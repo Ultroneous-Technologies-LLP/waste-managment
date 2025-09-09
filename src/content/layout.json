@@ -1,0 +1,214 @@
+{
+  "header": {
+    "headerLogo": {
+      "alt": "wast management logo",
+      "src": "/assets/images/logo.svg"
+    },
+    "headerLinks": [
+      {
+        "id": 1,
+        "label": "home",
+        "href": "/",
+        "title": "home"
+      },
+      {
+        "id": 2,
+        "label": "About us",
+        "href": "/",
+        "title": "About us"
+      },
+      {
+        "id": 3,
+        "label": "Services",
+        "href": "/",
+        "title": "Services"
+      },
+      {
+        "id": 4,
+        "label": "Industries",
+        "href": "/",
+        "title": "Industries"
+      },
+      {
+        "id": 5,
+        "label": "Process",
+        "href": "/",
+        "title": "Process"
+      },
+      {
+        "id": 6,
+        "label": "Impact",
+        "href": "/",
+        "title": "Impact"
+      },
+      {
+        "id": 7,
+        "label": "Resources",
+        "href": "/",
+        "title": "Resources"
+      },
+      {
+        "id": 8,
+        "label": "Get Involved",
+        "href": "/",
+        "title": "Get Involved"
+      }
+    ],
+    "headerButton": {
+      "label": "Request a pick up",
+      "ariaLabel": "Request a pick up"
+    }
+  },
+  "footer": {
+    "footerLogo": {
+      "src": "/assets/images/logo-white.svg",
+      "alt": "wast management logo"
+    },
+    "headquarters": {
+      "title": "Our headquarters",
+      "address": "16th Main Rd, MCHS Colony, stage 2, BTM, Layout, Bengaluru, Karnataka 560076",
+      "contactNo": [
+        { "id": 1, "number": "1800 258 6676", "href": "tel:1800 258 6676" },
+        { "id": 2, "number": "1800 258 6676", "href": "tel:1800 258 6676" }
+      ]
+    },
+    "company": {
+      "title": "Our Company",
+      "links": [
+        {
+          "id": 1,
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "id": 2,
+          "label": "About us",
+          "href": "/"
+        },
+        {
+          "id": 3,
+          "label": "Services",
+          "href": "/"
+        },
+        {
+          "id": 4,
+          "label": "recycler",
+          "href": "/"
+        },
+        {
+          "id": 5,
+          "label": "Solutions",
+          "href": "/"
+        },
+        {
+          "id": 6,
+          "label": "News & Blogs",
+          "href": "/"
+        }
+      ]
+    },
+    "services": {
+      "title": "Our Services",
+      "links": [
+        {
+          "id": 1,
+          "label": "E-waste Management & Recycling",
+          "href": "/"
+        },
+        {
+          "id": 2,
+          "label": "Dry and wet waste management",
+          "href": "/"
+        },
+        {
+          "id": 3,
+          "label": "Extended producer responsibility",
+          "href": "/"
+        },
+        {
+          "id": 4,
+          "label": "Waste recycled Products",
+          "href": "/"
+        },
+        {
+          "id": 5,
+          "label": "Event waste Management",
+          "href": "/"
+        },
+        {
+          "id": 6,
+          "label": "Waste Management Consultant",
+          "href": "/"
+        },
+        {
+          "id": 7,
+          "label": "Waste management Recycling",
+          "href": "/"
+        },
+        {
+          "id": 8,
+          "label": "Plastic waste management",
+          "href": "/"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "Our Newsletter",
+      "description": "Subscribe to our newsletter to stay informed on deals and news."
+    },
+    "regionalOffices": {
+      "title": "Regional Offices",
+      "regionalOfficesAddress": [
+        {
+          "id": 1,
+          "address": "A3, 1st Floor, Cybex Business Centre, 118B,Anna salai, Guindy, Chennai-600032"
+        },
+        {
+          "id": 2,
+          "address": "535/7, Mudda Vaddo, Parra, Bardez,Goa-403510"
+        }
+      ]
+    },
+    "copyRightText": {
+      "text": "© 2024 saahaswaste. All Rights Reserved."
+    },
+    "socialMediaLink": [
+      {
+        "id": 1,
+        "href": "https://www.instagram.com/",
+        "Icon": "Instagram",
+        "label": "Go to instagram"
+      },
+      {
+        "id": 2,
+        "href": "https://in.linkedin.com/",
+        "Icon": "LinkedIn",
+        "label": "Go to LinkedIn"
+      },
+      {
+        "id": 3,
+        "href": "https://dribbble.com/",
+        "Icon": "Dribble",
+        "label": "Go to dribbble"
+      },
+      {
+        "id": 4,
+        "href": "https://www.behance.net/",
+        "Icon": "Behance",
+        "label": "Go to behance"
+      }
+    ],
+    "footerBottomImage": [
+      {
+        "id": 1,
+        "src": "/assets/images/call-to-action.svg",
+        "alt": "image"
+      },
+      {
+        "id": 2,
+        "src": "/assets/images/tuv.svg",
+        "alt": "image"
+      }
+    ]
+  }
+}
