@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { footer } from "@/types/layout-type";
 import { Behance, Dribble, Instagram, LinkedIn } from "@/components/icons";
+import clsx from "clsx";
 
 interface FooterProps {
   data: footer;
@@ -23,7 +24,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
       className="py-12.5 px-4 xl:py-20 xl:px-12.5"
       backgroundClassName="bg-primary-green"
     >
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-y-8 md:gap-y-12 xl:gap-y-0 md:gap-x-8 md:pb-12 xl:pb-8 border-b border-white">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-y-8 md:gap-y-12 xl:gap-y-0 md:gap-x-8 pb-8 md:pb-12 xl:pb-8 border-b border-white">
         <div className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-1 row-end-2 xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2">
           <Image
             alt={data.footerLogo.alt}
@@ -54,11 +55,21 @@ const Footer: FC<FooterProps> = ({ data }) => {
           <p className="text-white text-xl/normal pb-4 xl:pb-8">
             {data.company.title}
           </p>
-          <ul className="space-y-2 xl:space-y-4 text-light-silver text-xs md:text-base leading-normal">
-            {data.company.links.map((value) => (
-              <li key={value.id}>
-                <Link href={value.href}>{value.label}</Link>
-              </li>
+          <ul className="space-y-2 xl:space-y-4 text-light-silver text-xs md:text-base leading-normal flex md:flex-col flex-wrap justify-center">
+            {data.company.links.map((value, index) => (
+              <div key={value.id} className="flex">
+                <li>
+                  <Link href={value.href}>{value.label}</Link>
+                </li>
+                <p
+                  className={clsx(
+                    "size-4.5 grid place-content-center md:hidden",
+                    { hidden: index === data.company.links.length - 1 }
+                  )}
+                >
+                  <span className="size-1 rounded-full bg-light-silver inline-block" />
+                </p>
+              </div>
             ))}
           </ul>
         </div>
@@ -114,9 +125,9 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="md:pt-12 xl:pt-8 flex flex-col md:flex-row justify-between">
+      <div className="pt-4 md:pt-12 xl:pt-8 flex flex-col md:flex-row justify-between">
         <p className="text-sm/4.5 text-white">{data.copyRightText.text}</p>
-        <div className="flex items-center gap-19">
+        <div className="flex justify-center items-center gap-19 pt-4 md:pt-0">
           <div className="flex gap-2 items-center">
             {data.socialMediaLink.map((value) => {
               const Icon = iconMap[value.Icon];
