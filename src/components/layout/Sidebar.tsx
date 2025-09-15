@@ -3,6 +3,7 @@ import { header } from "@/types/layout-type";
 import Image from "next/image";
 import clsx from "clsx";
 import { Arrow } from "../icons";
+import Link from "next/link";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -36,13 +37,13 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
           {data.headerLinks.map((link) => (
             <li key={link.label} className="flex gap-4 items-center group">
               <Arrow className="text-primary-yellow transition-all duration-500 ease-in-out group-hover:text-primary-green group-hover:translate-x-1 group-hover:scale-150" />
-              <a
+              <Link
                 href={link.href}
                 onClick={onClick}
                 className="text-black text-2xl/snug font-normal transition-all duration-500 ease-in-out group-hover:font-medium group-hover:text-primary-green block"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
