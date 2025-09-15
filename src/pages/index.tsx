@@ -1,6 +1,10 @@
+import { HomeHero } from "@/components/home";
 import Head from "next/head";
+import data from "@/content/home-page-data.json";
+import { homeData } from "@/types/home-type";
 
 export default function Home() {
+  const homeData = data as homeData;
   return (
     <>
       <Head>
@@ -50,9 +54,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <div className="h-svh pt-34 text-center text-3xl">
-        Welcome to Waste management
-      </div>
+      <HomeHero data={homeData.heroSection} />
     </>
   );
 }

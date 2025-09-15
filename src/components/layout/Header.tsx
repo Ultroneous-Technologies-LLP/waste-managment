@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({
 
   // ✅ Precompute classes
   const containerClasses = clsx(
-    "md:bg-[#f7f7f7] rounded-full py-3 px-4 xl:p-4 flex items-center transition-all duration-500 ease-in bg-white",
+    "md:bg-[#f7f7f7] rounded-full py-3 pl-2 pr-3 xl:p-4 flex items-center transition-all duration-500 ease-in bg-white",
     {
       "justify-end gap-2 md:bg-transparent": sidebarOpen,
       "justify-between gap-12": !sidebarOpen,
@@ -93,7 +93,7 @@ const Header: FC<HeaderProps> = ({
   );
 
   return (
-    <nav className="w-full fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-5 max-w-335 mx-auto">
+    <nav className="w-full fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-5 px-4 md:px-6 xl:px-12.5 mx-auto max-w-360">
       <Container as="header" className={containerClasses}>
         <div
           className={clsx(

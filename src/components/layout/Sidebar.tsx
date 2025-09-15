@@ -2,7 +2,7 @@ import { FC } from "react";
 import { header } from "@/types/layout-type";
 import Image from "next/image";
 import clsx from "clsx";
-import { Arrow } from "../icons";
+import { Arrow } from "@/components/icons";
 import Link from "next/link";
 
 interface SidebarProps {

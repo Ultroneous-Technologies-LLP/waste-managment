@@ -21,7 +21,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
   return (
     <Container
       as="footer"
-      className="py-12.5 px-4 xl:py-20 xl:px-12.5"
+      className="py-12.5 px-4 md:px-6 xl:py-20 xl:px-12.5"
       backgroundClassName="bg-primary-green"
     >
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-y-8 md:gap-y-12 xl:gap-y-0 md:gap-x-8 pb-8 md:pb-12 xl:pb-8 border-b border-white">
