@@ -5,5 +5,24 @@
     "buttonLabel": "Request a pick up",
     "src": "/assets/images/home-hero.avif",
     "alt": "photo-shoot-depicting-recycling-workshop-world-environmental-education-day"
+  },
+  "aboutUsSection": {
+    "title": "About SZW",
+    "descriptionWithBlackText": "SZW is an IMS certified social enterprise that offers holistic waste management solutions to corporates, governments, international organizations, bulk waste generators and consumers.",
+    "descriptionWithGreenText": "We have been operational for 10 years with a focus around nature, people and technology. Connect with us to know more.",
+    "buttonLabel": "Know More",
+    "weProtectNature": {
+      "firstPart": "we",
+      "secondPart": {
+        "src": "/assets/images/home/protect.avif",
+        "alt": "people collect garbage in the garden",
+        "title": "Protect"
+      },
+      "thirdPart": {
+        "src": "/assets/images/home/nature.avif",
+        "alt": "people collect garbage in the garden",
+        "title": "Nature"
+      }
+    }
   }
 }

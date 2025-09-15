@@ -1,4 +1,4 @@
-import { HomeHero } from "@/components/home";
+import { AboutUs, HomeHero } from "@/components/home";
 import Head from "next/head";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
@@ -55,6 +55,7 @@ export default function Home() {
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
       <HomeHero data={homeData.heroSection} />
+      <AboutUs data={homeData.aboutUsSection} />
     </>
   );
 }

@@ -36,7 +36,11 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
         <ul className="space-y-4">
           {data.headerLinks.map((link) => (
             <li key={link.label} className="flex gap-4 items-center group">
-              <Arrow className="text-primary-yellow transition-all duration-500 ease-in-out group-hover:text-primary-green group-hover:translate-x-1 group-hover:scale-150" />
+              <Arrow
+                width={21}
+                height={30}
+                className="text-primary-yellow transition-all duration-500 ease-in-out group-hover:text-primary-green group-hover:translate-x-1 group-hover:scale-150"
+              />
               <Link
                 href={link.href}
                 onClick={onClick}
