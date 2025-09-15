@@ -6,6 +6,7 @@ import Dribble from "./Dribble";
 import Behance from "./Behance";
 import Cross from "./Cross";
 import Arrow from "./Arrow";
+import ArrowWithBackGround from "./ArrowWithBackGround";
 
 export {
   DropDown,
@@ -16,4 +17,5 @@ export {
   Behance,
   Cross,
   Arrow,
+  ArrowWithBackGround,
 };

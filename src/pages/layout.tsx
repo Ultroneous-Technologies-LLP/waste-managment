@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           onMenuOpen={() => setSidebarOpen(true)}
           onMenuClose={() => setSidebarOpen(false)}
         />
-        <main className="pt-24">{children}</main>
+        <main>{children}</main>
         <Footer data={layoutData.footer} />
       </div>
     </div>
