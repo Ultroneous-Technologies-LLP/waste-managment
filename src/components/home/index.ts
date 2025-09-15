@@ -1,3 +1,4 @@
 import HomeHero from "./HomeHero";
+import AboutUs from "./AboutUs";
 
-export { HomeHero };
+export { HomeHero, AboutUs };

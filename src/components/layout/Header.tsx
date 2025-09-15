@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({
 
   // ✅ Precompute classes
   const containerClasses = clsx(
-    "md:bg-[#f7f7f7] rounded-full py-3 pl-2 pr-3 xl:p-4 flex items-center transition-all duration-500 ease-in bg-white",
+    "md:bg-[#f7f7f7] rounded-full py-3 pl-2 pr-3 xl:p-4 flex items-center transition-all duration-500 ease-in bg-black/30",
     {
       "justify-end gap-2 md:bg-transparent": sidebarOpen,
       "justify-between gap-12": !sidebarOpen,
@@ -159,8 +159,6 @@ const Header: FC<HeaderProps> = ({
               </>
             )}
           </div>
-
-          {/* Mobile Search */}
           <div
             className={clsx("xl:hidden", {
               "w-full": searchOpen,
