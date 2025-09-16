@@ -154,5 +154,53 @@
         "alt": "focal point"
       }
     ]
+  },
+  "transformingWasteSection": {
+    "title": "Transforming Waste into Resources",
+    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "skills": [
+      {
+        "id": 1,
+        "title": "10+ year expertise",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "expertise",
+        "src": "/assets/images/home/skill.svg"
+      },
+      {
+        "id": 2,
+        "title": "Certified",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "Certified",
+        "src": "/assets/images/home/skill.svg"
+      },
+      {
+        "id": 3,
+        "title": "Transparency",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "Transparency",
+        "src": "/assets/images/home/skill.svg"
+      },
+      {
+        "id": 4,
+        "title": "Compliant with laws",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "Compliant with laws",
+        "src": "/assets/images/home/skill.svg"
+      },
+      {
+        "id": 5,
+        "title": "Professional team",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "Professional team",
+        "src": "/assets/images/home/skill.svg"
+      },
+      {
+        "id": 6,
+        "title": "Safe Careers",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "alt": "Safe Careers",
+        "src": "/assets/images/home/skill.svg"
+      }
+    ]
   }
 }

@@ -55,9 +55,22 @@ export type industriesWeServeSection = {
   animation: { id: number; src: string; alt: string }[];
 };
 
+export type transformingWasteSection = {
+  title: string;
+  description: string;
+  skills: {
+    id: number;
+    title: string;
+    description: string;
+    alt: string;
+    src: string;
+  }[];
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
   wasteManagementServicesSection: wasteManagementServices;
   industriesWeServeSection: industriesWeServeSection;
+  transformingWasteSection: transformingWasteSection;
 };

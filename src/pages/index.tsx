@@ -2,6 +2,7 @@ import {
   AboutUs,
   HomeHero,
   IndustriesWeServe,
+  TransformingWaste,
   WasteManagementServices,
 } from "@/components/home";
 import Head from "next/head";
@@ -63,6 +64,7 @@ export default function Home() {
       <AboutUs data={homeData.aboutUsSection} />
       <WasteManagementServices data={homeData.wasteManagementServicesSection} />
       <IndustriesWeServe data={homeData.industriesWeServeSection} />
+      <TransformingWaste data={homeData.transformingWasteSection} />
     </>
   );
 }
