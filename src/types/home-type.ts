@@ -26,7 +26,20 @@ export type aboutUsSection = {
   };
 };
 
+export type wasteManagementServices = {
+  title: string;
+  description: string;
+  services: {
+    id: number;
+    title: string;
+    description: string;
+    alt: string;
+    src: string;
+  }[];
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
+  wasteManagementServicesSection: wasteManagementServices;
 };
