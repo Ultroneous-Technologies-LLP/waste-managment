@@ -83,7 +83,7 @@ const Header: FC<HeaderProps> = ({
     <button
       aria-label="Open menu"
       onClick={onMenuOpen}
-      className={clsx("flex flex-col md:mr-4", {
+      className={clsx("flex flex-col md:mr-4 xl:hidden", {
         hidden: sidebarOpen || searchOpen,
       })}
     >
@@ -112,12 +112,23 @@ const Header: FC<HeaderProps> = ({
         </div>
 
         {/* Desktop Nav */}
-        <div className="xl:max-w-190 xl:w-full hidden xl:block">
-          <ul className="flex justify-between text-base/normal">{navLinks}</ul>
+        <div
+          className={clsx("xl:max-w-150 xl:w-full", {
+            block: !searchOpen,
+            hidden: searchOpen,
+          })}
+        >
+          <ul className="flex gap-6 justify-center text-base/normal">
+            {navLinks}
+          </ul>
         </div>
 
         {/* Search + Button */}
-        <div className={clsx("flex gap-6", { "w-full": searchOpen })}>
+        <div
+          className={clsx("flex gap-6", {
+            "w-full": searchOpen,
+          })}
+        >
           {/* Desktop Search */}
           <div
             className={clsx(
@@ -131,7 +142,7 @@ const Header: FC<HeaderProps> = ({
               <>
                 <div
                   className={clsx(
-                    "bg-white px-3 py-4.5 rounded-full gap-2 items-center xl:max-w-46.5 w-full flex",
+                    "bg-white px-3 py-4.5 rounded-full gap-2 items-center xl:max-w-61.5 w-full flex",
                     { hidden: sidebarOpen }
                   )}
                   onClick={() => setSearchOpen(true)}
@@ -160,7 +171,7 @@ const Header: FC<HeaderProps> = ({
             )}
           </div>
           <div
-            className={clsx("xl:hidden", {
+            className={clsx("", {
               "w-full": searchOpen,
               "flex items-center gap-4": !searchOpen,
             })}

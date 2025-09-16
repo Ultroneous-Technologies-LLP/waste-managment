@@ -77,6 +77,14 @@ export type citiesWeCoveredSection = {
   }[];
 };
 
+export type drivingImpactSection = {
+  title: string;
+  sustainabilityMetrics: { id: number; title: string; number: string }[];
+  button: {
+    label: string;
+  };
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
@@ -84,4 +92,5 @@ export type homeData = {
   industriesWeServeSection: industriesWeServeSection;
   transformingWasteSection: transformingWasteSection;
   citiesWeCoveredSection: citiesWeCoveredSection;
+  drivingImpactSection: drivingImpactSection;
 };

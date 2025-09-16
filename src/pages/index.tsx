@@ -9,6 +9,7 @@ import {
 import Head from "next/head";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
+import DrivingImpact from "@/components/home/DrivingImpact";
 
 export default function Home() {
   const homeData = data as homeData;
@@ -67,6 +68,7 @@ export default function Home() {
       <IndustriesWeServe data={homeData.industriesWeServeSection} />
       <TransformingWaste data={homeData.transformingWasteSection} />
       <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
+      <DrivingImpact data={homeData.drivingImpactSection} />
     </>
   );
 }

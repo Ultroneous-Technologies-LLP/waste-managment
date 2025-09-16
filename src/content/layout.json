@@ -40,18 +40,6 @@
         "label": "Impact",
         "href": "/",
         "title": "Impact"
-      },
-      {
-        "id": 7,
-        "label": "Resources",
-        "href": "/",
-        "title": "Resources"
-      },
-      {
-        "id": 8,
-        "label": "Get Involved",
-        "href": "/",
-        "title": "Get Involved"
       }
     ],
     "headerButton": {

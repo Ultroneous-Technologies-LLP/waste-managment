@@ -261,5 +261,24 @@
         "src": "/assets/images/home/jaipur.avif"
       }
     ]
+  },
+  "drivingImpactSection": {
+    "title": "Driving impact: Connect with us today",
+    "sustainabilityMetrics": [
+      { "id": 1, "title": "MT of waste managed", "number": "42,122" },
+      {
+        "id": 2,
+        "title": "MT CO2 eq.of GHG emission reduced",
+        "number": "94,817"
+      },
+      {
+        "id": 3,
+        "title": "MT of plastic recovered from coastal regions",
+        "number": "6775"
+      }
+    ],
+    "button": {
+      "label": "Get in touch"
+    }
   }
 }
