@@ -67,10 +67,21 @@ export type transformingWasteSection = {
   }[];
 };
 
+export type citiesWeCoveredSection = {
+  title: string;
+  cities: {
+    id: number;
+    cityName: string;
+    alt: string;
+    src: string;
+  }[];
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
   wasteManagementServicesSection: wasteManagementServices;
   industriesWeServeSection: industriesWeServeSection;
   transformingWasteSection: transformingWasteSection;
+  citiesWeCoveredSection: citiesWeCoveredSection;
 };

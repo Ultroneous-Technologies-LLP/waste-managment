@@ -1,5 +1,6 @@
 import {
   AboutUs,
+  CitiesWeCovered,
   HomeHero,
   IndustriesWeServe,
   TransformingWaste,
@@ -65,6 +66,7 @@ export default function Home() {
       <WasteManagementServices data={homeData.wasteManagementServicesSection} />
       <IndustriesWeServe data={homeData.industriesWeServeSection} />
       <TransformingWaste data={homeData.transformingWasteSection} />
+      <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
     </>
   );
 }
