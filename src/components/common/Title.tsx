@@ -15,7 +15,7 @@ const Title: FC<TitleProps> = ({
   return isMainTitle ? (
     <h1
       className={clsx(
-        "text-[32px] md:text-5xl xl:text-6xl leading-snug text-black",
+        "text-32 md:text-5xl xl:text-6xl leading-snug text-black",
         className
       )}
     >
@@ -24,7 +24,7 @@ const Title: FC<TitleProps> = ({
   ) : (
     <h2
       className={clsx(
-        "text-2xl/snug md:text-[32px]/snug xl:text-6xl leading-snug text-black",
+        "text-2xl md:text-32 xl:text-6xl leading-snug text-black",
         className
       )}
     >
