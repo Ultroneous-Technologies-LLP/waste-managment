@@ -3,6 +3,7 @@ import {
   CitiesWeCovered,
   DrivingImpact,
   GetMoreUpdates,
+  FAQ,
   HomeHero,
   IndustriesWeServe,
   OurAchievements,
@@ -73,6 +74,7 @@ export default function Home() {
       <DrivingImpact data={homeData.drivingImpactSection} />
       <GetMoreUpdates data={homeData.getMoreUpdatesSection} />
       <OurAchievements data={homeData.ourAchievementsSection} />
+      <FAQ data={homeData.faqSections} />
     </>
   );
 }
