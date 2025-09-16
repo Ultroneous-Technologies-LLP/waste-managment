@@ -12,10 +12,7 @@ const AboutUs: FC<AboutUsProps> = ({ data }) => {
   return (
     <Container className="px-4 md:px-6 xl:px-12.5 pt-20 xl:pt-37.5">
       <div className="md:max-w-133.5 xl:max-w-216.5 mx-auto">
-        <Title
-          title={data.title}
-          className="text-center !text-2xl/snug md:!text-[32px]/snug"
-        />
+        <Title title={data.title} className="text-center" />
         <p className="py-6 md:py-8 text-sm/normal md:text-base/normal xl:text-2xl/normal font-light text-center">
           {data.descriptionWithBlackText}
           <span className="text-primary-green font-bold">

@@ -24,5 +24,46 @@
         "title": "Nature"
       }
     }
+  },
+  "wasteManagementServicesSection": {
+    "title": "A wide range of waste Management services",
+    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "services": [
+      {
+        "id": 1,
+        "title": "Waste Management Services",
+        "description": "Responsible & sustainable waste management solutions for bulk waste generators like corporate parks, universities, residential complexs & more.",
+        "alt": "recycle concept with woman collecting trash",
+        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+      },
+      {
+        "id": 2,
+        "title": "E-Waste Management",
+        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "alt": "recycle concept with woman collecting trash",
+        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+      },
+      {
+        "id": 3,
+        "title": "EPR",
+        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "alt": "recycle concept with woman collecting trash",
+        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+      },
+      {
+        "id": 4,
+        "title": "Consulting",
+        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "alt": "recycle concept with woman collecting trash",
+        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+      },
+      {
+        "id": 5,
+        "title": "Training & Development",
+        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "alt": "recycle concept with woman collecting trash",
+        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+      }
+    ]
   }
 }

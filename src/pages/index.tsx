@@ -1,4 +1,4 @@
-import { AboutUs, HomeHero } from "@/components/home";
+import { AboutUs, HomeHero, WasteManagementServices } from "@/components/home";
 import Head from "next/head";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
@@ -56,6 +56,7 @@ export default function Home() {
       </Head>
       <HomeHero data={homeData.heroSection} />
       <AboutUs data={homeData.aboutUsSection} />
+      <WasteManagementServices data={homeData.wasteManagementServicesSection} />
     </>
   );
 }

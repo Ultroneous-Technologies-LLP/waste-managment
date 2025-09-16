@@ -18,8 +18,7 @@ const ArrowWithBackGround: FC<ArrowWithBackGroundProps> = ({
   return (
     <div
       className={clsx(
-        "size-12 flex justify-center items-center cursor-pointer bg-white border border-transparent rounded-full transition-colors duration-300 group",
-        "hover:bg-transparent hover:border-black",
+        "flex justify-center items-center cursor-pointer border rounded-full transition-colors duration-300",
         className
       )}
     >
@@ -30,10 +29,7 @@ const ArrowWithBackGround: FC<ArrowWithBackGroundProps> = ({
         width={width}
         height={height}
         role="img"
-        className={clsx(
-          "text-black transition-colors duration-300 group-hover:text-white",
-          svgClassName
-        )}
+        className={clsx("transition-colors duration-300", svgClassName)}
         {...svgProps}
       >
         <path
