@@ -65,5 +65,94 @@
         "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
       }
     ]
+  },
+  "industriesWeServeSection": {
+    "mainTitle": "Industries We Serve",
+    "services": [
+      {
+        "id": 1,
+        "title": "Health Care"
+      },
+      {
+        "id": 2,
+        "title": "Events"
+      },
+      {
+        "id": 3,
+        "title": "Commercial"
+      },
+      {
+        "id": 4,
+        "title": "Residential"
+      },
+      {
+        "id": 5,
+        "title": "Food Industry"
+      },
+      {
+        "id": 6,
+        "title": "Construction Industry"
+      }
+    ],
+    "button": {
+      "label": "Know More"
+    },
+    "image": {
+      "src": "/assets/images/home/woman-collecting-trash.avif",
+      "alt": "woman collecting trash"
+    },
+    "title": "Trusted by the world’s most innovative companies",
+    "animation": [
+      {
+        "id": 1,
+        "src": "/assets/images/home/acme.svg",
+        "alt": "acme"
+      },
+      {
+        "id": 2,
+        "src": "/assets/images/home/focal-point.svg",
+        "alt": "focal point"
+      },
+      {
+        "id": 3,
+        "src": "/assets/images/home/polymath.svg",
+        "alt": "polymath"
+      },
+      {
+        "id": 4,
+        "src": "/assets/images/home/segment.svg",
+        "alt": "segment"
+      },
+      {
+        "id": 5,
+        "src": "/assets/images/home/acme.svg",
+        "alt": "acme"
+      },
+      {
+        "id": 6,
+        "src": "/assets/images/home/focal-point.svg",
+        "alt": "focal point"
+      },
+      {
+        "id": 7,
+        "src": "/assets/images/home/polymath.svg",
+        "alt": "polymath"
+      },
+      {
+        "id": 8,
+        "src": "/assets/images/home/segment.svg",
+        "alt": "segment"
+      },
+      {
+        "id": 9,
+        "src": "/assets/images/home/acme.svg",
+        "alt": "acme"
+      },
+      {
+        "id": 10,
+        "src": "/assets/images/home/focal-point.svg",
+        "alt": "focal point"
+      }
+    ]
   }
 }

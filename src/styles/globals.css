@@ -5,8 +5,20 @@
   --color-primary-green: #22631b;
   --color-primary-yellow: #f8c70c;
   --color-light-silver: #d8d7d7;
+  --color-anti-flash-white: #f3f3f3;
+  --animate-marquee: marquee 20s linear infinite;
+  --text-32: 32px;
 }
 
 body {
   font-family: "Lexend", sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

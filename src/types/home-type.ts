@@ -38,8 +38,26 @@ export type wasteManagementServices = {
   }[];
 };
 
+export type industriesWeServeSection = {
+  mainTitle: string;
+  services: {
+    id: Number;
+    title: string;
+  }[];
+  button: {
+    label: string;
+  };
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  animation: { id: number; src: string; alt: string }[];
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
   wasteManagementServicesSection: wasteManagementServices;
+  industriesWeServeSection: industriesWeServeSection;
 };
