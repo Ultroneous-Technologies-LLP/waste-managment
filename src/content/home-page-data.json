@@ -281,6 +281,22 @@
       "label": "Get in touch"
     }
   },
+  "faqSections": {
+    "title": "Frequently Asked Questions",
+    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "faq": [
+      {
+        "id": 1,
+        "questions": "",
+        "ans": ""
+      }
+    ],
+    "haveQuestions": {
+      "title": "Still have Questions?",
+      "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at. ",
+      "buttonLabel": "Get in touch"
+    }
+  },
   "getMoreUpdatesSection": {
     "title": "Get more updates from SZW",
     "latestBlog": {

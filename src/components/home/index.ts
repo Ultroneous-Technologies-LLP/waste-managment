@@ -7,6 +7,7 @@ import CitiesWeCovered from "./CitiesWeCovered";
 import GetMoreUpdates from "./GetMoreUpdates";
 import OurAchievements from "./OurAchievements";
 import DrivingImpact from "./DrivingImpact";
+import FAQ from "./FAQ";
 
 export {
   HomeHero,
@@ -18,4 +19,5 @@ export {
   GetMoreUpdates,
   OurAchievements,
   DrivingImpact,
+  FAQ,
 };

@@ -119,6 +119,16 @@ export type ourAchievementsSection = {
     alt: string;
   }[];
 };
+export type faqSections = {
+  title: string;
+  description: string;
+  faq: {
+    id: number;
+    question: string;
+    ans: string;
+  }[];
+  haveQuestions: { title: string; description: string; buttonLabel: string };
+};
 
 export type homeData = {
   heroSection: heroSection;
@@ -130,4 +140,5 @@ export type homeData = {
   drivingImpactSection: drivingImpactSection;
   getMoreUpdatesSection: getMoreUpdatesSection;
   ourAchievementsSection: ourAchievementsSection;
+  faqSections: faqSections;
 };
