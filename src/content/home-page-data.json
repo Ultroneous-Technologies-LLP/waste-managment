@@ -155,6 +155,19 @@
       }
     ]
   },
+  "ourProcessSection": {
+    "title": "Our Process",
+    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "video": {
+      "posterSrc": "/assets/images/home/video-poster.avif",
+      "alt": "Demo video",
+      "videoSrc": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    "buttonImg": {
+      "src": "/assets/images/home/play-button.svg",
+      "alt": "button"
+    }
+  },
   "transformingWasteSection": {
     "title": "Transforming Waste into Resources",
     "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
