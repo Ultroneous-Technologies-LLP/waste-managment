@@ -5,6 +5,8 @@ import IndustriesWeServe from "./IndustriesWeServe";
 import TransformingWaste from "./TransformingWaste";
 import CitiesWeCovered from "./CitiesWeCovered";
 import GetMoreUpdates from "./GetMoreUpdates";
+import OurAchievements from "./OurAchievements";
+import DrivingImpact from "./DrivingImpact";
 
 export {
   HomeHero,
@@ -14,4 +16,6 @@ export {
   TransformingWaste,
   CitiesWeCovered,
   GetMoreUpdates,
+  OurAchievements,
+  DrivingImpact,
 };

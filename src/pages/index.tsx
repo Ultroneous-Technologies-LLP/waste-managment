@@ -1,16 +1,17 @@
 import {
   AboutUs,
   CitiesWeCovered,
+  DrivingImpact,
   GetMoreUpdates,
   HomeHero,
   IndustriesWeServe,
+  OurAchievements,
   TransformingWaste,
   WasteManagementServices,
 } from "@/components/home";
 import Head from "next/head";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
-import DrivingImpact from "@/components/home/DrivingImpact";
 
 export default function Home() {
   const homeData = data as homeData;
@@ -71,6 +72,7 @@ export default function Home() {
       <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
       <DrivingImpact data={homeData.drivingImpactSection} />
       <GetMoreUpdates data={homeData.getMoreUpdatesSection} />
+      <OurAchievements data={homeData.ourAchievementsSection} />
     </>
   );
 }
