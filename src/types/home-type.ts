@@ -112,6 +112,14 @@ export type getMoreUpdatesSection = {
   };
 };
 
+export type ourAchievementsSection = {
+  title: string;
+  images: {
+    src: string;
+    alt: string;
+  }[];
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
@@ -121,4 +129,5 @@ export type homeData = {
   citiesWeCoveredSection: citiesWeCoveredSection;
   drivingImpactSection: drivingImpactSection;
   getMoreUpdatesSection: getMoreUpdatesSection;
+  ourAchievementsSection: ourAchievementsSection;
 };

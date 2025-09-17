@@ -326,5 +326,30 @@
     "button": {
       "buttonLabel": "View All"
     }
+  },
+  "ourAchievementsSection": {
+    "title": "Our Achievements",
+    "images": [
+      {
+        "id": 1,
+        "src": "/assets/images/home/golbal-citizen-award.avif",
+        "alt": "golbal-citizen-award"
+      },
+      {
+        "id": 2,
+        "src": "/assets/images/home/cll.avif",
+        "alt": ""
+      },
+      {
+        "id": 3,
+        "src": "/assets/images/home/award.avif",
+        "alt": ""
+      },
+      {
+        "id": 4,
+        "src": "/assets/images/home/golbal-citizen-award.avif",
+        "alt": "golbal-citizen-award"
+      }
+    ]
   }
 }
