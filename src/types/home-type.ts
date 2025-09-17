@@ -85,6 +85,17 @@ export type drivingImpactSection = {
   };
 };
 
+export type faqSections = {
+  title: string;
+  description: string;
+  faq: {
+    id: number;
+    questions: string;
+    ans: string;
+  }[];
+  haveQuestions: { title: string; description: string; buttonLabel: string };
+};
+
 export type getMoreUpdatesSection = {
   title: string;
   latestBlog: {
@@ -118,16 +129,6 @@ export type ourAchievementsSection = {
     src: string;
     alt: string;
   }[];
-};
-export type faqSections = {
-  title: string;
-  description: string;
-  faq: {
-    id: number;
-    question: string;
-    ans: string;
-  }[];
-  haveQuestions: { title: string; description: string; buttonLabel: string };
 };
 
 export type homeData = {

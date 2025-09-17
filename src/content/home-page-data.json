@@ -287,8 +287,33 @@
     "faq": [
       {
         "id": 1,
-        "questions": "",
-        "ans": ""
+        "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
+      },
+      {
+        "id": 2,
+        "questions": "Why Are The Recycled Papers A Shade Of Brown?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
+      },
+      {
+        "id": 3,
+        "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
+      },
+      {
+        "id": 4,
+        "questions": "How Do I Place Orders In Bulk?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
+      },
+      {
+        "id": 5,
+        "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
+      },
+      {
+        "id": 6,
+        "questions": "How Do I Place Orders In Bulk?",
+        "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       }
     ],
     "haveQuestions": {
