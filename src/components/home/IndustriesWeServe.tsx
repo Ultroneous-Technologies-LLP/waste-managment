@@ -11,8 +11,9 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
   return (
     <>
       <Container
-        backgroundClassName="bg-anti-flash-white"
+        backgroundClassName="bg-anti-flash-white scroll-mt-10"
         className="px-6 md:px-6 xl:px-12.5 grid gap-6 md:gap-8 xl:gap-6 py-12.5 md:pt-20 md:pb-8 xl:py-25 grid-cols-1 xl:grid-cols-2 xl:gap-y-0"
+        id="industries"
       >
         <div className="col-start-1 col-end-2 row-start-1 row-end-2">
           <Title title={data.mainTitle} className="text-center xl:text-start" />

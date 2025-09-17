@@ -38,7 +38,12 @@ const Container = forwardRef(
     if (backgroundClassName) {
       return (
         <Component className={clsx(backgroundClassName)} ref={ref} {...rest}>
-          <div className={clsx("mx-auto w-full max-w-360", className)}>
+          <div
+            className={clsx(
+              "px-4 md:px-6 xl:px-12.5 mx-auto w-full max-w-360",
+              className
+            )}
+          >
             {children}
           </div>
         </Component>
@@ -47,7 +52,10 @@ const Container = forwardRef(
 
     return (
       <Component
-        className={clsx("mx-auto w-full max-w-360", className)}
+        className={clsx(
+          "px-4 md:px-6 xl:px-12.5 mx-auto w-full max-w-360",
+          className
+        )}
         ref={ref}
         {...rest}
       >

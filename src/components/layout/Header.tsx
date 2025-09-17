@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({
 
   // ✅ Precompute classes
   const containerClasses = clsx(
-    "md:bg-[#f7f7f7] rounded-full py-3 pl-2 pr-3 xl:p-4 flex items-center transition-all duration-500 ease-in bg-black/30",
+    "md:bg-[#f7f7f7] rounded-full !py-3 !pl-2 !pr-3 xl:!p-4 flex items-center transition-all duration-500 ease-in bg-black/30",
     {
       "justify-end gap-2 md:bg-transparent": sidebarOpen,
       "justify-between gap-12": !sidebarOpen,
@@ -101,14 +101,19 @@ const Header: FC<HeaderProps> = ({
             { hidden: sidebarOpen || searchOpen }
           )}
         >
-          <Image
-            alt={data.headerLogo.alt}
-            src={data.headerLogo.src}
-            title={data.headerLogo.alt}
-            width={60}
-            height={56}
-            className="w-9.5 h-8 md:w-15 md:h-14"
-          />
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <Image
+              alt={data.headerLogo.alt}
+              src={data.headerLogo.src}
+              title={data.headerLogo.alt}
+              width={60}
+              height={56}
+              className="w-9.5 h-8 md:w-15 md:h-14"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}

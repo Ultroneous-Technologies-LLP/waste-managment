@@ -23,7 +23,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
     isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
 
   return (
-    <Container className="px-4 md:px-6 xl:px-12.5 py-20 xl:py-37.5">
+    <Container className="py-20 xl:py-37.5">
       <Title title={data.title} className="text-center" />
 
       <div className="grid md:grid-cols-2 py-6 md:py-8 gap-8 md:gap-6">

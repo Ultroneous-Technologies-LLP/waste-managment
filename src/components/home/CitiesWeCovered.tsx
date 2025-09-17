@@ -9,7 +9,7 @@ interface CitiesWeCoveredProps {
 
 const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
   return (
-    <Container className="px-4 md:px-6 xl:px-12.5 pb-20 xl:pb-37.5 flex flex-col xl:flex-row gap-6 xl:gap-9.5">
+    <Container className="pb-20 xl:pb-37.5 flex flex-col xl:flex-row gap-6 xl:gap-9.5">
       <div className="xl:max-w-132.5 w-full">
         <Title title={data.title} className="text-center xl:text-start" />
       </div>
