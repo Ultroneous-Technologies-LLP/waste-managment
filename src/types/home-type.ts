@@ -41,7 +41,7 @@ export type wasteManagementServices = {
 export type industriesWeServeSection = {
   mainTitle: string;
   services: {
-    id: Number;
+    id: number;
     title: string;
   }[];
   button: {

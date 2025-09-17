@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({
 
   // ✅ Precompute classes
   const containerClasses = clsx(
-    "md:bg-[#f7f7f7] rounded-full !py-3 !pl-2 !pr-3 xl:!p-4 flex items-center transition-all duration-500 ease-in bg-black/30",
+    "md:bg-[#f7f7f7] rounded-full !py-3 !pl-2 !pr-3 xl:!p-4 flex items-center transition-all duration-500 ease-in bg-white",
     {
       "justify-end gap-2 md:bg-transparent": sidebarOpen,
       "justify-between gap-12": !sidebarOpen,
@@ -60,7 +60,7 @@ const Header: FC<HeaderProps> = ({
   );
 
   // ✅ Reusable SearchBar
-  const SearchBar = ({ mobile }: { mobile?: boolean }) => (
+  const SearchBar = () => (
     <div className="flex items-center w-full bg-white px-3 py-2 rounded-full border border-primary-green/40 shadow-[0_0_0_4px_#22631B1F]">
       <Search className="text-black mr-2" />
       <input
@@ -93,7 +93,7 @@ const Header: FC<HeaderProps> = ({
   );
 
   return (
-    <nav className="w-full fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-5 px-4 md:px-6 xl:px-12.5 mx-auto max-w-360">
+    <nav className="w-full sticky top-0 mx-auto z-50 pt-5 px-4 md:px-6 xl:px-12.5 max-w-360">
       <Container as="header" className={containerClasses}>
         <div
           className={clsx(
@@ -134,10 +134,9 @@ const Header: FC<HeaderProps> = ({
             "w-full": searchOpen,
           })}
         >
-          {/* Desktop Search */}
           <div
             className={clsx(
-              "w-fit md:max-w-80 xl:max-w-98 md:w-full hidden md:flex gap-4",
+              "w-fit md:max-w-80 xl:max-w-113 md:w-full hidden md:flex gap-4",
               { "md:hidden": searchOpen }
             )}
           >
@@ -168,7 +167,7 @@ const Header: FC<HeaderProps> = ({
                 </div>
                 <Button
                   aria-label={data.headerButton.ariaLabel}
-                  className="!hidden xl:!inline-block"
+                  className="!hidden xl:!inline-block xl:max-w-48.5"
                 >
                   {data.headerButton.label}
                 </Button>
@@ -185,17 +184,15 @@ const Header: FC<HeaderProps> = ({
               <>
                 <Search
                   onClick={() => setSearchOpen(true)}
-                  className="text-[#141420] md:hidden opacity-30"
+                  className="text-[#141420] xl:hidden opacity-30"
                 />
                 <MenuToggle />
               </>
             ) : (
-              <SearchBar mobile />
+              <SearchBar />
             )}
           </div>
         </div>
-
-        {/* Close Menu */}
         <button
           aria-label="Close menu"
           onClick={onMenuClose}

@@ -18,6 +18,19 @@ export default function Layout({ children }: { children: ReactNode }) {
     }
   }, [sidebarOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setSidebarOpen(false);
+      }
+    };
+
+    handleResize(); // run on mount in case user starts on desktop
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="relative min-h-screen">
       <Sidebar
@@ -27,7 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       />
       <div
         className={clsx("transition-transform duration-300 ease-in-out", {
-          "min-h-screen -translate-x-72": sidebarOpen,
+          "min-h-screen -translate-x-66": sidebarOpen,
         })}
       >
         <Header
