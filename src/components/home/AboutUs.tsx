@@ -10,7 +10,7 @@ interface AboutUsProps {
 
 const AboutUs: FC<AboutUsProps> = ({ data }) => {
   return (
-    <Container className="px-4 md:px-6 xl:px-12.5 pt-20 xl:pt-37.5">
+    <Container className="pt-20 xl:pt-37.5" id="about-us">
       <div className="md:max-w-133.5 xl:max-w-216.5 mx-auto">
         <Title title={data.title} className="text-center" />
         <p className="py-6 md:py-8 text-sm/normal md:text-base/normal xl:text-2xl/normal font-light text-center">
@@ -20,9 +20,7 @@ const AboutUs: FC<AboutUsProps> = ({ data }) => {
           </span>
         </p>
         <div className="max-w-fit mx-auto">
-          <Button as="link" href="/">
-            {data.buttonLabel}
-          </Button>
+          <Button>{data.buttonLabel}</Button>
         </div>
       </div>
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-2 py-20 md:pt-25 md:pb-16.5 xl:py-37.5">

@@ -8,37 +8,37 @@
       {
         "id": 1,
         "label": "home",
-        "href": "/",
+        "href": "/#home",
         "title": "home"
       },
       {
         "id": 2,
         "label": "About us",
-        "href": "/",
+        "href": "/#about-us",
         "title": "About us"
       },
       {
         "id": 3,
         "label": "Services",
-        "href": "/",
+        "href": "/#services",
         "title": "Services"
       },
       {
         "id": 4,
         "label": "Industries",
-        "href": "/",
+        "href": "/#industries",
         "title": "Industries"
       },
       {
         "id": 5,
         "label": "Process",
-        "href": "/",
+        "href": "/#process",
         "title": "Process"
       },
       {
         "id": 6,
         "label": "Impact",
-        "href": "/",
+        "href": "/#impact",
         "title": "Impact"
       }
     ],

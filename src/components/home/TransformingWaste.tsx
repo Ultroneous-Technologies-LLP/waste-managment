@@ -9,7 +9,7 @@ interface TransformingWasteProps {
 
 const TransformingWaste: FC<TransformingWasteProps> = ({ data }) => {
   return (
-    <Container className="px-4 md:px-6 xl:px-12.5 py-20 xl:py-37.5">
+    <Container className="py-20 xl:py-37.5" id="process">
       <div className="flex flex-col gap-6 md:flex-row justify-between items-center pb-6 md:pb-8">
         <Title
           title={data.title}

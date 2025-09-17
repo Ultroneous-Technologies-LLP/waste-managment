@@ -12,7 +12,7 @@ const WasteManagementServices: FC<WasteManagementServicesProps> = ({
   data,
 }) => {
   return (
-    <Container className="pb-20 xl:pb-37.5 px-4 md:px-6 xl:px-12.5">
+    <Container className="pb-20 xl:pb-37.5 scroll-mt-30" id="services">
       <div className="flex flex-col gap-6 md:flex-row justify-between items-center pb-6 md:pb-8 border-b border-[#D6D6D6]">
         <Title
           title={data.title}

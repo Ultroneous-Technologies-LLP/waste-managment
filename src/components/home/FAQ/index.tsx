@@ -10,7 +10,7 @@ interface FAQsProps {
 const FAQ: FC<FAQsProps> = ({ data }) => {
   return (
     <Container
-      className="px-4 md:px-6 xl:px-12.5 py-12.5 md:py-20 xl:py-25"
+      className="py-12.5 md:py-20 xl:py-25"
       backgroundClassName="bg-anti-flash-white"
     >
       <div>

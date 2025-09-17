@@ -9,8 +9,9 @@ interface DrivingImpactProps {
 const DrivingImpact: FC<DrivingImpactProps> = ({ data }) => {
   return (
     <Container
-      className="px-4 md:px-6 xl:px-12.5 py-12.5 md:py-20 flex flex-col xl:flex-row gap-6"
+      className="py-12.5 md:py-20 flex flex-col xl:flex-row gap-6"
       backgroundClassName="bg-primary-yellow"
+      id="impact"
     >
       <div className="max-w-117.5 w-full mx-auto">
         <Title title={data.title} className="text-center xl:text-start" />
