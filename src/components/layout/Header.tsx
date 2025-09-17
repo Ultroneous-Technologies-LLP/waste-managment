@@ -113,10 +113,10 @@ const Header: FC<HeaderProps> = ({
 
         {/* Desktop Nav */}
         <div
-          className={clsx("xl:max-w-150 xl:w-full", {
-            block: !searchOpen,
-            hidden: searchOpen,
-          })}
+          className={clsx(
+            "xl:max-w-150 xl:w-full hidden",
+            searchOpen ? "xl:hidden" : "xl:block"
+          )}
         >
           <ul className="flex gap-6 justify-center text-base/normal">
             {navLinks}

@@ -4,6 +4,7 @@ import WasteManagementServices from "./WasteManagementServices";
 import IndustriesWeServe from "./IndustriesWeServe";
 import TransformingWaste from "./TransformingWaste";
 import CitiesWeCovered from "./CitiesWeCovered";
+import GetMoreUpdates from "./GetMoreUpdates";
 
 export {
   HomeHero,
@@ -12,4 +13,5 @@ export {
   IndustriesWeServe,
   TransformingWaste,
   CitiesWeCovered,
+  GetMoreUpdates,
 };

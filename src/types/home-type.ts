@@ -85,6 +85,33 @@ export type drivingImpactSection = {
   };
 };
 
+export type getMoreUpdatesSection = {
+  title: string;
+  latestBlog: {
+    img: {
+      src: string;
+      alt: string;
+    };
+    category: string;
+    title: string;
+    descriptions: string;
+    date: string;
+    link: string;
+  };
+  blogList: {
+    id: 1;
+    category: string;
+    title: string;
+    descriptions: string;
+    link: string;
+    src: string;
+    alt: string;
+  }[];
+  button: {
+    buttonLabel: string;
+  };
+};
+
 export type homeData = {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
@@ -93,4 +120,5 @@ export type homeData = {
   transformingWasteSection: transformingWasteSection;
   citiesWeCoveredSection: citiesWeCoveredSection;
   drivingImpactSection: drivingImpactSection;
+  getMoreUpdatesSection: getMoreUpdatesSection;
 };
