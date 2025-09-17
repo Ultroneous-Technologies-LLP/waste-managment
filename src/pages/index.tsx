@@ -72,9 +72,9 @@ export default function Home() {
       <TransformingWaste data={homeData.transformingWasteSection} />
       <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
       <DrivingImpact data={homeData.drivingImpactSection} />
+      <FAQ data={homeData.faqSections} />
       <GetMoreUpdates data={homeData.getMoreUpdatesSection} />
       <OurAchievements data={homeData.ourAchievementsSection} />
-      <FAQ data={homeData.faqSections} />
     </>
   );
 }
