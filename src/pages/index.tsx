@@ -1,6 +1,7 @@
 import {
   AboutUs,
   CitiesWeCovered,
+  GetMoreUpdates,
   HomeHero,
   IndustriesWeServe,
   TransformingWaste,
@@ -69,6 +70,7 @@ export default function Home() {
       <TransformingWaste data={homeData.transformingWasteSection} />
       <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
       <DrivingImpact data={homeData.drivingImpactSection} />
+      <GetMoreUpdates data={homeData.getMoreUpdatesSection} />
     </>
   );
 }
