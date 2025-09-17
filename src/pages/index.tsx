@@ -6,6 +6,7 @@ import {
   FAQ,
   HomeHero,
   IndustriesWeServe,
+  OurProcess,
   OurAchievements,
   TransformingWaste,
   WasteManagementServices,
@@ -69,6 +70,7 @@ export default function Home() {
       <AboutUs data={homeData.aboutUsSection} />
       <WasteManagementServices data={homeData.wasteManagementServicesSection} />
       <IndustriesWeServe data={homeData.industriesWeServeSection} />
+      <OurProcess data={homeData.ourProcessSection} />
       <TransformingWaste data={homeData.transformingWasteSection} />
       <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
       <DrivingImpact data={homeData.drivingImpactSection} />
