@@ -1,8 +1,9 @@
-import { FC } from "react";
+"use client";
+import { FC, useState } from "react";
 import { header } from "@/types/layout-type";
 import Image from "next/image";
 import clsx from "clsx";
-import { Arrow } from "@/components/icons";
+import { Arrow, RightArrow, RightArrowLong } from "@/components/icons";
 import Link from "next/link";
 
 interface SidebarProps {
@@ -12,6 +13,8 @@ interface SidebarProps {
 }
 
 const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
   return (
     <aside
       className={clsx(
@@ -34,22 +37,33 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
           />
         </div>
         <ul className="space-y-4">
-          {data.headerLinks.map((link) => (
-            <li key={link.label} className="flex gap-4 items-center group">
-              <Arrow
-                width={21}
-                height={30}
-                className="text-primary-yellow transition-all duration-500 ease-in-out group-hover:text-primary-green group-hover:translate-x-1 group-hover:scale-150"
-              />
-              <Link
-                href={link.href}
-                onClick={onClick}
-                className="text-black text-2xl/snug font-normal transition-all duration-500 ease-in-out group-hover:font-medium group-hover:text-primary-green block"
+          {data.headerLinks.map((link) => {
+            const isHovered = hoveredLink === link.label;
+            return (
+              <li
+                key={link.label}
+                className="flex gap-4 items-center"
+                onMouseEnter={() => setHoveredLink(link.label)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+                {isHovered ? (
+                  <RightArrowLong className="text-primary-green" />
+                ) : (
+                  <RightArrow className="text-primary-yellow" />
+                )}
+                <Link
+                  href={link.href}
+                  onClick={onClick}
+                  className={clsx(
+                    "text-black text-2xl/snug font-normal transition-all duration-500 ease-in-out block",
+                    isHovered && "font-medium text-primary-green"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </aside>
