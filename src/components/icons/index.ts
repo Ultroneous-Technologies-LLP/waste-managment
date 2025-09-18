@@ -9,6 +9,7 @@ import Arrow from "./Arrow";
 import ArrowWithBackGround from "./ArrowWithBackGround";
 import RightArrowLong from "./RightArrowLong";
 import RightArrow from "./RightArrow";
+import PlayButton from "./PlayButton";
 
 export {
   DropDown,
@@ -22,4 +23,5 @@ export {
   ArrowWithBackGround,
   RightArrowLong,
   RightArrow,
+  PlayButton,
 };

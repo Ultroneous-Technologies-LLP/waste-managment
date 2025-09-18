@@ -59,10 +59,6 @@ export type ourProcessSection = {
   title: string;
   description: string;
   video: { videoSrc: string; posterSrc: string; alt: string };
-  buttonImg: {
-    src: string;
-    alt: string;
-  };
 };
 
 export type transformingWasteSection = {

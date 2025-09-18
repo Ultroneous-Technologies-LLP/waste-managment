@@ -41,28 +41,28 @@
         "title": "E-Waste Management",
         "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
         "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        "src": "/assets/images/home/e-waste-management.avif"
       },
       {
         "id": 3,
         "title": "EPR",
         "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
         "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        "src": "/assets/images/home/epr.avif"
       },
       {
         "id": 4,
         "title": "Consulting",
         "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
         "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        "src": "/assets/images/home/consulting.avif"
       },
       {
         "id": 5,
         "title": "Training & Development",
         "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
         "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        "src": "/assets/images/home/training-development.avif"
       }
     ]
   },
@@ -125,32 +125,32 @@
       },
       {
         "id": 5,
-        "src": "/assets/images/home/acme.svg",
+        "src": "/assets/images/home/bavarian.svg",
         "alt": "acme"
       },
       {
         "id": 6,
-        "src": "/assets/images/home/focal-point.svg",
+        "src": "/assets/images/home/harmony-hills.svg",
         "alt": "focal point"
       },
       {
         "id": 7,
-        "src": "/assets/images/home/polymath.svg",
+        "src": "/assets/images/home/abstract.svg",
         "alt": "polymath"
       },
       {
         "id": 8,
-        "src": "/assets/images/home/segment.svg",
+        "src": "/assets/images/home/good.svg",
         "alt": "segment"
       },
       {
         "id": 9,
-        "src": "/assets/images/home/acme.svg",
+        "src": "/assets/images/home/designocracy.svg",
         "alt": "acme"
       },
       {
         "id": 10,
-        "src": "/assets/images/home/focal-point.svg",
+        "src": "/assets/images/home/intdeco.svg",
         "alt": "focal point"
       }
     ]
@@ -162,10 +162,6 @@
       "posterSrc": "/assets/images/home/video-poster.avif",
       "alt": "Demo video",
       "videoSrc": "https://www.w3schools.com/html/mov_bbb.mp4"
-    },
-    "buttonImg": {
-      "src": "/assets/images/home/play-button.svg",
-      "alt": "button"
     }
   },
   "transformingWasteSection": {

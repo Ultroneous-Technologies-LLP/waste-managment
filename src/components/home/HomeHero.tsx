@@ -10,7 +10,7 @@ interface HomeHeroProps {
 
 const HomeHero: FC<HomeHeroProps> = ({ data }) => {
   return (
-    <Container className="pt-21 md:pt-32 xl:pt-34 grid grid-cols-1 xl:grid-cols-2 gap-6">
+    <Container className="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
       <div className="p-6 md:p-14 bg-primary-yellow rounded-3xl xl:rounded-[56px]">
         <Title
           title={data.title}
