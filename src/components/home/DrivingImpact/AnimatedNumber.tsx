@@ -41,7 +41,11 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({
     return () => observer.disconnect();
   }, [value, duration]);
 
-  return <span ref={ref}>{displayValue.toLocaleString()}</span>;
+  return (
+    <span ref={ref} role="text" aria-label={`${displayValue.toLocaleString()}`}>
+      {displayValue.toLocaleString()}
+    </span>
+  );
 };
 
 export default AnimatedNumber;

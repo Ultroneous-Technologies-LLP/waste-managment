@@ -22,11 +22,16 @@ const Footer: FC<FooterProps> = ({ data }) => {
   return (
     <Container
       as="footer"
+      role="contentinfo"
       className="py-12.5 px-4 md:px-6 xl:py-20 xl:px-12.5"
       backgroundClassName="bg-primary-green"
     >
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-y-8 md:gap-y-12 xl:gap-y-0 md:gap-x-8 pb-8 md:pb-12 xl:pb-8 border-b border-white">
-        <div className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-1 row-end-2 xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2">
+        {/* Logo and Headquarters */}
+        <div
+          className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-1 row-end-2 xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2"
+          aria-label="Company logo and headquarters information"
+        >
           <Image
             alt={data.footerLogo.alt}
             title={data.footerLogo.alt}
@@ -44,7 +49,9 @@ const Footer: FC<FooterProps> = ({ data }) => {
           <div className="flex text-light-silver gap-2 items-center justify-center md:justify-start text-xs md:text-base leading-normal">
             {data.headquarters.contactNo.map((value) => (
               <React.Fragment key={value.id}>
-                <Link href="/">{value.number}</Link>
+                <Link href="/" aria-label={`Contact number ${value.number}`}>
+                  {value.number}
+                </Link>
                 <p className="size-6 grid place-content-center last:hidden">
                   <span className="size-1.5 rounded-full bg-light-silver inline-block" />
                 </p>
@@ -52,7 +59,12 @@ const Footer: FC<FooterProps> = ({ data }) => {
             ))}
           </div>
         </div>
-        <div className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2">
+
+        {/* Company Links */}
+        <div
+          className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
+          aria-label="Company links"
+        >
           <p className="text-white text-xl/normal pb-4 xl:pb-8">
             {data.company.title}
           </p>
@@ -74,7 +86,12 @@ const Footer: FC<FooterProps> = ({ data }) => {
             ))}
           </ul>
         </div>
-        <div className="text-center md:text-start md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 xl:col-start-3 xl:col-end-4 xl:row-start-1 xl:row-end-2">
+
+        {/* Services Links */}
+        <div
+          className="text-center md:text-start md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 xl:col-start-3 xl:col-end-4 xl:row-start-1 xl:row-end-2"
+          aria-label="Services links"
+        >
           <p className="text-white text-xl/normal pb-4 xl:pb-8">
             {data.services.title}
           </p>
@@ -86,7 +103,12 @@ const Footer: FC<FooterProps> = ({ data }) => {
             ))}
           </ul>
         </div>
-        <div className="text-center md:text-start md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 xl:col-start-4 xl:col-end-5 xl:row-start-1 xl:row-end-2">
+
+        {/* Newsletter and Regional Offices */}
+        <div
+          className="text-center md:text-start md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 xl:col-start-4 xl:col-end-5 xl:row-start-1 xl:row-end-2"
+          aria-label="Newsletter subscription and regional offices"
+        >
           <div className="pb-8">
             <p className="text-white text-xl/normal pb-4">
               {data.newsletter.title}
@@ -126,10 +148,15 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
         </div>
       </div>
+
+      {/* Footer Bottom */}
       <div className="pt-4 md:pt-12 xl:pt-8 flex flex-col md:flex-row justify-between">
         <p className="text-sm/4.5 text-white">{data.copyRightText.text}</p>
         <div className="flex justify-center items-center gap-19 pt-4 md:pt-0">
-          <div className="flex gap-2 items-center">
+          <div
+            className="flex gap-2 items-center"
+            aria-label="Social media links"
+          >
             {data.socialMediaLink.map((value) => {
               const Icon = iconMap[value.Icon];
               return (
@@ -147,7 +174,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
               );
             })}
           </div>
-          <div className="flex gap-2.5">
+          <div className="flex gap-2.5" aria-label="Footer images">
             {data.footerBottomImage.map((value) => (
               <Image
                 alt={value.alt}

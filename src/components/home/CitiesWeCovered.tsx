@@ -4,7 +4,7 @@ import Image from "next/image";
 import clsx from "clsx";
 
 import { citiesWeCoveredSection } from "@/types/home-type";
-import { FC, useState } from "react";
+import { FC, useState, KeyboardEvent } from "react";
 import { Container, Title } from "@/components/common";
 
 interface CitiesWeCoveredProps {
@@ -18,20 +18,45 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
     setActiveId((prev) => (prev === id ? null : id));
   };
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>, id: number) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleToggle(id);
+    }
+  };
+
   return (
-    <Container className="pb-20 xl:pb-37.5 flex flex-col xl:flex-row gap-6 xl:gap-9.5">
+    <Container
+      className="pb-20 xl:pb-37.5 flex flex-col xl:flex-row gap-6 xl:gap-9.5"
+      id="cities-we-covered"
+      role="region"
+      aria-labelledby="cities-title"
+    >
       <div className="xl:max-w-132.5 w-full">
-        <Title title={data.title} className="text-center xl:text-start" />
+        <Title
+          title={data.title}
+          className="text-center xl:text-start"
+          id="cities-title"
+        />
       </div>
 
-      <div className="xl:max-w-193 w-full flex flex-wrap gap-2 justify-center xl:justify-start">
+      <div
+        className="xl:max-w-193 w-full flex flex-wrap gap-2 justify-center xl:justify-start"
+        role="list"
+        aria-label="List of cities we covered"
+      >
         {data.cities.map((value) => {
           const isActive = activeId === value.id;
 
           return (
-            <div
+            <h3
               key={value.id}
               onClick={() => handleToggle(value.id)}
+              onKeyDown={(e) => handleKeyDown(e, value.id)}
+              role="button"
+              tabIndex={0}
+              aria-pressed={isActive}
+              aria-label={`City: ${value.cityName}`}
               className={clsx(
                 "relative py-6 px-13 md:py-4 md:px-8 xl:py-6 xl:px-14",
                 "bg-anti-flash-white text-base md:text-xl xl:text-2xl font-normal text-black",
@@ -58,6 +83,7 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
                   isActive ? "opacity-100" : "opacity-0",
                   "xl:group-hover:opacity-100"
                 )}
+                title={value.cityName}
               />
 
               <div
@@ -67,7 +93,7 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
                   "xl:group-hover:opacity-100"
                 )}
               />
-            </div>
+            </h3>
           );
         })}
       </div>

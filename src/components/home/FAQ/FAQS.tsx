@@ -1,6 +1,5 @@
 "use client";
-import { FC, useState } from "react";
-
+import { FC, useState, KeyboardEvent } from "react";
 import { faqSections } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
 
@@ -11,40 +10,70 @@ interface FAQSProps {
 const FAQS: FC<FAQSProps> = ({ data }) => {
   const [openId, setOpenId] = useState<number | null>(null);
 
-  return (
-    <div className="pt-6 space-y-3">
-      {data.map((faq) => (
-        <div
-          key={faq.id}
-          className="bg-white rounded-3xl md:rounded-4xl p-4 xl:p-6 cursor-pointer"
-          onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-        >
-          <div className="flex justify-between gap-4 items-center">
-            <h3 className="text-base xl:text-2xl/7.5 max-w-63 md:max-w-154 xl:max-w-304.5 w-full">
-              {faq.questions}
-            </h3>
-            <ArrowWithBackGround
-              className="bg-primary-yellow size-14.5 border-transparent cursor-pointer transition-transform duration-500"
-              width={22}
-              height={16}
-              svgClassName={`${
-                openId === faq.id ? "rotate-90" : "-rotate-90"
-              } text-black transition-transform duration-500`}
-            />
-          </div>
+  const handleToggle = (id: number) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
 
-          {/* Smooth expanding answer */}
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>, id: number) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleToggle(id);
+    }
+  };
+
+  return (
+    <div
+      className="pt-6 space-y-3"
+      role="list"
+      aria-label="Frequently asked questions"
+    >
+      {data.map((faq) => {
+        const isOpen = openId === faq.id;
+        return (
           <div
-            className={`overflow-hidden transition-all duration-500 ease-in-out ${
-              openId === faq.id
-                ? "max-h-96 opacity-100 pt-3"
-                : "max-h-0 opacity-0"
-            }`}
+            key={faq.id}
+            className="bg-white rounded-3xl md:rounded-4xl p-4 xl:p-6"
+            role="listitem"
           >
-            <p className="text-base">{faq.ans}</p>
+            {/* Button-like header */}
+            <div
+              role="button"
+              tabIndex={0}
+              aria-expanded={isOpen}
+              aria-controls={`faq-answer-${faq.id}`}
+              id={`faq-question-${faq.id}`}
+              onClick={() => handleToggle(faq.id)}
+              onKeyDown={(e) => handleKeyDown(e, faq.id)}
+              className="flex justify-between gap-4 items-center cursor-pointer"
+            >
+              <h3 className="text-base xl:text-2xl/7.5 max-w-63 md:max-w-154 xl:max-w-304.5 w-full">
+                {faq.questions}
+              </h3>
+              <ArrowWithBackGround
+                className="bg-primary-yellow size-14.5 border-transparent transition-transform duration-500"
+                width={22}
+                height={16}
+                svgClassName={`${
+                  isOpen ? "rotate-90" : "-rotate-90"
+                } text-black transition-transform duration-500`}
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Expandable answer */}
+            <div
+              id={`faq-answer-${faq.id}`}
+              role="region"
+              aria-labelledby={`faq-question-${faq.id}`}
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                isOpen ? "max-h-96 opacity-100 pt-3" : "max-h-0 opacity-0"
+              }`}
+            >
+              <p className="text-base">{faq.ans}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

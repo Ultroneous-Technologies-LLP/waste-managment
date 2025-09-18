@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import Image from "next/image";
 import { ArrowWithBackGround } from "@/components/icons";
 
@@ -18,19 +18,34 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
 
+  // For keyboard accessibility
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      setHovered((prev) => !prev);
+    }
+  };
+
   return (
     <div
-      className="py-6 md:py-11.5 xl:py-5 flex gap-3 md:gap-0 justify-between items-center border-b border-[#D6D6D6] relative"
+      className="py-6 md:py-11.5 xl:py-5 flex gap-3 md:gap-0 justify-between items-center border-b border-[#D6D6D6] relative cursor-pointer"
+      role="listitem"
+      aria-labelledby={`service-title-${value.id}`}
+      tabIndex={0}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onKeyDown={handleKeyDown}
     >
-      <h3 className="text-xl/snug md:text-2xl/normal xl:text-xl/snug max-w-68 md:max-w-100 xl:max-w-75 w-full">
+      <h3
+        id={`service-title-${value.id}`}
+        className="text-xl/snug md:text-2xl/normal xl:text-xl/snug max-w-68 md:max-w-100 xl:max-w-75 w-full"
+      >
         {value.title}
       </h3>
+
       <p className="text-xl/snug max-w-136.5 w-full text-[#6F6F6F] font-light xl:block hidden">
         {value.description}
       </p>
@@ -40,6 +55,7 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
         width={22}
         height={16}
         svgClassName="rotate-[130deg] text-black"
+        aria-hidden="true"
       />
 
       {/* Floating image follows mouse over entire row */}
