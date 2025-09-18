@@ -44,6 +44,7 @@ const HomeHero: FC<HomeHeroProps> = ({ data }) => {
           width={658}
           height={658}
           className="max-h-50 md:max-h-110 xl:max-h-full w-full h-full rounded-3xl xl:rounded-[50px] object-cover"
+          priority
         />
       </div>
     </Container>

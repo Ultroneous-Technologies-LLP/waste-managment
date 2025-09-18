@@ -132,6 +132,7 @@ export type getMoreUpdatesSection = {
 export type ourAchievementsSection = {
   title: string;
   images: {
+    id: number;
     src: string;
     alt: string;
   }[];
