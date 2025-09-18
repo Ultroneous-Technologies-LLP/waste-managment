@@ -1,7 +1,6 @@
 import { FC } from "react";
-import Image from "next/image";
 
-import { Title } from "@/components/common";
+import { NextImageWithFallback, Title } from "@/components/common";
 import { ourAchievementsSection } from "@/types/home-type";
 
 interface OurAchievementsProps {
@@ -34,7 +33,7 @@ const OurAchievements: FC<OurAchievementsProps> = ({ data }) => {
               role="listitem"
               aria-label={`Achievement image ${value.id}`}
             >
-              <Image
+              <NextImageWithFallback
                 src={value.src}
                 alt={value.alt || `Achievement image ${value.id}`}
                 width={523}
@@ -52,7 +51,7 @@ const OurAchievements: FC<OurAchievementsProps> = ({ data }) => {
               role="listitem"
               aria-label={`Duplicate achievement image ${value.id}`}
             >
-              <Image
+              <NextImageWithFallback
                 src={value.src}
                 alt={value.alt || `Duplicate achievement image ${value.id}`}
                 width={523}

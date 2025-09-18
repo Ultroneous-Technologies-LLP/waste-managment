@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 
-import { Container, Title } from "@/components/common";
+import { Container, NextImageWithFallback, Title } from "@/components/common";
 import { ourProcessSection } from "@/types/home-type";
 import { FC, useState } from "react";
 import { PlayButton } from "@/components/icons";
@@ -39,7 +38,7 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
       >
         {!isPlaying ? (
           <div className="relative w-full h-full rounded-2xl">
-            <Image
+            <NextImageWithFallback
               src={data.video.posterSrc}
               alt={data.video.alt}
               fill

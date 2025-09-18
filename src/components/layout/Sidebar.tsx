@@ -1,11 +1,11 @@
 "use client";
 import { FC, useState } from "react";
-import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
 
 import { header } from "@/types/layout-type";
 import { RightArrow, RightArrowLong } from "@/components/icons";
+import { NextImageWithFallback } from "@/components/common";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -28,7 +28,7 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
     >
       <div className="p-4">
         <div className="pb-12">
-          <Image
+          <NextImageWithFallback
             alt={data.headerLogo.alt}
             src={data.headerLogo.src}
             title={data.headerLogo.alt}

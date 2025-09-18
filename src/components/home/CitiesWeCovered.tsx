@@ -1,11 +1,9 @@
 "use client"; // only here
-
-import Image from "next/image";
 import clsx from "clsx";
 
 import { citiesWeCoveredSection } from "@/types/home-type";
 import { FC, useState, KeyboardEvent } from "react";
-import { Container, Title } from "@/components/common";
+import { Container, NextImageWithFallback, Title } from "@/components/common";
 
 interface CitiesWeCoveredProps {
   data: citiesWeCoveredSection;
@@ -74,7 +72,7 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
                 {value.cityName}
               </span>
 
-              <Image
+              <NextImageWithFallback
                 alt={value.alt}
                 src={value.src}
                 fill
