@@ -1,8 +1,9 @@
 import { FC, useState, useEffect } from "react";
-import { Button, Container, Title } from "@/components/common";
-import { getMoreUpdatesSection } from "@/types/home-type";
 import Image from "next/image";
 import Link from "next/link";
+
+import { Button, Container, Title } from "@/components/common";
+import { getMoreUpdatesSection } from "@/types/home-type";
 
 interface GetMoreUpdatesProps {
   data: getMoreUpdatesSection;

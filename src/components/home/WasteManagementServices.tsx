@@ -1,8 +1,9 @@
 import { FC } from "react";
+import Image from "next/image";
+
 import { Container, Title } from "@/components/common";
 import { wasteManagementServices } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
-import Image from "next/image";
 
 interface WasteManagementServicesProps {
   data: wasteManagementServices;

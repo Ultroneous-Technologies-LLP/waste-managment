@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Container } from "@/components/common";
-import { Cross, DropDown, Search } from "@/components/icons";
-import { header } from "@/types/layout-type";
 import { FC, useState, useMemo } from "react";
 import Link from "next/link";
 import clsx from "clsx";
+
+import { Button, Container } from "@/components/common";
+import { Cross, DropDown, Search } from "@/components/icons";
+import { header } from "@/types/layout-type";
 
 interface HeaderProps {
   data: header;
@@ -29,7 +30,7 @@ const Header: FC<HeaderProps> = ({
     {
       "justify-end gap-2 md:bg-transparent": sidebarOpen,
       "justify-between gap-12": !sidebarOpen,
-      "md:bg-transparent": searchOpen,
+      "md:bg-transparent h-14 md:h-21 bg-transparent": searchOpen,
     }
   );
 
@@ -95,10 +96,14 @@ const Header: FC<HeaderProps> = ({
   return (
     <nav className="w-full sticky top-0 mx-auto z-50 pt-5 px-4 md:px-6 xl:px-12.5 max-w-360">
       <Container as="header" className={containerClasses}>
+        {/* logo */}
         <div
           className={clsx(
             "xl:max-w-15 xl:w-full transition-all duration-500 ease-in",
-            { hidden: sidebarOpen || searchOpen }
+            {
+              hidden: sidebarOpen,
+              "hidden xl:block": searchOpen,
+            }
           )}
         >
           <Link
@@ -117,12 +122,7 @@ const Header: FC<HeaderProps> = ({
         </div>
 
         {/* Desktop Nav */}
-        <div
-          className={clsx(
-            "xl:max-w-150 xl:w-full hidden",
-            searchOpen ? "xl:hidden" : "xl:block"
-          )}
-        >
+        <div className="xl:max-w-150 xl:w-full hidden xl:block">
           <ul className="flex gap-6 justify-center text-base/normal">
             {navLinks}
           </ul>
@@ -130,48 +130,40 @@ const Header: FC<HeaderProps> = ({
 
         {/* Search + Button */}
         <div
-          className={clsx("flex gap-6", {
+          className={clsx("flex gap-6 xl:hidden", {
             "w-full": searchOpen,
           })}
         >
           <div
             className={clsx(
-              "w-fit md:max-w-80 xl:max-w-113 md:w-full hidden md:flex gap-4",
+              "w-fit md:max-w-80 md:w-full hidden md:flex gap-4",
               { "md:hidden": searchOpen }
             )}
           >
             {searchOpen ? (
               <SearchBar />
             ) : (
-              <>
-                <div
-                  className={clsx(
-                    "bg-white px-3 py-4.5 rounded-full gap-2 items-center xl:max-w-61.5 w-full flex",
-                    { hidden: sidebarOpen }
-                  )}
-                  onClick={() => setSearchOpen(true)}
-                >
-                  <Search
-                    width={16}
-                    height={16}
-                    className="text-[#141420] opacity-30"
-                  />
-                  <label htmlFor="searchInput" className="sr-only">
-                    Search input
-                  </label>
-                  <input
-                    id="searchInput"
-                    placeholder="Search"
-                    className="placeholder:text-[#B1B3B5] text-base focus-within:outline-0 text-[#b1b3b5] max-w-4/5 w-full"
-                  />
-                </div>
-                <Button
-                  aria-label={data.headerButton.ariaLabel}
-                  className="!hidden xl:!inline-block xl:max-w-48.5"
-                >
-                  {data.headerButton.label}
-                </Button>
-              </>
+              <div
+                className={clsx(
+                  "bg-white px-3 py-4.5 rounded-full gap-2 items-center xl:max-w-61.5 w-full flex",
+                  { hidden: sidebarOpen }
+                )}
+                onClick={() => setSearchOpen(true)}
+              >
+                <Search
+                  width={16}
+                  height={16}
+                  className="text-[#141420] opacity-30"
+                />
+                <label htmlFor="searchInput" className="sr-only">
+                  Search input
+                </label>
+                <input
+                  id="searchInput"
+                  placeholder="Search"
+                  className="placeholder:text-philippine-silver text-base focus-within:outline-0 text-philippine-silver max-w-4/5 w-full"
+                />
+              </div>
             )}
           </div>
           <div
@@ -193,6 +185,41 @@ const Header: FC<HeaderProps> = ({
             )}
           </div>
         </div>
+
+        <div className="hidden xl:flex gap-4">
+          <div
+            className={clsx(
+              "bg-white px-3 py-4.5 rounded-full gap-2 items-center max-w-61.5 w-full flex",
+              "border border-transparent", // default border transparent
+              "focus-within:border-primary-green/40 focus-within:shadow-[0_0_0_4px_#22631B1F]" // green border + shadow on focus
+            )}
+          >
+            <button type="button">
+              <Search
+                width={16}
+                height={16}
+                className="text-[#141420] opacity-30"
+              />
+            </button>
+
+            <label htmlFor="searchInput" className="sr-only">
+              Search input
+            </label>
+            <input
+              id="searchInput"
+              placeholder="Search"
+              className="placeholder:text-philippine-silver text-base focus:outline-none text-philippine-silver max-w-4/5 w-full"
+            />
+          </div>
+
+          <Button
+            aria-label={data.headerButton.ariaLabel}
+            className="!hidden xl:!inline-block xl:max-w-48.5"
+          >
+            {data.headerButton.label}
+          </Button>
+        </div>
+
         <button
           aria-label="Close menu"
           onClick={onMenuClose}

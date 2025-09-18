@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { Button, Container, Title } from "@/components/common";
 import Image from "next/image";
+
+import { Button, Container, Title } from "@/components/common";
 import { Arrow } from "@/components/icons";
 import { aboutUsSection } from "@/types/home-type";
 

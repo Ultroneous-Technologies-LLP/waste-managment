@@ -1,7 +1,8 @@
 "use client";
 import { FC, useState } from "react";
+
 import { faqSections } from "@/types/home-type";
-import { ArrowWithBackGround } from "../../icons";
+import { ArrowWithBackGround } from "@/components/icons";
 
 interface FAQSProps {
   data: faqSections["faq"];

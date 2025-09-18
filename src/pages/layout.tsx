@@ -1,10 +1,11 @@
 "use client";
 
-import { Footer, Header, Sidebar } from "@/components/layout";
 import { ReactNode, useState, useEffect } from "react";
+import clsx from "clsx";
+
+import { Footer, Header, Sidebar } from "@/components/layout";
 import data from "@/content/layout.json";
 import { layoutData } from "@/types/layout-type";
-import clsx from "clsx";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const layoutData = data as layoutData;

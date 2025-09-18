@@ -1,7 +1,8 @@
-import { transformingWasteSection } from "@/types/home-type";
-import { FC } from "react";
-import { Container, Title } from "@/components/common";
 import Image from "next/image";
+import { FC } from "react";
+
+import { transformingWasteSection } from "@/types/home-type";
+import { Container, Title } from "@/components/common";
 
 interface TransformingWasteProps {
   data: transformingWasteSection;

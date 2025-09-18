@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import {
   AboutUs,
   CitiesWeCovered,
@@ -11,7 +13,6 @@ import {
   TransformingWaste,
   WasteManagementServices,
 } from "@/components/home";
-import Head from "next/head";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
 

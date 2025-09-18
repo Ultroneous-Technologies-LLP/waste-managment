@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import { Container } from "@/components/common";
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
+
+import { Container } from "@/components/common";
 import { footer } from "@/types/layout-type";
 import { Behance, Dribble, Instagram, LinkedIn } from "@/components/icons";
-import clsx from "clsx";
 
 interface FooterProps {
   data: footer;
@@ -96,7 +97,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
               </label>
               <input
                 id="ourNewsletter"
-                className="h-fi w-4/5 focus-within:outline-0 text-[#B1B3B5]"
+                className="h-fi w-4/5 focus-within:outline-0 text-philippine-silver"
                 placeholder="xyz@gmail.com"
               />
               <button
