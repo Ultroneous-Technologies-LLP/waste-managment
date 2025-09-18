@@ -1,8 +1,12 @@
 import { FC, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
-import { Button, Container, Title } from "@/components/common";
+import {
+  Button,
+  Container,
+  NextImageWithFallback,
+  Title,
+} from "@/components/common";
 import { getMoreUpdatesSection } from "@/types/home-type";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -40,7 +44,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
           role="listitem"
           aria-label={`Read latest blog: ${data.latestBlog.title}`}
         >
-          <Image
+          <NextImageWithFallback
             alt={data.latestBlog.img.alt}
             src={data.latestBlog.img.src}
             width={658}
@@ -75,7 +79,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
               role="listitem"
               aria-label={`Read blog: ${value.title}`}
             >
-              <Image
+              <NextImageWithFallback
                 alt={value.alt}
                 src={value.src}
                 width={260}

@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { FC, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-import { Button, Container } from "@/components/common";
+import { Button, Container, NextImageWithFallback } from "@/components/common";
 import { Cross, Search } from "@/components/icons";
 import { header } from "@/types/layout-type";
 
@@ -132,7 +131,7 @@ const Header: FC<HeaderProps> = ({
             aria-label="Homepage"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <Image
+            <NextImageWithFallback
               alt={data.headerLogo.alt}
               src={data.headerLogo.src}
               title={data.headerLogo.alt}

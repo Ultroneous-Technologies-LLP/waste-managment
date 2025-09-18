@@ -1,7 +1,11 @@
 import { FC } from "react";
-import Image from "next/image";
 
-import { Button, Container, Title } from "@/components/common";
+import {
+  Button,
+  Container,
+  NextImageWithFallback,
+  Title,
+} from "@/components/common";
 import { industriesWeServeSection } from "@/types/home-type";
 
 interface IndustriesWeServe {
@@ -53,7 +57,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
 
         {/* Image Section */}
         <div className="col-start-1 col-end-2 row-start-2 md:row-start-3 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-4">
-          <Image
+          <NextImageWithFallback
             alt={data.image.alt}
             src={data.image.src}
             width={658}
@@ -91,7 +95,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
         >
           <div className="flex w-max animate-marquee">
             {data.animation.map((value) => (
-              <Image
+              <NextImageWithFallback
                 key={`anim1-${value.id}`}
                 src={value.src}
                 alt={value.alt}
@@ -102,7 +106,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
               />
             ))}
             {data.animation.map((value) => (
-              <Image
+              <NextImageWithFallback
                 key={`anim2-${value.id}`}
                 src={value.src}
                 alt={value.alt}

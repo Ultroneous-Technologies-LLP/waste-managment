@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 
-import { Container } from "@/components/common";
+import { Container, NextImageWithFallback } from "@/components/common";
 import { footer } from "@/types/layout-type";
 import { Behance, Dribble, Instagram, LinkedIn } from "@/components/icons";
 
@@ -32,7 +31,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
           className="text-center md:text-start md:col-start-1 md:col-end-2 md:row-start-1 row-end-2 xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2"
           aria-label="Company logo and headquarters information"
         >
-          <Image
+          <NextImageWithFallback
             alt={data.footerLogo.alt}
             title={data.footerLogo.alt}
             src={data.footerLogo.src}
@@ -176,7 +175,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
           <div className="flex gap-2.5" aria-label="Footer images">
             {data.footerBottomImage.map((value) => (
-              <Image
+              <NextImageWithFallback
                 alt={value.alt}
                 title={value.alt}
                 src={value.src}

@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { FC } from "react";
 
 import { transformingWasteSection } from "@/types/home-type";
-import { Container, Title } from "@/components/common";
+import { Container, NextImageWithFallback, Title } from "@/components/common";
 
 interface TransformingWasteProps {
   data: transformingWasteSection;
@@ -43,7 +42,7 @@ const TransformingWaste: FC<TransformingWasteProps> = ({ data }) => {
             className="bg-anti-flash-white p-6 md:p-10 rounded-3xl flex flex-col xl:flex-row gap-4 xl:gap-6 items-start text-left"
             aria-label={`${value.title}: ${value.description}`}
           >
-            <Image
+            <NextImageWithFallback
               alt={value.alt}
               src={value.src}
               width={64}

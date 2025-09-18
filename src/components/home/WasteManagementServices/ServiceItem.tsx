@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, KeyboardEvent } from "react";
-import Image from "next/image";
 import { ArrowWithBackGround } from "@/components/icons";
+import { NextImageWithFallback } from "@/components/common";
 
 interface ServiceItemProps {
   value: {
@@ -60,7 +60,7 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
 
       {/* Floating image follows mouse over entire row */}
       {hovered && (
-        <Image
+        <NextImageWithFallback
           alt={value.alt}
           src={value.src}
           width={203}

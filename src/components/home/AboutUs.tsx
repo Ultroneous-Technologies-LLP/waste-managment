@@ -1,7 +1,11 @@
 import { FC } from "react";
-import Image from "next/image";
 
-import { Button, Container, Title } from "@/components/common";
+import {
+  Button,
+  Container,
+  NextImageWithFallback,
+  Title,
+} from "@/components/common";
 import { Arrow } from "@/components/icons";
 import { aboutUsSection } from "@/types/home-type";
 
@@ -61,7 +65,7 @@ const AboutUs: FC<AboutUsProps> = ({ data }) => {
           <h3 className="text-6xl leading-snug text-white absolute">
             {data.weProtectNature.secondPart.title}
           </h3>
-          <Image
+          <NextImageWithFallback
             alt={data.weProtectNature.secondPart.alt}
             src={data.weProtectNature.secondPart.src}
             width={330}
@@ -93,7 +97,7 @@ const AboutUs: FC<AboutUsProps> = ({ data }) => {
           <h3 className="text-6xl leading-snug text-white absolute">
             {data.weProtectNature.thirdPart.title}
           </h3>
-          <Image
+          <NextImageWithFallback
             alt={data.weProtectNature.thirdPart.alt}
             src={data.weProtectNature.thirdPart.src}
             title={data.weProtectNature.thirdPart.alt}

@@ -1,5 +1,9 @@
-import Image from "next/image";
-import { Button, Container, Title } from "@/components/common";
+import {
+  Button,
+  Container,
+  NextImageWithFallback,
+  Title,
+} from "@/components/common";
 import { FC } from "react";
 import { heroSection } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
@@ -58,7 +62,7 @@ const HomeHero: FC<HomeHeroProps> = ({ data }) => {
       </div>
 
       <div>
-        <Image
+        <NextImageWithFallback
           alt={data.alt}
           title={data.alt}
           src={data.src}
