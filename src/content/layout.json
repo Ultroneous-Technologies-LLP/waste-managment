@@ -190,12 +190,12 @@
       {
         "id": 1,
         "src": "/assets/images/call-to-action.svg",
-        "alt": "image"
+        "alt": "call-to-action"
       },
       {
         "id": 2,
         "src": "/assets/images/tuv.svg",
-        "alt": "image"
+        "alt": "tuv"
       }
     ]
   }

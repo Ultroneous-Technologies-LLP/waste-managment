@@ -13,18 +13,27 @@ const WasteManagementServices: FC<WasteManagementServicesProps> = ({
   data,
 }) => {
   return (
-    <Container className="py-20 xl:py-37.5 scroll-mt-20" id="services">
+    <Container
+      className="py-20 xl:py-37.5 scroll-mt-20"
+      id="services"
+      role="region"
+      aria-labelledby="services-title"
+    >
       <div className="flex flex-col gap-6 md:flex-row justify-between items-center pb-6 md:pb-8 border-b border-[#D6D6D6]">
         <Title
+          id="services-title"
           title={data.title}
           className="max-w-164.5 w-full text-center md:text-start"
         />
-        <p className="max-w-136 w-full text-lg/normal md:text-base/normal xl:text-xl/snug text-[#6F6F6F] font-light text-center md:text-start">
+        <p
+          className="max-w-136 w-full text-lg/normal md:text-base/normal xl:text-xl/snug text-[#6F6F6F] font-light text-center md:text-start"
+          aria-label="Service description"
+        >
           {data.description}
         </p>
       </div>
 
-      <div>
+      <div role="list" aria-label="List of available services">
         {data.services.map((value) => (
           <ServiceItem key={value.id} value={value} />
         ))}

@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Button, Container, Title } from "@/components/common";
 import { FC } from "react";
 import { heroSection } from "@/types/home-type";
@@ -14,28 +13,50 @@ const HomeHero: FC<HomeHeroProps> = ({ data }) => {
     <Container
       className="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-6 scroll-mt-30"
       id="home"
+      role="region"
+      aria-labelledby="home-hero-title"
     >
-      <div className="p-6 md:p-14 bg-primary-yellow rounded-3xl xl:rounded-[56px]">
+      <div
+        className="p-6 md:p-14 bg-primary-yellow rounded-3xl xl:rounded-[56px]"
+        role="presentation"
+      >
         <Title
           title={data.title}
           className="min-w-77.5 xl:max-w-100 w-full"
           isMainTitle
         />
-        <p className="text-sm/normal md:text-base/normal xl:text-lg/normal font-light py-4">
+        <p
+          className="text-sm/normal md:text-base/normal xl:text-lg/normal font-light py-4"
+          aria-label="Description"
+        >
           {data.description}
         </p>
-        <Button className="!w-fit">{data.buttonLabel}</Button>
-        <div className="mt-11 md:mt-17.5 xl:mt-11 flex gap-2">
+        <Button className="!w-fit" aria-label={data.buttonLabel}>
+          {data.buttonLabel}
+        </Button>
+
+        <div
+          className="mt-11 md:mt-17.5 xl:mt-11 flex gap-2"
+          role="group"
+          aria-label="Hero navigation arrows"
+        >
           <ArrowWithBackGround
             className="bg-white size-12 border-transparent hover:bg-transparent hover:border-black group"
             svgClassName="group-hover:text-white text-black"
+            role="button"
+            tabIndex={0}
+            aria-label="Previous slide"
           />
           <ArrowWithBackGround
             className="bg-white size-12 border-transparent hover:bg-transparent hover:border-black group"
             svgClassName="rotate-180 group-hover:text-white text-black"
+            role="button"
+            tabIndex={0}
+            aria-label="Next slide"
           />
         </div>
       </div>
+
       <div>
         <Image
           alt={data.alt}

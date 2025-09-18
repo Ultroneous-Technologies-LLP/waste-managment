@@ -236,7 +236,9 @@ const Header: FC<HeaderProps> = ({
               <>
                 <Search
                   onClick={() => setSearchOpen(true)}
-                  className="text-[#141420] xl:hidden opacity-30"
+                  className={clsx("text-[#141420] xl:hidden opacity-30", {
+                    hidden: !searchOpen,
+                  })}
                   aria-hidden="true"
                 />
                 <MenuToggle />
