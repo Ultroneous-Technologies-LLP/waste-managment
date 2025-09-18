@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "title": "Keep the environment clean and unharmed",
-    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies.",
+    "description": "Join us in protecting our planet by ensuring cleaner surroundings. Together, we can reduce waste, promote recycling, and preserve nature for future generations.",
     "buttonLabel": "Request a pick up",
     "src": "/assets/images/home-hero.avif",
     "alt": "photo-shoot-depicting-recycling-workshop-world-environmental-education-day"
@@ -27,7 +27,7 @@
   },
   "wasteManagementServicesSection": {
     "title": "A wide range of waste Management services",
-    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "description": "We provide innovative and sustainable waste management services designed to meet the needs of organizations, institutions, and communities. Our goal is to create a cleaner, greener tomorrow.",
     "services": [
       {
         "id": 1,
@@ -39,28 +39,28 @@
       {
         "id": 2,
         "title": "E-Waste Management",
-        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "description": "Specialized solutions for safe disposal and recycling of electronic waste, ensuring compliance with environmental regulations.",
         "alt": "recycle concept with woman collecting trash",
         "src": "/assets/images/home/e-waste-management.avif"
       },
       {
         "id": 3,
         "title": "EPR",
-        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "description": "Helping brands and producers meet their EPR obligations through sustainable collection, recycling, and reporting mechanisms.",
         "alt": "recycle concept with woman collecting trash",
         "src": "/assets/images/home/epr.avif"
       },
       {
         "id": 4,
         "title": "Consulting",
-        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "description": "Expert advisory services to guide organizations in adopting eco-friendly waste management strategies and policies.",
         "alt": "recycle concept with woman collecting trash",
         "src": "/assets/images/home/consulting.avif"
       },
       {
         "id": 5,
         "title": "Training & Development",
-        "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+        "description": "Workshops and training programs to raise awareness and build capacity for effective waste management practices.",
         "alt": "recycle concept with woman collecting trash",
         "src": "/assets/images/home/training-development.avif"
       }
@@ -157,7 +157,7 @@
   },
   "ourProcessSection": {
     "title": "Our Process",
-    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "description": "Our process is designed to minimize waste and maximize recycling. From collection to segregation, treatment, and reuse, we ensure every step contributes to environmental sustainability.",
     "video": {
       "posterSrc": "/assets/images/home/video-poster.avif",
       "alt": "Demo video",
@@ -166,47 +166,47 @@
   },
   "transformingWasteSection": {
     "title": "Transforming Waste into Resources",
-    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "description": "We believe waste is not the end, but the beginning of new possibilities. By recycling and reusing, we convert waste into valuable resources that benefit both businesses and communities.",
     "skills": [
       {
         "id": 1,
         "title": "10+ year expertise",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "Over a decade of experience in delivering innovative and sustainable waste management solutions.",
         "alt": "expertise",
         "src": "/assets/images/home/skill.svg"
       },
       {
         "id": 2,
         "title": "Certified",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "Recognized and accredited by industry-leading certification bodies for our high standards of operation.",
         "alt": "Certified",
         "src": "/assets/images/home/skill.svg"
       },
       {
         "id": 3,
         "title": "Transparency",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "Clear, reliable processes with complete accountability at every stage of waste management.",
         "alt": "Transparency",
         "src": "/assets/images/home/skill.svg"
       },
       {
         "id": 4,
         "title": "Compliant with laws",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "Strict adherence to national and international environmental regulations.",
         "alt": "Compliant with laws",
         "src": "/assets/images/home/skill.svg"
       },
       {
         "id": 5,
         "title": "Professional team",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "A highly skilled and dedicated team committed to sustainable practices",
         "alt": "Professional team",
         "src": "/assets/images/home/skill.svg"
       },
       {
         "id": 6,
         "title": "Safe Careers",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "description": "Promoting safe working conditions and career growth opportunities in the waste management sector.",
         "alt": "Safe Careers",
         "src": "/assets/images/home/skill.svg"
       }
@@ -292,7 +292,7 @@
   },
   "faqSections": {
     "title": "Frequently Asked Questions",
-    "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at.",
+    "description": "Have questions about eco-friendly practices, recycling, or waste disposal? Explore our FAQs to find clear answers and practical solutions.",
     "faq": [
       {
         "id": 1,
@@ -327,7 +327,7 @@
     ],
     "haveQuestions": {
       "title": "Still have Questions?",
-      "description": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at. ",
+      "description": "Couldn’t find what you were looking for? Our team is here to help you with customized waste management solutions and expert advice.",
       "buttonLabel": "Get in touch"
     }
   },
@@ -340,7 +340,7 @@
       },
       "category": "Blog | Waste Management",
       "title": "Waste management container or bin for my home?",
-      "descriptions": "Lorem ipsum dolor sit amet consectetur. Commodo auctor leo pharetra risus malesuada amet cursus semper at Lorem ipsum dolor sit amet consectetur. Commodo auctor leo pharetra risus malesuada amet cursus semper at",
+      "descriptions": "Discover the right waste management solutions for your home and community. Learn how to choose between containers, bins, and recycling options to keep your surroundings clean.",
       "date": "02 Feb, 2024",
       "link": "/"
     },
