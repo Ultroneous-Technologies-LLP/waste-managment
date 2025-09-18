@@ -26,7 +26,6 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
               alt={data.video.alt}
               fill
               className="object-cover"
-              priority
               title={data.video.alt}
             />
             <button

@@ -11,7 +11,6 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({
   duration = 2000,
 }) => {
   const [displayValue, setDisplayValue] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
@@ -20,19 +19,18 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-
+        if (entry.isIntersecting) {
           let start: number | null = null;
+          setDisplayValue(0); // reset before animating again
+
           const step = (timestamp: number) => {
             if (!start) start = timestamp;
             const progress = Math.min((timestamp - start) / duration, 1);
             setDisplayValue(Math.floor(progress * value));
             if (progress < 1) requestAnimationFrame(step);
           };
-          requestAnimationFrame(step);
 
-          observer.disconnect();
+          requestAnimationFrame(step);
         }
       },
       { threshold: 0.3 }
@@ -41,7 +39,7 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [value, duration, hasAnimated]);
+  }, [value, duration]);
 
   return <span ref={ref}>{displayValue.toLocaleString()}</span>;
 };

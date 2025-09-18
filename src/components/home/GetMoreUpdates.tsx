@@ -1,24 +1,18 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Button, Container, Title } from "@/components/common";
 import { getMoreUpdatesSection } from "@/types/home-type";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface GetMoreUpdatesProps {
   data: getMoreUpdatesSection;
 }
 
 const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
-  const [isMobile, setIsMobile] = useState(false);
   const [showAll, setShowAll] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  const isMobile = useIsMobile();
 
   const blogsToShow =
     isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
@@ -35,7 +29,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
             src={data.latestBlog.img.src}
             width={658}
             height={350}
-            className="w-full h-42.5 md:h-87.5 xl:h-92.5 md:rounded-3xl"
+            className="w-full h-42.5 md:h-87.5 xl:h-92.5 md:rounded-3xl object-cover"
           />
           <p className="pt-4 pb-3 text-xs xl:text-xl leading-normal">
             {data.latestBlog.category}
@@ -64,7 +58,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
                 src={value.src}
                 width={260}
                 height={158}
-                className="w-full md:max-w-25 md:h-30 md:rounded-3xl xl:max-w-65 xl:h-39.5"
+                className="w-full md:max-w-25 md:h-30 md:rounded-3xl xl:max-w-65 xl:h-39.5 object-cover"
               />
               <div className="md:max-w-95.5 w-full">
                 <p className="pb-4 text-xs leading-normal">{value.category}</p>

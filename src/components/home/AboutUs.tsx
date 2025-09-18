@@ -24,7 +24,7 @@ const AboutUs: FC<AboutUsProps> = ({ data }) => {
           <Button>{data.buttonLabel}</Button>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-2 py-20 md:pt-25 md:pb-16.5 xl:py-37.5">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-2 pt-20 md:pt-25 xl:pt-37.5">
         <div className="bg-anti-flash-white flex justify-center items-center max-w-89.5 h-43 md:max-w-89 xl:max-w-82.5 md:h-50 w-full rounded-full mx-auto">
           <h3 className="text-6xl leading-snug text-black">
             {data.weProtectNature.firstPart}

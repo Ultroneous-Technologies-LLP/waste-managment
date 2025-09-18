@@ -14,22 +14,22 @@ const OurAchievements: FC<OurAchievementsProps> = ({ data }) => {
       <Title title={data.title} className="text-center pb-6 md:pb-8" />
       <div className="relative w-full overflow-hidden">
         <div className="flex w-max animate-marquee">
-          {data.images.map((value, idx) => (
-            <div key={`first-${idx}`} className="mr-4 xl:mr-6 last:mr-0">
+          {data.images.map((value) => (
+            <div key={`first-${value.id}`} className="mr-4 xl:mr-6 last:mr-0">
               <Image
                 src={value.src}
-                alt={`slider-img-${idx}`}
+                alt={`slider-img-${value.id}`}
                 width={523}
                 height={348}
                 className="w-50 h-42.5 md:w-115 md:h-87 xl:w-130.5 xl:h-87 object-cover rounded-[20px] md:rounded-40"
               />
             </div>
           ))}
-          {data.images.map((value, idx) => (
-            <div key={`second-${idx}`} className="mr-4 xl:mr-6 last:mr-0">
+          {data.images.map((value) => (
+            <div key={`second-${value.id}`} className="mr-4 xl:mr-6 last:mr-0">
               <Image
                 src={value.src}
-                alt={`slider-img-dup-${idx}`}
+                alt={`slider-img-dup-${value.id}`}
                 width={523}
                 height={348}
                 className="w-50 h-42.5 md:w-115 md:h-87 xl:w-130.5 xl:h-87 object-cover rounded-[20px] md:rounded-40"

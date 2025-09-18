@@ -1,4 +1,3 @@
-import DropDown from "./DropDown";
 import Search from "./Search";
 import Instagram from "./Instagram";
 import LinkedIn from "./LinkedIn";
@@ -12,7 +11,6 @@ import RightArrow from "./RightArrow";
 import PlayButton from "./PlayButton";
 
 export {
-  DropDown,
   Search,
   Instagram,
   LinkedIn,

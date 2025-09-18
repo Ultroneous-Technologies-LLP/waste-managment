@@ -13,11 +13,9 @@ import {
   TransformingWaste,
   WasteManagementServices,
 } from "@/components/home";
-import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
 
-export default function Home() {
-  const homeData = data as homeData;
+export default function Home({ data }: { data: homeData }) {
   return (
     <>
       <Head>
@@ -67,17 +65,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <HomeHero data={homeData.heroSection} />
-      <AboutUs data={homeData.aboutUsSection} />
-      <WasteManagementServices data={homeData.wasteManagementServicesSection} />
-      <IndustriesWeServe data={homeData.industriesWeServeSection} />
-      <OurProcess data={homeData.ourProcessSection} />
-      <TransformingWaste data={homeData.transformingWasteSection} />
-      <CitiesWeCovered data={homeData.citiesWeCoveredSection} />
-      <DrivingImpact data={homeData.drivingImpactSection} />
-      <FAQ data={homeData.faqSections} />
-      <GetMoreUpdates data={homeData.getMoreUpdatesSection} />
-      <OurAchievements data={homeData.ourAchievementsSection} />
+      <HomeHero data={data.heroSection} />
+      <AboutUs data={data.aboutUsSection} />
+      <WasteManagementServices data={data.wasteManagementServicesSection} />
+      <IndustriesWeServe data={data.industriesWeServeSection} />
+      <OurProcess data={data.ourProcessSection} />
+      <TransformingWaste data={data.transformingWasteSection} />
+      <CitiesWeCovered data={data.citiesWeCoveredSection} />
+      <DrivingImpact data={data.drivingImpactSection} />
+      <FAQ data={data.faqSections} />
+      <GetMoreUpdates data={data.getMoreUpdatesSection} />
+      <OurAchievements data={data.ourAchievementsSection} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Import static data
+  const data = (await import("@/content/home-page-data.json")).default;
+
+  return {
+    props: {
+      data,
+    },
+  };
 }
