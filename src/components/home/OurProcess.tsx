@@ -3,6 +3,7 @@ import { Container, Title } from "@/components/common";
 import { ourProcessSection } from "@/types/home-type";
 import Image from "next/image";
 import { FC, useState } from "react";
+import { PlayButton } from "../icons";
 
 interface OurProcessProps {
   data: ourProcessSection;
@@ -29,17 +30,9 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
             />
             <button
               onClick={() => setIsPlaying(true)}
-              className="absolute inset-0 m-auto flex items-center justify-center w-16 h-16 rounded-full bg-black/60 text-white hover:bg-black/80 transition
-            "
+              className="absolute inset-0 m-auto transition flex items-center justify-center"
             >
-              <Image
-                src={data.buttonImg.src}
-                alt={data.buttonImg.alt}
-                fill
-                className="object-cover"
-                priority
-                title={data.buttonImg.alt}
-              />
+              <PlayButton />
             </button>
           </div>
         ) : (

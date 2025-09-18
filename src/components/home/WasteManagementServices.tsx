@@ -26,9 +26,9 @@ const WasteManagementServices: FC<WasteManagementServicesProps> = ({
         {data.services.map((value) => (
           <div
             key={value.id}
-            className="py-6 md:py-11.5 xl:py-5 flex justify-between items-center border-b border-[#D6D6D6] relative group"
+            className="py-6 md:py-11.5 xl:py-5 flex gap-3 md:gap-0 justify-between items-center border-b border-[#D6D6D6] relative group"
           >
-            <h3 className="text-xl/snug md:text-2xl/normal xl:text-xl/snug max-w-75 md:max-w-100 xl:max-w-75 w-full">
+            <h3 className="text-xl/snug md:text-2xl/normal xl:text-xl/snug max-w-68 md:max-w-100 xl:max-w-75 w-full">
               {value.title}
             </h3>
             <p className="text-xl/snug max-w-136.5 w-full text-[#6F6F6F] font-light xl:block hidden">
