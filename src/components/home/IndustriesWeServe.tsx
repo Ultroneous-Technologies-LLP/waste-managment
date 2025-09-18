@@ -1,7 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
+
 import { Button, Container, Title } from "@/components/common";
 import { industriesWeServeSection } from "@/types/home-type";
-import Image from "next/image";
 
 interface IndustriesWeServe {
   data: industriesWeServeSection;
@@ -34,7 +35,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
             src={data.image.src}
             width={658}
             height={690}
-            className="md:max-w-180 md:max-h-172.5 w-full h-full object-cover md:rounded-[40px] mx-auto xl:max-w-fit xl:max-h-fit"
+            className="md:max-w-180 md:max-h-172.5 w-full h-full object-cover md:rounded-40 mx-auto xl:max-w-fit xl:max-h-fit"
           />
         </div>
         <div className="col-start-1 col-end-2 row-start-3 md:row-start-2 xl:row-start-2 xl:row-end-3 xl:col-start-1 xl:col-end-2 self-start xl:self-end w-fit mx-auto xl:ml-0 xl:mr-auto">

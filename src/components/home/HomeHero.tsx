@@ -1,5 +1,6 @@
-import { Button, Container, Title } from "@/components/common";
 import Image from "next/image";
+
+import { Button, Container, Title } from "@/components/common";
 import { FC } from "react";
 import { heroSection } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
@@ -10,7 +11,10 @@ interface HomeHeroProps {
 
 const HomeHero: FC<HomeHeroProps> = ({ data }) => {
   return (
-    <Container className="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+    <Container
+      className="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-6 scroll-mt-30"
+      id="home"
+    >
       <div className="p-6 md:p-14 bg-primary-yellow rounded-3xl xl:rounded-[56px]">
         <Title
           title={data.title}

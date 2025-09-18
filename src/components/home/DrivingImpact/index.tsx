@@ -1,6 +1,7 @@
-import React, { FC } from "react";
-import { Button, Container, Title } from "@/components/common";
+import { FC } from "react";
+
 import { drivingImpactSection } from "@/types/home-type";
+import { Button, Container, Title } from "@/components/common";
 import AnimatedNumber from "./AnimatedNumber";
 
 interface DrivingImpactProps {
@@ -11,7 +12,7 @@ const DrivingImpact: FC<DrivingImpactProps> = ({ data }) => {
   return (
     <Container
       className="py-12.5 md:py-20 flex flex-col xl:flex-row gap-6"
-      backgroundClassName="bg-primary-yellow"
+      backgroundClassName="bg-primary-yellow scroll-mt-30"
       id="impact"
     >
       <div className="max-w-117.5 w-full mx-auto">

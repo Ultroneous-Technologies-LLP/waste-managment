@@ -1,6 +1,6 @@
 const PlayButton = () => {
   return (
-    <div className="size-14 bg-white rounded-full shadow-[0_0_0_6px_#FFFFFF66] flex items-center justify-center">
+    <div className="size-14 bg-white rounded-full shadow-[0_0_0_6px_#FFFFFF66] flex items-center justify-center cursor-pointer">
       <svg
         width="18"
         height="20"

@@ -6,8 +6,10 @@
   --color-primary-yellow: #f8c70c;
   --color-light-silver: #d8d7d7;
   --color-anti-flash-white: #f3f3f3;
+  --color-philippine-silver: #b1b3b5;
   --animate-marquee: marquee 20s linear infinite;
   --text-32: 32px;
+  --radius-40: 40px;
 }
 
 body {

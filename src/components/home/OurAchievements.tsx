@@ -1,7 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
+
 import { Title } from "@/components/common";
 import { ourAchievementsSection } from "@/types/home-type";
-import Image from "next/image";
 
 interface OurAchievementsProps {
   data: ourAchievementsSection;
@@ -20,7 +21,7 @@ const OurAchievements: FC<OurAchievementsProps> = ({ data }) => {
                 alt={`slider-img-${idx}`}
                 width={523}
                 height={348}
-                className="w-50 h-42.5 md:w-115 md:h-87 xl:w-[523px] xl:h-[348px] object-cover rounded-[20px] md:rounded-[40px]"
+                className="w-50 h-42.5 md:w-115 md:h-87 xl:w-130.5 xl:h-87 object-cover rounded-[20px] md:rounded-40"
               />
             </div>
           ))}
@@ -31,7 +32,7 @@ const OurAchievements: FC<OurAchievementsProps> = ({ data }) => {
                 alt={`slider-img-dup-${idx}`}
                 width={523}
                 height={348}
-                className="w-50 h-42.5 md:w-115 md:h-87 xl:w-[523px] xl:h-[348px] object-cover rounded-[20px] md:rounded-[40px]"
+                className="w-50 h-42.5 md:w-115 md:h-87 xl:w-130.5 xl:h-87 object-cover rounded-[20px] md:rounded-40"
               />
             </div>
           ))}
