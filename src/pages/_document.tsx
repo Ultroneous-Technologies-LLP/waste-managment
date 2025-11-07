@@ -1,13 +1,14 @@
 import { Html, Head, NextScript, Main } from "next/document";
+import { JSX } from "react";
 
-export default function Document() {
-  return (
-    <Html lang="en" className="scroll-smooth">
-      <Head />
-      <body className="antialiased">
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-}
+const Document = (): JSX.Element => (
+  <Html className="scroll-smooth" lang="en">
+    <Head />
+    <body className="antialiased">
+      <Main />
+      <NextScript />
+    </body>
+  </Html>
+);
+
+export default Document;
