@@ -1,7 +1,8 @@
 import { FC } from "react";
 
 import { NextImageWithFallback, Title } from "@/components/common";
-import { OurAchievementsSectionProps } from "@/components";
+
+import { OurAchievementsSectionProps } from "./types";
 
 export const OurAchievements: FC<OurAchievementsSectionProps> = ({ images, title }) => (
   <section className="pb-20 xl:pb-37.5" role="region" aria-labelledby="our-achievements-title">

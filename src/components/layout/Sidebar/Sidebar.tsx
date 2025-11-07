@@ -3,17 +3,11 @@ import { FC, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 
-import { header } from "@/types/layout-type";
-import { RightArrow, RightArrowLong } from "@/components/icons";
-import { NextImageWithFallback } from "@/components/common";
+import { NextImageWithFallback, RightArrow, RightArrowLong } from "@/components";
 
-interface SidebarProps {
-  sidebarOpen: boolean;
-  onClick: () => void;
-  data: header;
-}
+import { SidebarProps } from "./types";
 
-const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
+export const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, headerLinks, headerLogo }) => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
@@ -29,16 +23,16 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
       <div className="p-4">
         <div className="pb-12">
           <NextImageWithFallback
-            alt={data.headerLogo.alt}
-            src={data.headerLogo.src}
-            title={data.headerLogo.alt}
+            alt={headerLogo.alt}
+            src={headerLogo.src}
+            title={headerLogo.alt}
             width={60}
             height={65}
             className="mr-0 ml-auto h-8 w-8.5 md:h-14 md:w-15"
           />
         </div>
         <ul className="space-y-4">
-          {data.headerLinks.map((link) => {
+          {headerLinks.map((link) => {
             const isHovered = hoveredLink === link.label;
             return (
               <li
@@ -86,5 +80,3 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
     </aside>
   );
 };
-
-export default Sidebar;

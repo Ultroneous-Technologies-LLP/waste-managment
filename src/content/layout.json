@@ -43,8 +43,11 @@
       }
     ],
     "headerButton": {
+      "id": 1,
       "label": "Request a pick up",
-      "ariaLabel": "Request a pick up"
+      "ariaLabel": "Request a pick up",
+      "href": "/#contact",
+      "title": "Request a pick up"
     }
   },
   "footer": {

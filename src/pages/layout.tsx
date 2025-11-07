@@ -3,12 +3,13 @@
 import { ReactNode, useState, useEffect } from "react";
 import clsx from "clsx";
 
-import { Footer, Header, Sidebar } from "@/components/layout";
 import data from "@/content/layout.json";
-import { layoutData } from "@/types/layout-type";
+import { layoutData } from "@/types";
+import { Footer, Header, Sidebar } from "@/components";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const layoutData = data as layoutData;
+  const { footer, header }: layoutData = data;
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -34,24 +35,15 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="relative min-h-screen">
-      <Sidebar
-        onClick={() => setSidebarOpen(false)}
-        sidebarOpen={sidebarOpen}
-        data={layoutData.header}
-      />
+      <Sidebar onClick={() => setSidebarOpen(false)} sidebarOpen={sidebarOpen} {...header} />
       <div
         className={clsx("transition-transform duration-300 ease-in-out", {
           "min-h-screen -translate-x-66": sidebarOpen,
         })}
       >
-        <Header
-          data={layoutData.header}
-          sidebarOpen={sidebarOpen}
-          onMenuOpen={() => setSidebarOpen(true)}
-          onMenuClose={() => setSidebarOpen(false)}
-        />
+        <Header {...header} />
         <main>{children}</main>
-        <Footer data={layoutData.footer} />
+        <Footer {...footer} />
       </div>
     </div>
   );

@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, KeyboardEvent, FC } from "react";
-import { ArrowWithBackGround } from "@/components/icons";
-import { NextImageWithFallback } from "@/components/common";
-import { ServiceItemProps } from "@/components";
+import { ArrowWithBackGround, NextImageWithFallback, ServiceItemProps } from "@/components";
 
 const ServiceItem: FC<ServiceItemProps> = ({ value }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });

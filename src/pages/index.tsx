@@ -13,7 +13,7 @@ import {
   DrivingImpact,
   HomeHero,
 } from "@/components/home";
-import { homeData } from "@/types/home-type";
+import { homeData } from "@/types/data-type";
 
 export default function Home({ data }: { data: homeData }) {
   const {

@@ -1,8 +1,7 @@
 "use client";
 
 import { FC, useState, KeyboardEvent } from "react";
-import { ArrowWithBackGround } from "@/components/icons";
-import { FAQSProps } from "@/components";
+import { ArrowWithBackGround, FAQSProps } from "@/components";
 
 export const FAQS: FC<FAQSProps> = ({ data }) => {
   const [openId, setOpenId] = useState<number | null>(null);

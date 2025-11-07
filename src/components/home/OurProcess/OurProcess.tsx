@@ -1,9 +1,13 @@
 "use client";
 
-import { Container, NextImageWithFallback, Title } from "@/components/common";
+import {
+  Container,
+  NextImageWithFallback,
+  Title,
+  PlayButton,
+  OurProcessSectionProps,
+} from "@/components";
 import { FC, useState } from "react";
-import { PlayButton } from "@/components/icons";
-import { OurProcessSectionProps } from "@/components";
 
 export const OurProcess: FC<OurProcessSectionProps> = ({ description, title, video }) => {
   const [isPlaying, setIsPlaying] = useState(false);

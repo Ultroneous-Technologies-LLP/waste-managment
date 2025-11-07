@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
-import { Arrow } from "@/components/icons";
+import { Button, Container, NextImageWithFallback, Title, Arrow } from "@/components";
 import { AboutUsSectionProps } from "./types";
 
 export const AboutUs: FC<AboutUsSectionProps> = ({

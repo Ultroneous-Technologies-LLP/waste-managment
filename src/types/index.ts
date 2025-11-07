@@ -1,4 +1,2 @@
-export interface Image {
-  alt: string;
-  src: string;
-}
+export * from './common'
+export * from './data-type'

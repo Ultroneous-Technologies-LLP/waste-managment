@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { Container, NextImageWithFallback, Title } from "@/components/common";
-import { TransformingWasteSectionProps } from "@/components";
+import { TransformingWasteSectionProps } from "./types";
 
 export const TransformingWaste: FC<TransformingWasteSectionProps> = ({
   description,

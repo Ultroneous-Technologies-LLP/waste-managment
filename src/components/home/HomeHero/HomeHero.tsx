@@ -1,6 +1,5 @@
-import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
+import { Button, Container, NextImageWithFallback, Title, ArrowWithBackGround } from "@/components";
 import { FC } from "react";
-import { ArrowWithBackGround } from "@/components/icons";
 import { HeroSectionProps } from "./types";
 
 export const HomeHero: FC<HeroSectionProps> = ({ alt, buttonLabel, description, src, title }) => (

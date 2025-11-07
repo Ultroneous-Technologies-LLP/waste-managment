@@ -3,7 +3,9 @@ import {
   CitiesWeCoveredSectionProps,
   DrivingImpactSectionProps,
   FaqSectionsProps,
+  FooterProps,
   GetMoreUpdatesSectionProps,
+  HeaderProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurAchievementsSectionProps,
@@ -11,6 +13,11 @@ import {
   TransformingWasteSectionProps,
   WasteManagementServicesSectionProps,
 } from "@/components";
+
+export type layoutData = {
+  header: HeaderProps;
+  footer: FooterProps;
+};
 
 export type homeData = {
   aboutUsSection: AboutUsSectionProps;

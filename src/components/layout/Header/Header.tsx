@@ -4,18 +4,17 @@ import { FC, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-import { Button, Container, NextImageWithFallback } from "@/components/common";
-import { Cross, Search } from "@/components/icons";
-import { header } from "@/types/layout-type";
+import { Button, Container, NextImageWithFallback, Cross, Search } from "@/components";
+import { HeaderProps } from "./types";
 
-interface HeaderProps {
-  data: header;
-  sidebarOpen?: boolean;
-  onMenuOpen?: () => void;
-  onMenuClose?: () => void;
-}
-
-const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose }) => {
+export const Header: FC<HeaderProps> = ({
+  headerButton,
+  headerLinks,
+  headerLogo,
+  sidebarOpen,
+  onMenuOpen,
+  onMenuClose,
+}) => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("home");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
@@ -24,7 +23,7 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
   // Scroll spy
   useEffect(() => {
     const handleScroll = () => {
-      data.headerLinks.forEach((link) => {
+      headerLinks.forEach((link) => {
         const sectionId = link.href.split("#")[1]; // extract 'home' from '/#home'
         const section = document.getElementById(sectionId); // safer than querySelector
         if (section) {
@@ -39,7 +38,7 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // initialize
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [data.headerLinks]);
+  }, [headerLinks]);
 
   // Update underline position
   useEffect(() => {
@@ -118,9 +117,9 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <NextImageWithFallback
-              alt={data.headerLogo.alt}
-              src={data.headerLogo.src}
-              title={data.headerLogo.alt}
+              alt={headerLogo.alt}
+              src={headerLogo.src}
+              title={headerLogo.alt}
               width={60}
               height={56}
               className="h-8 w-9.5 md:h-14 md:w-15"
@@ -136,7 +135,7 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
             id="site-navigation"
             role="menubar"
           >
-            {data.headerLinks.map((link) => (
+            {headerLinks.map((link) => (
               <li key={link.label} role="none">
                 <Link
                   href={link.href}
@@ -155,7 +154,7 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
 
             {/* Sliding underline */}
             <span
-              className="absolute bottom-0 h-[2px] bg-black transition-all duration-300"
+              className="absolute bottom-0 h-0.5 bg-black transition-all duration-300"
               style={{
                 left: underlineStyle.left,
                 width: underlineStyle.width,
@@ -256,10 +255,10 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
           </div>
 
           <Button
-            aria-label={data.headerButton.ariaLabel}
-            className="!hidden xl:!inline-block xl:max-w-48.5"
+            aria-label={headerButton.ariaLabel}
+            className="hidden! xl:inline-block! xl:max-w-48.5"
           >
-            {data.headerButton.label}
+            {headerButton.label}
           </Button>
         </div>
 
@@ -277,5 +276,3 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
     </nav>
   );
 };
-
-export default Header;

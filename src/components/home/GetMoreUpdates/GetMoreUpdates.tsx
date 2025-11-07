@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { GetMoreUpdatesSectionProps } from "@/components";
+
+import { GetMoreUpdatesSectionProps } from "./types";
 
 export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
   blogList,
