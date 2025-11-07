@@ -1,13 +1,10 @@
 "use client";
+
 import { FC, useState, KeyboardEvent } from "react";
-import { faqSections } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
+import { FAQSProps } from "@/components";
 
-interface FAQSProps {
-  data: faqSections["faq"];
-}
-
-const FAQS: FC<FAQSProps> = ({ data }) => {
+export const FAQS: FC<FAQSProps> = ({ data }) => {
   const [openId, setOpenId] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
@@ -73,5 +70,3 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
     </div>
   );
 };
-
-export default FAQS;

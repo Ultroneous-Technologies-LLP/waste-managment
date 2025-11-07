@@ -1,25 +1,11 @@
-import HomeHero from "./HomeHero";
-import AboutUs from "./AboutUs";
-import WasteManagementServices from "./WasteManagementServices";
-import IndustriesWeServe from "./IndustriesWeServe";
-import OurProcess from "./OurProcess";
-import TransformingWaste from "./TransformingWaste";
-import CitiesWeCovered from "./CitiesWeCovered";
-import GetMoreUpdates from "./GetMoreUpdates";
-import OurAchievements from "./OurAchievements";
-import DrivingImpact from "./DrivingImpact";
-import FAQ from "./FAQ";
-
-export {
-  HomeHero,
-  AboutUs,
-  WasteManagementServices,
-  IndustriesWeServe,
-  OurProcess,
-  TransformingWaste,
-  CitiesWeCovered,
-  GetMoreUpdates,
-  OurAchievements,
-  DrivingImpact,
-  FAQ,
-};
+export * from "./HomeHero";
+export * from "./AboutUs";
+export * from "./DrivingImpact";
+export * from "./CitiesWeCovered";
+export * from "./GetMoreUpdates";
+export * from "./TransformingWaste";
+export * from "./OurAchievements";
+export * from "./OurProcess";
+export * from "./IndustriesWeServe";
+export * from "./WasteManagementServices";
+export * from "./FAQ";

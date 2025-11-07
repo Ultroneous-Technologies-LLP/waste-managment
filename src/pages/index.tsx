@@ -1,21 +1,34 @@
 import Head from "next/head";
 
 import {
-  AboutUs,
   CitiesWeCovered,
-  DrivingImpact,
   GetMoreUpdates,
   FAQ,
-  HomeHero,
   IndustriesWeServe,
   OurProcess,
   OurAchievements,
   TransformingWaste,
   WasteManagementServices,
+  AboutUs,
+  DrivingImpact,
+  HomeHero,
 } from "@/components/home";
 import { homeData } from "@/types/home-type";
 
 export default function Home({ data }: { data: homeData }) {
+  const {
+    drivingImpactSection,
+    heroSection,
+    aboutUsSection,
+    citiesWeCoveredSection,
+    getMoreUpdatesSection,
+    transformingWasteSection,
+    ourAchievementsSection,
+    ourProcessSection,
+    industriesWeServeSection,
+    wasteManagementServicesSection,
+    faqSections,
+  }: homeData = data;
   return (
     <>
       <Head>
@@ -63,17 +76,17 @@ export default function Home({ data }: { data: homeData }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <HomeHero data={data.heroSection} />
-      <AboutUs data={data.aboutUsSection} />
-      <WasteManagementServices data={data.wasteManagementServicesSection} />
-      <IndustriesWeServe data={data.industriesWeServeSection} />
-      <OurProcess data={data.ourProcessSection} />
-      <TransformingWaste data={data.transformingWasteSection} />
-      <CitiesWeCovered data={data.citiesWeCoveredSection} />
-      <DrivingImpact data={data.drivingImpactSection} />
-      <FAQ data={data.faqSections} />
-      <GetMoreUpdates data={data.getMoreUpdatesSection} />
-      <OurAchievements data={data.ourAchievementsSection} />
+      <HomeHero {...heroSection} />
+      <AboutUs {...aboutUsSection} />
+      <WasteManagementServices {...wasteManagementServicesSection} />
+      <IndustriesWeServe {...industriesWeServeSection} />
+      <OurProcess {...ourProcessSection} />
+      <TransformingWaste {...transformingWasteSection} />
+      <CitiesWeCovered {...citiesWeCoveredSection} />
+      <DrivingImpact {...drivingImpactSection} />
+      <FAQ {...faqSections} />
+      <GetMoreUpdates {...getMoreUpdatesSection} />
+      <OurAchievements {...ourAchievementsSection} />
     </>
   );
 }
