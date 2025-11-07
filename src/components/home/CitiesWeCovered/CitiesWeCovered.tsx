@@ -1,15 +1,12 @@
-"use client"; // only here
+"use client";
+
 import clsx from "clsx";
 
-import { citiesWeCoveredSection } from "@/types/home-type";
 import { FC, useState, KeyboardEvent } from "react";
 import { Container, NextImageWithFallback, Title } from "@/components/common";
+import { CitiesWeCoveredSectionProps } from "./types";
 
-interface CitiesWeCoveredProps {
-  data: citiesWeCoveredSection;
-}
-
-const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
+export const CitiesWeCovered: FC<CitiesWeCoveredSectionProps> = ({ cities, title }) => {
   const [activeId, setActiveId] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
@@ -31,7 +28,7 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
       aria-labelledby="cities-title"
     >
       <div className="w-full xl:max-w-132.5">
-        <Title title={data.title} className="text-center xl:text-start" id="cities-title" />
+        <Title title={title} className="text-center xl:text-start" id="cities-title" />
       </div>
 
       <div
@@ -39,7 +36,7 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
         role="list"
         aria-label="List of cities we covered"
       >
-        {data.cities.map((value) => {
+        {cities.map((value) => {
           const isActive = activeId === value.id;
 
           return (
@@ -94,5 +91,3 @@ const CitiesWeCovered: FC<CitiesWeCoveredProps> = ({ data }) => {
     </Container>
   );
 };
-
-export default CitiesWeCovered;

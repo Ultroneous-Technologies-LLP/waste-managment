@@ -2,22 +2,23 @@ import { FC, useState } from "react";
 import Link from "next/link";
 
 import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
-import { getMoreUpdatesSection } from "@/types/home-type";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { GetMoreUpdatesSectionProps } from "@/components";
 
-interface GetMoreUpdatesProps {
-  data: getMoreUpdatesSection;
-}
-
-const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
+export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
+  blogList,
+  button,
+  latestBlog,
+  title,
+}) => {
   const [showAll, setShowAll] = useState(false);
   const isMobile = useIsMobile();
 
-  const blogsToShow = isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
+  const blogsToShow = isMobile && !showAll ? blogList.slice(0, 2) : blogList;
 
   return (
     <Container className="py-20 xl:py-37.5" role="region" aria-labelledby="get-more-updates-title">
-      <Title id="get-more-updates-title" title={data.title} className="text-center" />
+      <Title id="get-more-updates-title" title={title} className="text-center" />
 
       <div
         className="grid gap-8 py-6 md:grid-cols-2 md:gap-6 md:py-8"
@@ -26,28 +27,28 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
       >
         {/* Latest Blog */}
         <Link
-          href={data.latestBlog.link}
+          href={latestBlog.link}
           role="listitem"
-          aria-label={`Read latest blog: ${data.latestBlog.title}`}
+          aria-label={`Read latest blog: ${latestBlog.title}`}
         >
           <NextImageWithFallback
-            alt={data.latestBlog.img.alt}
-            src={data.latestBlog.img.src}
+            alt={latestBlog.img.alt}
+            src={latestBlog.img.src}
             width={658}
             height={350}
             className="h-42.5 w-full object-cover md:h-87.5 md:rounded-3xl xl:h-92.5"
-            title={data.latestBlog.img.alt}
+            title={latestBlog.img.alt}
           />
-          <p className="pt-4 pb-3 text-xs leading-normal xl:text-xl">{data.latestBlog.category}</p>
-          <h3 className="text-xl leading-normal xl:text-4xl">{data.latestBlog.title}</h3>
+          <p className="pt-4 pb-3 text-xs leading-normal xl:text-xl">{latestBlog.category}</p>
+          <h3 className="text-xl leading-normal xl:text-4xl">{latestBlog.title}</h3>
           <p
             className="line-clamp-2 h-14.5 overflow-hidden pt-1 pb-3 text-base leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 md:text-xs xl:h-14.5 xl:text-base"
-            aria-label={`Blog summary: ${data.latestBlog.descriptions}`}
+            aria-label={`Blog summary: ${latestBlog.descriptions}`}
           >
-            {data.latestBlog.descriptions}
+            {latestBlog.descriptions}
           </p>
           <p className="text-[10px] leading-normal font-light text-[#8D8D8D] md:mt-2 xl:mt-0 xl:text-xs">
-            {data.latestBlog.date}
+            {latestBlog.date}
           </p>
         </Link>
 
@@ -55,7 +56,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
         <div className="space-y-8">
           {blogsToShow.map((value) => (
             <Link
-              href={data.latestBlog.link}
+              href={latestBlog.link}
               className="flex flex-col gap-4 md:flex-row"
               key={value.id}
               role="listitem"
@@ -94,12 +95,10 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
             }}
             aria-label={`Show more blog posts`}
           >
-            {data.button.buttonLabel}
+            {button.buttonLabel}
           </Button>
         ) : null}
       </div>
     </Container>
   );
 };
-
-export default GetMoreUpdates;
