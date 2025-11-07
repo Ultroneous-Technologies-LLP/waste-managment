@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-const LinkedIn = ({
-  width = 15,
-  height = 16,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const LinkedIn = ({ width = 15, height = 16, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 15 16"

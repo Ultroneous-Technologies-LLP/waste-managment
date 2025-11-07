@@ -19,9 +19,7 @@ export default function Home({ data }: { data: homeData }) {
   return (
     <>
       <Head>
-        <title>
-          Waste Management Landing Page Design | Eco-Friendly UI Concept
-        </title>
+        <title>Waste Management Landing Page Design | Eco-Friendly UI Concept</title>
         <meta
           name="description"
           content="Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites."

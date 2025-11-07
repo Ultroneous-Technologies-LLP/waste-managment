@@ -1,11 +1,6 @@
 import { FC } from "react";
 
-import {
-  Button,
-  Container,
-  NextImageWithFallback,
-  Title,
-} from "@/components/common";
+import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
 import { industriesWeServeSection } from "@/types/home-type";
 
 interface IndustriesWeServe {
@@ -17,7 +12,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
     <>
       <Container
         backgroundClassName="bg-anti-flash-white scroll-mt-10"
-        className="px-6 md:px-6 xl:px-12.5 grid gap-6 md:gap-8 xl:gap-6 py-12.5 md:pt-20 md:pb-8 xl:py-25 grid-cols-1 xl:grid-cols-2 xl:gap-y-0"
+        className="grid grid-cols-1 gap-6 px-6 py-12.5 md:gap-8 md:px-6 md:pt-20 md:pb-8 xl:grid-cols-2 xl:gap-6 xl:gap-y-0 xl:px-12.5 xl:py-25"
         id="industries"
         role="region"
         aria-labelledby="industries-title"
@@ -30,14 +25,14 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
             id="industries-title"
           />
           <div
-            className="pt-6 xl:py-8 flex justify-center xl:justify-start flex-wrap gap-2"
+            className="flex flex-wrap justify-center gap-2 pt-6 xl:justify-start xl:py-8"
             role="list"
             aria-label="Industries we serve"
           >
             {data.services.map((value) => (
               <h3
                 key={value.title}
-                className="p-2.5 md:p-6 text-xs md:text-2xl leading-normal bg-white text-black rounded-full font-light cursor-pointer select-none"
+                className="cursor-pointer rounded-full bg-white p-2.5 text-xs leading-normal font-light text-black select-none md:p-6 md:text-2xl"
                 role="button"
                 tabIndex={0}
                 aria-label={`Industry: ${value.title}`}
@@ -62,38 +57,38 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => {
             src={data.image.src}
             width={658}
             height={690}
-            className="md:max-w-180 md:max-h-172.5 w-full h-full object-cover md:rounded-40 mx-auto xl:max-w-fit xl:max-h-fit"
+            className="md:rounded-40 mx-auto h-full w-full object-cover md:max-h-172.5 md:max-w-180 xl:max-h-fit xl:max-w-fit"
             title={data.image.alt}
           />
         </div>
 
         {/* Button Section */}
-        <div className="col-start-1 col-end-2 row-start-3 md:row-start-2 xl:row-start-2 xl:row-end-3 xl:col-start-1 xl:col-end-2 self-start xl:self-end w-fit mx-auto xl:ml-0 xl:mr-auto">
+        <div className="col-start-1 col-end-2 row-start-3 mx-auto w-fit self-start md:row-start-2 xl:col-start-1 xl:col-end-2 xl:row-start-2 xl:row-end-3 xl:mr-auto xl:ml-0 xl:self-end">
           <Button aria-label={data.button.label}>{data.button.label}</Button>
         </div>
       </Container>
 
       {/* Animated Brand Section */}
       <div
-        className="py-12.5 bg-primary-yellow"
+        className="bg-primary-yellow py-12.5"
         role="region"
         aria-labelledby="industries-animation-title"
       >
         <div>
           <h4
             id="industries-animation-title"
-            className="text-2xl md:text-32 md:px-6 xl:px-0 xl:text-[40px] leading-snug text-black text-center pb-6 md:pb-12"
+            className="md:text-32 pb-6 text-center text-2xl leading-snug text-black md:px-6 md:pb-12 xl:px-0 xl:text-[40px]"
           >
             {data.title}
           </h4>
         </div>
 
         <div
-          className="overflow-hidden relative w-full"
+          className="relative w-full overflow-hidden"
           role="list"
           aria-label="Scrolling partner logos"
         >
-          <div className="flex w-max animate-marquee">
+          <div className="animate-marquee flex w-max">
             {data.animation.map((value) => (
               <NextImageWithFallback
                 key={`anim1-${value.id}`}

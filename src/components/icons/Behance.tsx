@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-const Behance = ({
-  width = 16,
-  height = 10,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const Behance = ({ width = 16, height = 10, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 16 10"

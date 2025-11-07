@@ -19,7 +19,7 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
   return (
     <aside
       className={clsx(
-        "fixed top-0 right-0 h-full w-67 bg-white shadow-lg z-40 transition-transform duration-300 ease-in-out pt-6",
+        "fixed top-0 right-0 z-40 h-full w-67 bg-white pt-6 shadow-lg transition-transform duration-300 ease-in-out",
         {
           "translate-x-0": sidebarOpen,
           "translate-x-full": !sidebarOpen,
@@ -34,7 +34,7 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
             title={data.headerLogo.alt}
             width={60}
             height={65}
-            className="w-8.5 h-8 md:w-15 md:h-14 ml-auto mr-0"
+            className="mr-0 ml-auto h-8 w-8.5 md:h-14 md:w-15"
           />
         </div>
         <ul className="space-y-4">
@@ -50,8 +50,8 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
                   href={link.href}
                   onClick={onClick}
                   className={clsx(
-                    "text-black text-2xl/snug flex items-center font-normal transition-colors duration-700 ease-in-out",
-                    isHovered && "font-medium text-primary-green"
+                    "flex items-center text-2xl/snug font-normal text-black transition-colors duration-700 ease-in-out",
+                    isHovered && "text-primary-green font-medium"
                   )}
                 >
                   {/* Width of this div animates smoothly */}
@@ -63,22 +63,20 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
                   >
                     <RightArrowLong
                       className={clsx(
-                        "absolute inset-0 text-primary-green transition-opacity duration-700 ease-in-out",
+                        "text-primary-green absolute inset-0 transition-opacity duration-700 ease-in-out",
                         isHovered ? "opacity-100" : "opacity-0"
                       )}
                     />
                     <RightArrow
                       className={clsx(
-                        "absolute inset-0 text-primary-yellow transition-opacity duration-700 ease-in-out",
+                        "text-primary-yellow absolute inset-0 transition-opacity duration-700 ease-in-out",
                         !isHovered ? "opacity-100" : "opacity-0"
                       )}
                     />
                   </div>
 
                   {/* The text will move naturally as the wrapper expands */}
-                  <span className="ml-4 transition-all duration-700 ease-in-out">
-                    {link.label}
-                  </span>
+                  <span className="ml-4 transition-all duration-700 ease-in-out">{link.label}</span>
                 </Link>
               </li>
             );

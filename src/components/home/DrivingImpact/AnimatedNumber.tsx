@@ -6,10 +6,7 @@ interface AnimatedNumberProps {
   duration?: number;
 }
 
-const AnimatedNumber: FC<AnimatedNumberProps> = ({
-  value,
-  duration = 2000,
-}) => {
+const AnimatedNumber: FC<AnimatedNumberProps> = ({ value, duration = 2000 }) => {
   const [displayValue, setDisplayValue] = useState(0);
   const ref = useRef<HTMLSpanElement | null>(null);
 

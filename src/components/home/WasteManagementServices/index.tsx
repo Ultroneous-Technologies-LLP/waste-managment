@@ -9,24 +9,22 @@ interface WasteManagementServicesProps {
   data: wasteManagementServices;
 }
 
-const WasteManagementServices: FC<WasteManagementServicesProps> = ({
-  data,
-}) => {
+const WasteManagementServices: FC<WasteManagementServicesProps> = ({ data }) => {
   return (
     <Container
-      className="py-20 xl:py-37.5 scroll-mt-20"
+      className="scroll-mt-20 py-20 xl:py-37.5"
       id="services"
       role="region"
       aria-labelledby="services-title"
     >
-      <div className="flex flex-col gap-6 md:flex-row justify-between items-center pb-6 md:pb-8 border-b border-[#D6D6D6]">
+      <div className="flex flex-col items-center justify-between gap-6 border-b border-[#D6D6D6] pb-6 md:flex-row md:pb-8">
         <Title
           id="services-title"
           title={data.title}
-          className="max-w-164.5 w-full text-center md:text-start"
+          className="w-full max-w-164.5 text-center md:text-start"
         />
         <p
-          className="max-w-136 w-full text-lg/normal md:text-base/normal xl:text-xl/snug text-[#6F6F6F] font-light text-center md:text-start"
+          className="w-full max-w-136 text-center text-lg/normal font-light text-[#6F6F6F] md:text-start md:text-base/normal xl:text-xl/snug"
           aria-label="Service description"
         >
           {data.description}

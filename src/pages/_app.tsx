@@ -15,10 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={lexend.variable}>
       <Head>
         <title>Waste Management</title>
-        <meta
-          name="description"
-          content="Default description for Waste Management"
-        />
+        <meta name="description" content="Default description for Waste Management" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Layout>

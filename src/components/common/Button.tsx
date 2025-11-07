@@ -1,12 +1,7 @@
 import clsx from "clsx";
 import Link, { LinkProps } from "next/link";
 
-import {
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  FC,
-  ReactNode,
-} from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode } from "react";
 
 type ButtonOnlyProps = {
   as?: "button";
@@ -19,10 +14,7 @@ type LinkOnlyProps = {
   href: string;
   children: ReactNode;
   className?: string;
-} & Omit<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  "className" | "children" | "href"
-> &
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href"> &
   Omit<LinkProps, "passHref">;
 
 type ButtonProps = ButtonOnlyProps | LinkOnlyProps;

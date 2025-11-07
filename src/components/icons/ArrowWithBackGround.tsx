@@ -18,7 +18,7 @@ const ArrowWithBackGround: FC<ArrowWithBackGroundProps> = ({
   return (
     <div
       className={clsx(
-        "flex justify-center items-center cursor-pointer border rounded-full transition-colors duration-300",
+        "flex cursor-pointer items-center justify-center rounded-full border transition-colors duration-300",
         className
       )}
     >

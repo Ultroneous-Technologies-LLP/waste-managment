@@ -1,10 +1,6 @@
 import React, { SVGProps } from "react";
 
-const RightArrowLong = ({
-  width = 67,
-  height = 23,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const RightArrowLong = ({ width = 67, height = 23, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 67 23"

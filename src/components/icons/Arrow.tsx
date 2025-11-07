@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-const Arrow = ({
-  width = 93,
-  height = 70,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const Arrow = ({ width = 93, height = 70, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 93 70"
