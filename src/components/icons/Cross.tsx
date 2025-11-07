@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-const Cross = ({
-  width = 17,
-  height = 17,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const Cross = ({ width = 17, height = 17, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 17 17"

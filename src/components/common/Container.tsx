@@ -1,17 +1,8 @@
 import clsx from "clsx";
 
-import {
-  ComponentPropsWithoutRef,
-  ElementType,
-  forwardRef,
-  JSX,
-  ReactElement,
-} from "react";
+import { ComponentPropsWithoutRef, ElementType, forwardRef, JSX, ReactElement } from "react";
 
-type SupportedTags = Extract<
-  keyof JSX.IntrinsicElements,
-  "div" | "header" | "footer" | "section"
->;
+type SupportedTags = Extract<keyof JSX.IntrinsicElements, "div" | "header" | "footer" | "section">;
 
 type ContainerProps<T extends SupportedTags> = {
   as?: T;
@@ -24,13 +15,7 @@ type ContainerProps<T extends SupportedTags> = {
 // This version supports all 4 tags and proper ref types
 const Container = forwardRef(
   <T extends SupportedTags = "div">(
-    {
-      as,
-      backgroundClassName = "",
-      className = "",
-      children,
-      ...rest
-    }: ContainerProps<T>,
+    { as, backgroundClassName = "", className = "", children, ...rest }: ContainerProps<T>,
     ref: React.Ref<T extends "div" ? HTMLDivElement : HTMLElement>
   ) => {
     const Component = (as || "section") as ElementType;
@@ -38,12 +23,7 @@ const Container = forwardRef(
     if (backgroundClassName) {
       return (
         <Component className={clsx(backgroundClassName)} ref={ref} {...rest}>
-          <div
-            className={clsx(
-              "px-4 md:px-6 xl:px-12.5 mx-auto w-full max-w-360",
-              className
-            )}
-          >
+          <div className={clsx("mx-auto w-full max-w-360 px-4 md:px-6 xl:px-12.5", className)}>
             {children}
           </div>
         </Component>
@@ -52,10 +32,7 @@ const Container = forwardRef(
 
     return (
       <Component
-        className={clsx(
-          "px-4 md:px-6 xl:px-12.5 mx-auto w-full max-w-360",
-          className
-        )}
+        className={clsx("mx-auto w-full max-w-360 px-4 md:px-6 xl:px-12.5", className)}
         ref={ref}
         {...rest}
       >

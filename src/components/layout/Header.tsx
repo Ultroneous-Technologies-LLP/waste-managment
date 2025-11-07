@@ -15,12 +15,7 @@ interface HeaderProps {
   onMenuClose?: () => void;
 }
 
-const Header: FC<HeaderProps> = ({
-  data,
-  sidebarOpen,
-  onMenuOpen,
-  onMenuClose,
-}) => {
+const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose }) => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("home");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
@@ -50,9 +45,7 @@ const Header: FC<HeaderProps> = ({
   useEffect(() => {
     if (!navRef.current) return;
 
-    const activeLink = navRef.current.querySelector<HTMLElement>(
-      `[data-id='${currentSection}']`
-    );
+    const activeLink = navRef.current.querySelector<HTMLElement>(`[data-id='${currentSection}']`);
     if (activeLink) {
       setUnderlineStyle({
         left: activeLink.offsetLeft,
@@ -74,24 +67,20 @@ const Header: FC<HeaderProps> = ({
 
   // ✅ Reusable SearchBar
   const SearchBar = () => (
-    <div className="flex items-center w-full bg-white px-3 py-2 rounded-full border border-primary-green/40 shadow-[0_0_0_4px_#22631B1F]">
-      <Search className="text-black mr-2" aria-hidden="true" />
+    <div className="border-primary-green/40 flex w-full items-center rounded-full border bg-white px-3 py-2 shadow-[0_0_0_4px_#22631B1F]">
+      <Search className="mr-2 text-black" aria-hidden="true" />
       <label htmlFor="searchInput" className="sr-only">
         Search input
       </label>
       <input
         autoFocus
         placeholder="Search"
-        className="w-full outline-none text-base text-black"
+        className="w-full text-base text-black outline-none"
         id="searchInput"
         type="search"
         aria-label="Search site"
       />
-      <button
-        aria-label="Close search"
-        onClick={() => setSearchOpen(false)}
-        className="ml-2"
-      >
+      <button aria-label="Close search" onClick={() => setSearchOpen(false)} className="ml-2">
         <Cross className="text-black" aria-hidden="true" />
       </button>
     </div>
@@ -108,23 +97,20 @@ const Header: FC<HeaderProps> = ({
         hidden: sidebarOpen || searchOpen,
       })}
     >
-      <span className="block w-5 md:w-8.5 h-0.5 md:h-1 bg-primary-green rounded-full mb-2.5"></span>
-      <span className="block w-5 md:w-8.5 h-0.5 md:h-1 bg-primary-green rounded-full"></span>
+      <span className="bg-primary-green mb-2.5 block h-0.5 w-5 rounded-full md:h-1 md:w-8.5"></span>
+      <span className="bg-primary-green block h-0.5 w-5 rounded-full md:h-1 md:w-8.5"></span>
     </button>
   );
 
   return (
-    <nav className="w-full sticky top-0 mx-auto z-50 pt-5 px-4 md:px-6 xl:px-12.5 max-w-360">
+    <nav className="sticky top-0 z-50 mx-auto w-full max-w-360 px-4 pt-5 md:px-6 xl:px-12.5">
       <Container as="header" className={containerClasses} role="banner">
         {/* logo */}
         <div
-          className={clsx(
-            "xl:max-w-15 xl:w-full transition-all duration-500 ease-in",
-            {
-              hidden: sidebarOpen,
-              "hidden xl:block": searchOpen,
-            }
-          )}
+          className={clsx("transition-all duration-500 ease-in xl:w-full xl:max-w-15", {
+            hidden: sidebarOpen,
+            "hidden xl:block": searchOpen,
+          })}
         >
           <Link
             href="/"
@@ -137,16 +123,16 @@ const Header: FC<HeaderProps> = ({
               title={data.headerLogo.alt}
               width={60}
               height={56}
-              className="w-9.5 h-8 md:w-15 md:h-14"
+              className="h-8 w-9.5 md:h-14 md:w-15"
             />
           </Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="xl:max-w-150 xl:w-full hidden xl:block relative">
+        <div className="relative hidden xl:block xl:w-full xl:max-w-150">
           <ul
             ref={navRef}
-            className="flex gap-6 justify-center text-base/normal relative"
+            className="relative flex justify-center gap-6 text-base/normal"
             id="site-navigation"
             role="menubar"
           >
@@ -157,16 +143,10 @@ const Header: FC<HeaderProps> = ({
                   data-id={link.href.replace("/#", "")}
                   className={clsx(
                     "relative px-1 py-2 font-light transition-colors duration-300",
-                    currentSection === link.href.replace("/#", "")
-                      ? "text-black"
-                      : "text-gray-500"
+                    currentSection === link.href.replace("/#", "") ? "text-black" : "text-gray-500"
                   )}
                   role="menuitem"
-                  aria-current={
-                    currentSection === link.href.replace("/#", "")
-                      ? "page"
-                      : undefined
-                  }
+                  aria-current={currentSection === link.href.replace("/#", "") ? "page" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -191,17 +171,16 @@ const Header: FC<HeaderProps> = ({
           })}
         >
           <div
-            className={clsx(
-              "w-fit md:max-w-80 md:w-full hidden md:flex gap-4",
-              { "md:hidden": searchOpen }
-            )}
+            className={clsx("hidden w-fit gap-4 md:flex md:w-full md:max-w-80", {
+              "md:hidden": searchOpen,
+            })}
           >
             {searchOpen ? (
               <SearchBar />
             ) : (
               <div
                 className={clsx(
-                  "bg-white px-3 py-4.5 rounded-full gap-2 items-center xl:max-w-61.5 w-full flex",
+                  "flex w-full items-center gap-2 rounded-full bg-white px-3 py-4.5 xl:max-w-61.5",
                   { hidden: sidebarOpen }
                 )}
                 onClick={() => setSearchOpen(true)}
@@ -218,7 +197,7 @@ const Header: FC<HeaderProps> = ({
                 <input
                   id="searchInput"
                   placeholder="Search"
-                  className="placeholder:text-philippine-silver text-base focus-within:outline-0 text-philippine-silver max-w-4/5 w-full"
+                  className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus-within:outline-0"
                   type="search"
                   aria-label="Search site"
                 />
@@ -235,7 +214,7 @@ const Header: FC<HeaderProps> = ({
               <>
                 <Search
                   onClick={() => setSearchOpen(true)}
-                  className={clsx("text-[#141420] xl:hidden opacity-30", {
+                  className={clsx("text-[#141420] opacity-30 xl:hidden", {
                     hidden: !searchOpen,
                   })}
                   aria-hidden="true"
@@ -248,10 +227,10 @@ const Header: FC<HeaderProps> = ({
           </div>
         </div>
 
-        <div className="hidden xl:flex gap-4">
+        <div className="hidden gap-4 xl:flex">
           <div
             className={clsx(
-              "bg-white px-3 py-4.5 rounded-full gap-2 items-center max-w-61.5 w-full flex",
+              "flex w-full max-w-61.5 items-center gap-2 rounded-full bg-white px-3 py-4.5",
               "border border-transparent", // default border transparent
               "focus-within:border-primary-green/40 focus-within:shadow-[0_0_0_4px_#22631B1F]" // green border + shadow on focus
             )}
@@ -272,7 +251,7 @@ const Header: FC<HeaderProps> = ({
               placeholder="Search"
               type="search"
               aria-label="Search site"
-              className="placeholder:text-philippine-silver text-base focus:outline-none text-philippine-silver max-w-4/5 w-full"
+              className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus:outline-none"
             />
           </div>
 
@@ -288,7 +267,7 @@ const Header: FC<HeaderProps> = ({
           aria-label="Close menu"
           onClick={onMenuClose}
           className={clsx(
-            "size-10 rounded-xl bg-[#949494] grid place-content-center transition-all duration-300 ease-in",
+            "grid size-10 place-content-center rounded-xl bg-[#949494] transition-all duration-300 ease-in",
             { block: sidebarOpen, hidden: !sidebarOpen || searchOpen }
           )}
         >

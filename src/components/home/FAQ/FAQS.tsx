@@ -22,17 +22,13 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
   };
 
   return (
-    <div
-      className="pt-6 space-y-3"
-      role="list"
-      aria-label="Frequently asked questions"
-    >
+    <div className="space-y-3 pt-6" role="list" aria-label="Frequently asked questions">
       {data.map((faq) => {
         const isOpen = openId === faq.id;
         return (
           <div
             key={faq.id}
-            className="bg-white rounded-3xl md:rounded-4xl p-4 xl:p-6"
+            className="rounded-3xl bg-white p-4 md:rounded-4xl xl:p-6"
             role="listitem"
           >
             {/* Button-like header */}
@@ -44,9 +40,9 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
               id={`faq-question-${faq.id}`}
               onClick={() => handleToggle(faq.id)}
               onKeyDown={(e) => handleKeyDown(e, faq.id)}
-              className="flex justify-between gap-4 items-center cursor-pointer"
+              className="flex cursor-pointer items-center justify-between gap-4"
             >
-              <h3 className="text-base xl:text-2xl/7.5 max-w-63 md:max-w-154 xl:max-w-304.5 w-full">
+              <h3 className="w-full max-w-63 text-base md:max-w-154 xl:max-w-304.5 xl:text-2xl/7.5">
                 {faq.questions}
               </h3>
               <ArrowWithBackGround
@@ -66,7 +62,7 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
               role="region"
               aria-labelledby={`faq-question-${faq.id}`}
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                isOpen ? "max-h-96 opacity-100 pt-3" : "max-h-0 opacity-0"
+                isOpen ? "max-h-96 pt-3 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
               <p className="text-base">{faq.ans}</p>

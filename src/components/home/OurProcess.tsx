@@ -19,25 +19,21 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
       role="region"
       aria-labelledby="our-process-title"
     >
-      <Title
-        id="our-process-title"
-        title={data.title}
-        className="text-center"
-      />
+      <Title id="our-process-title" title={data.title} className="text-center" />
       <p
-        className="max-w-221.5 w-full mx-auto py-6 text-sm md:text-base xl:text-xl leading-normal text-center"
+        className="mx-auto w-full max-w-221.5 py-6 text-center text-sm leading-normal md:text-base xl:text-xl"
         id="our-process-description"
       >
         {data.description}
       </p>
 
       <div
-        className="relative w-89.5 h-75 md:w-180 md:h-125 xl:w-335 overflow-hidden rounded-2xl mx-auto"
+        className="relative mx-auto h-75 w-89.5 overflow-hidden rounded-2xl md:h-125 md:w-180 xl:w-335"
         role="group"
         aria-labelledby="our-process-title our-process-description"
       >
         {!isPlaying ? (
-          <div className="relative w-full h-full rounded-2xl">
+          <div className="relative h-full w-full rounded-2xl">
             <NextImageWithFallback
               src={data.video.posterSrc}
               alt={data.video.alt}
@@ -47,7 +43,7 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
             />
             <button
               onClick={() => setIsPlaying(true)}
-              className="absolute inset-0 m-auto transition flex items-center justify-center"
+              className="absolute inset-0 m-auto flex items-center justify-center transition"
               aria-label={`Play video: ${data.video.alt}`}
             >
               <PlayButton aria-hidden="true" {...{ focusable: "false" }} />
@@ -58,7 +54,7 @@ const OurProcess: FC<OurProcessProps> = ({ data }) => {
             src={data.video.videoSrc}
             controls
             autoPlay
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             aria-label={`Video player: ${data.video.alt}`}
           />
         )}

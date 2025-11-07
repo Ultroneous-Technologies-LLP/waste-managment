@@ -1,11 +1,6 @@
 import { SVGProps } from "react";
 
-const Search = ({
-  width = 18,
-  height = 18,
-  opacity = 1,
-  ...svgProps
-}: SVGProps<SVGSVGElement>) => {
+const Search = ({ width = 18, height = 18, opacity = 1, ...svgProps }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 18 18"

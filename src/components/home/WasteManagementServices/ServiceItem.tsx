@@ -27,7 +27,7 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
 
   return (
     <div
-      className="py-6 md:py-11.5 xl:py-5 flex gap-3 md:gap-0 justify-between items-center border-b border-[#D6D6D6] relative cursor-pointer"
+      className="relative flex cursor-pointer items-center justify-between gap-3 border-b border-[#D6D6D6] py-6 md:gap-0 md:py-11.5 xl:py-5"
       role="listitem"
       aria-labelledby={`service-title-${value.id}`}
       tabIndex={0}
@@ -41,12 +41,12 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
     >
       <h3
         id={`service-title-${value.id}`}
-        className="text-xl/snug md:text-2xl/normal xl:text-xl/snug max-w-68 md:max-w-100 xl:max-w-75 w-full"
+        className="w-full max-w-68 text-xl/snug md:max-w-100 md:text-2xl/normal xl:max-w-75 xl:text-xl/snug"
       >
         {value.title}
       </h3>
 
-      <p className="text-xl/snug max-w-136.5 w-full text-[#6F6F6F] font-light xl:block hidden">
+      <p className="hidden w-full max-w-136.5 text-xl/snug font-light text-[#6F6F6F] xl:block">
         {value.description}
       </p>
 
@@ -65,7 +65,7 @@ const ServiceItem = ({ value }: ServiceItemProps) => {
           src={value.src}
           width={203}
           height={237}
-          className="absolute xl:block pointer-events-none transition-all duration-100 z-50"
+          className="pointer-events-none absolute z-50 transition-all duration-100 xl:block"
           style={{
             left: mousePos.x + 20,
             top: mousePos.y - 100,

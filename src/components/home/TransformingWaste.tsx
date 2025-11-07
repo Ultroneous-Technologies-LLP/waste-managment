@@ -16,14 +16,14 @@ const TransformingWaste: FC<TransformingWasteProps> = ({ data }) => {
       aria-labelledby="transforming-waste-title"
     >
       {/* Section header */}
-      <div className="flex flex-col gap-6 md:flex-row justify-between items-center pb-6 md:pb-8">
+      <div className="flex flex-col items-center justify-between gap-6 pb-6 md:flex-row md:pb-8">
         <Title
           title={data.title}
-          className="max-w-164.5 w-full text-center md:text-start"
+          className="w-full max-w-164.5 text-center md:text-start"
           id="transforming-waste-title"
         />
         <p
-          className="max-w-136 w-full text-sm/normal md:text-base/normal xl:text-xl/snug text-[#6F6F6F] font-light text-center md:text-start"
+          className="w-full max-w-136 text-center text-sm/normal font-light text-[#6F6F6F] md:text-start md:text-base/normal xl:text-xl/snug"
           aria-label="Section description"
         >
           {data.description}
@@ -32,14 +32,14 @@ const TransformingWaste: FC<TransformingWasteProps> = ({ data }) => {
 
       {/* Skills list */}
       <div
-        className="grid md:grid-cols-2 xl:grid-cols-3 gap-6"
+        className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
         role="list"
         aria-label="Transforming waste skills"
       >
         {data.skills.map((value) => (
           <button
             key={value.id}
-            className="bg-anti-flash-white p-6 md:p-10 rounded-3xl flex flex-col xl:flex-row gap-4 xl:gap-6 items-start text-left"
+            className="bg-anti-flash-white flex flex-col items-start gap-4 rounded-3xl p-6 text-left md:p-10 xl:flex-row xl:gap-6"
             aria-label={`${value.title}: ${value.description}`}
           >
             <NextImageWithFallback
@@ -51,10 +51,10 @@ const TransformingWaste: FC<TransformingWasteProps> = ({ data }) => {
               title={value.alt}
             />
             <div>
-              <h3 className="text-xl leading-normal md:text-2xl text-black pb-3 text-start">
+              <h3 className="pb-3 text-start text-xl leading-normal text-black md:text-2xl">
                 {value.title}
               </h3>
-              <p className="text-xs leading-normal md:text-base text-[#565656] font-light text-start">
+              <p className="text-start text-xs leading-normal font-light text-[#565656] md:text-base">
                 {value.description}
               </p>
             </div>

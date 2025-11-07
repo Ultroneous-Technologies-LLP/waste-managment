@@ -1,12 +1,7 @@
 import { FC, useState } from "react";
 import Link from "next/link";
 
-import {
-  Button,
-  Container,
-  NextImageWithFallback,
-  Title,
-} from "@/components/common";
+import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
 import { getMoreUpdatesSection } from "@/types/home-type";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -18,23 +13,14 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
   const [showAll, setShowAll] = useState(false);
   const isMobile = useIsMobile();
 
-  const blogsToShow =
-    isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
+  const blogsToShow = isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
 
   return (
-    <Container
-      className="py-20 xl:py-37.5"
-      role="region"
-      aria-labelledby="get-more-updates-title"
-    >
-      <Title
-        id="get-more-updates-title"
-        title={data.title}
-        className="text-center"
-      />
+    <Container className="py-20 xl:py-37.5" role="region" aria-labelledby="get-more-updates-title">
+      <Title id="get-more-updates-title" title={data.title} className="text-center" />
 
       <div
-        className="grid md:grid-cols-2 py-6 md:py-8 gap-8 md:gap-6"
+        className="grid gap-8 py-6 md:grid-cols-2 md:gap-6 md:py-8"
         role="list"
         aria-label="Blog updates"
       >
@@ -49,22 +35,18 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
             src={data.latestBlog.img.src}
             width={658}
             height={350}
-            className="w-full h-42.5 md:h-87.5 xl:h-92.5 md:rounded-3xl object-cover"
+            className="h-42.5 w-full object-cover md:h-87.5 md:rounded-3xl xl:h-92.5"
             title={data.latestBlog.img.alt}
           />
-          <p className="pt-4 pb-3 text-xs xl:text-xl leading-normal">
-            {data.latestBlog.category}
-          </p>
-          <h3 className="text-xl xl:text-4xl leading-normal">
-            {data.latestBlog.title}
-          </h3>
+          <p className="pt-4 pb-3 text-xs leading-normal xl:text-xl">{data.latestBlog.category}</p>
+          <h3 className="text-xl leading-normal xl:text-4xl">{data.latestBlog.title}</h3>
           <p
-            className="pt-1 pb-3 text-[#8D8D8D] text-base md:text-xs xl:text-base leading-normal font-light overflow-hidden text-ellipsis line-clamp-2 h-14.5 md:h-11 xl:h-14.5"
+            className="line-clamp-2 h-14.5 overflow-hidden pt-1 pb-3 text-base leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 md:text-xs xl:h-14.5 xl:text-base"
             aria-label={`Blog summary: ${data.latestBlog.descriptions}`}
           >
             {data.latestBlog.descriptions}
           </p>
-          <p className="text-[10px] xl:text-xs leading-normal font-light text-[#8D8D8D] md:mt-2 xl:mt-0">
+          <p className="text-[10px] leading-normal font-light text-[#8D8D8D] md:mt-2 xl:mt-0 xl:text-xs">
             {data.latestBlog.date}
           </p>
         </Link>
@@ -74,7 +56,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
           {blogsToShow.map((value) => (
             <Link
               href={data.latestBlog.link}
-              className="flex flex-col md:flex-row gap-4"
+              className="flex flex-col gap-4 md:flex-row"
               key={value.id}
               role="listitem"
               aria-label={`Read blog: ${value.title}`}
@@ -84,16 +66,14 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
                 src={value.src}
                 width={260}
                 height={158}
-                className="w-full md:max-w-25 md:h-30 md:rounded-3xl xl:max-w-65 xl:h-39.5 object-cover"
+                className="w-full object-cover md:h-30 md:max-w-25 md:rounded-3xl xl:h-39.5 xl:max-w-65"
                 title={value.alt}
               />
-              <div className="md:max-w-95.5 w-full">
+              <div className="w-full md:max-w-95.5">
                 <p className="pb-4 text-xs leading-normal">{value.category}</p>
-                <h3 className="text-xl md:text-base xl:text-2xl leading-normal">
-                  {value.title}
-                </h3>
+                <h3 className="text-xl leading-normal md:text-base xl:text-2xl">{value.title}</h3>
                 <p
-                  className="pt-1 text-[#8D8D8D] text-xs xl:text-base leading-normal font-light overflow-hidden text-ellipsis line-clamp-2 h-14.5 md:h-11 xl:h-14.5"
+                  className="line-clamp-2 h-14.5 overflow-hidden pt-1 text-xs leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 xl:h-14.5 xl:text-base"
                   aria-label={`Blog summary: ${value.descriptions}`}
                 >
                   {value.descriptions}
@@ -104,7 +84,7 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
         </div>
       </div>
 
-      <div className="w-fit mx-auto">
+      <div className="mx-auto w-fit">
         {(!showAll && isMobile) || !isMobile ? (
           <Button
             onClick={() => {

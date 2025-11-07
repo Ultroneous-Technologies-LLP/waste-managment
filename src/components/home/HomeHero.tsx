@@ -1,9 +1,4 @@
-import {
-  Button,
-  Container,
-  NextImageWithFallback,
-  Title,
-} from "@/components/common";
+import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
 import { FC } from "react";
 import { heroSection } from "@/types/home-type";
 import { ArrowWithBackGround } from "@/components/icons";
@@ -15,22 +10,18 @@ interface HomeHeroProps {
 const HomeHero: FC<HomeHeroProps> = ({ data }) => {
   return (
     <Container
-      className="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-6 scroll-mt-30"
+      className="grid scroll-mt-30 grid-cols-1 gap-6 pt-6 xl:grid-cols-2"
       id="home"
       role="region"
       aria-labelledby="home-hero-title"
     >
       <div
-        className="p-6 md:p-14 bg-primary-yellow rounded-3xl xl:rounded-[56px]"
+        className="bg-primary-yellow rounded-3xl p-6 md:p-14 xl:rounded-[56px]"
         role="presentation"
       >
-        <Title
-          title={data.title}
-          className="min-w-77.5 xl:max-w-100 w-full"
-          isMainTitle
-        />
+        <Title title={data.title} className="w-full min-w-77.5 xl:max-w-100" isMainTitle />
         <p
-          className="text-sm/normal md:text-base/normal xl:text-lg/normal font-light py-4"
+          className="py-4 text-sm/normal font-light md:text-base/normal xl:text-lg/normal"
           aria-label="Description"
         >
           {data.description}
@@ -40,19 +31,19 @@ const HomeHero: FC<HomeHeroProps> = ({ data }) => {
         </Button>
 
         <div
-          className="mt-11 md:mt-17.5 xl:mt-11 flex gap-2"
+          className="mt-11 flex gap-2 md:mt-17.5 xl:mt-11"
           role="group"
           aria-label="Hero navigation arrows"
         >
           <ArrowWithBackGround
-            className="bg-white size-12 border-transparent hover:bg-transparent hover:border-black group"
+            className="group size-12 border-transparent bg-white hover:border-black hover:bg-transparent"
             svgClassName="group-hover:text-white text-black"
             role="button"
             tabIndex={0}
             aria-label="Previous slide"
           />
           <ArrowWithBackGround
-            className="bg-white size-12 border-transparent hover:bg-transparent hover:border-black group"
+            className="group size-12 border-transparent bg-white hover:border-black hover:bg-transparent"
             svgClassName="rotate-180 group-hover:text-white text-black"
             role="button"
             tabIndex={0}
@@ -68,7 +59,7 @@ const HomeHero: FC<HomeHeroProps> = ({ data }) => {
           src={data.src}
           width={658}
           height={658}
-          className="max-h-50 md:max-h-110 xl:max-h-full w-full h-full rounded-3xl xl:rounded-[50px] object-cover"
+          className="h-full max-h-50 w-full rounded-3xl object-cover md:max-h-110 xl:max-h-full xl:rounded-[50px]"
           priority
         />
       </div>

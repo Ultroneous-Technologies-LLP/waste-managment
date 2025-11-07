@@ -18,7 +18,7 @@ const FAQ: FC<FAQsProps> = ({ data }) => {
       <div>
         <Title id="faq-title" title={data.title} className="text-center" />
         <p
-          className="max-w-221.5 w-full mx-auto text-sm xl:text-xl leading-normal text-center font-light py-6"
+          className="mx-auto w-full max-w-221.5 py-6 text-center text-sm leading-normal font-light xl:text-xl"
           aria-label="FAQ section description"
         >
           {data.description}
@@ -29,20 +29,17 @@ const FAQ: FC<FAQsProps> = ({ data }) => {
       <FAQS data={data.faq} />
 
       <div
-        className="mt-14 bg-primary-yellow max-w-164.5 w-full p-6 xl:p-12.5 rounded-3xl mx-auto"
+        className="bg-primary-yellow mx-auto mt-14 w-full max-w-164.5 rounded-3xl p-6 xl:p-12.5"
         role="region"
         aria-labelledby="faq-contact-title"
       >
-        <h3
-          id="faq-contact-title"
-          className="text-2xl xl:text-5xl leading-snug text-center"
-        >
+        <h3 id="faq-contact-title" className="text-center text-2xl leading-snug xl:text-5xl">
           {data.haveQuestions.title}
         </h3>
-        <p className="text-sm xl:text-xl leading-snug py-4 font-light text-center">
+        <p className="py-4 text-center text-sm leading-snug font-light xl:text-xl">
           {data.haveQuestions.description}
         </p>
-        <div className="w-fit mx-auto">
+        <div className="mx-auto w-fit">
           <Button aria-label={data.haveQuestions.buttonLabel}>
             {data.haveQuestions.buttonLabel}
           </Button>
