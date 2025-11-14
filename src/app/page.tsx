@@ -12,7 +12,7 @@ import {
   OurAchievements,
   TransformingWaste,
   WasteManagementServices,
-} from "@/components/home";
+} from "@/components";
 import data from "@/content/home-page-data.json";
 import { homeData } from "@/types/home-type";
 
@@ -29,7 +29,7 @@ const Home: FC = () => {
     ourProcessSection,
     transformingWasteSection,
     wasteManagementServicesSection,
-  }: homeData = data;
+  }: homeData = data as homeData;
   return (
     <>
       <HomeHero data={heroSection} />
