@@ -1,3 +1,3 @@
 export * from "./Container";
 
-export type { ContainerProps, SupportedTags } from "./type";
+export type { ContainerProps, SupportedTags } from "./types";

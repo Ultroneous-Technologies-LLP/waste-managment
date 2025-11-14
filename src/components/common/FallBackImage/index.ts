@@ -1,3 +1,3 @@
 export * from "./FallBackImage";
 
-export type { NextImageWithFallbackProps } from "./type";
+export type { NextImageWithFallbackProps } from "./types";

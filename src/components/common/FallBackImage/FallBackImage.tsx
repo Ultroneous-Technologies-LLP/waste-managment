@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, FC } from "react";
 
-import { NextImageWithFallbackProps } from "./type";
+import { NextImageWithFallbackProps } from "./types";
 
 const DEFAULT_FALLBACK = "/assets/images/fall-back-image.avif";
 
