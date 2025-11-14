@@ -1,9 +1,11 @@
-import { FC, useState } from "react";
+"use client";
+
 import Link from "next/link";
+import { FC, useState } from "react";
 
 import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
-import { getMoreUpdatesSection } from "@/types/home-type";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { getMoreUpdatesSection } from "@/types/home-type";
 
 interface GetMoreUpdatesProps {
   data: getMoreUpdatesSection;
@@ -16,33 +18,33 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
   const blogsToShow = isMobile && !showAll ? data.blogList.slice(0, 2) : data.blogList;
 
   return (
-    <Container className="py-20 xl:py-37.5" role="region" aria-labelledby="get-more-updates-title">
-      <Title id="get-more-updates-title" title={data.title} className="text-center" />
+    <Container aria-labelledby="get-more-updates-title" className="py-20 xl:py-37.5" role="region">
+      <Title className="text-center" id="get-more-updates-title" title={data.title} />
 
       <div
+        aria-label="Blog updates"
         className="grid gap-8 py-6 md:grid-cols-2 md:gap-6 md:py-8"
         role="list"
-        aria-label="Blog updates"
       >
         {/* Latest Blog */}
         <Link
+          aria-label={`Read latest blog: ${data.latestBlog.title}`}
           href={data.latestBlog.link}
           role="listitem"
-          aria-label={`Read latest blog: ${data.latestBlog.title}`}
         >
           <NextImageWithFallback
             alt={data.latestBlog.img.alt}
-            src={data.latestBlog.img.src}
-            width={658}
-            height={350}
             className="h-42.5 w-full object-cover md:h-87.5 md:rounded-3xl xl:h-92.5"
+            height={350}
+            src={data.latestBlog.img.src}
             title={data.latestBlog.img.alt}
+            width={658}
           />
           <p className="pt-4 pb-3 text-xs leading-normal xl:text-xl">{data.latestBlog.category}</p>
           <h3 className="text-xl leading-normal xl:text-4xl">{data.latestBlog.title}</h3>
           <p
-            className="line-clamp-2 h-14.5 overflow-hidden pt-1 pb-3 text-base leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 md:text-xs xl:h-14.5 xl:text-base"
             aria-label={`Blog summary: ${data.latestBlog.descriptions}`}
+            className="line-clamp-2 h-14.5 overflow-hidden pt-1 pb-3 text-base leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 md:text-xs xl:h-14.5 xl:text-base"
           >
             {data.latestBlog.descriptions}
           </p>
@@ -55,26 +57,26 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
         <div className="space-y-8">
           {blogsToShow.map((value) => (
             <Link
-              href={data.latestBlog.link}
+              aria-label={`Read blog: ${value.title}`}
               className="flex flex-col gap-4 md:flex-row"
+              href={data.latestBlog.link}
               key={value.id}
               role="listitem"
-              aria-label={`Read blog: ${value.title}`}
             >
               <NextImageWithFallback
                 alt={value.alt}
-                src={value.src}
-                width={260}
-                height={158}
                 className="w-full object-cover md:h-30 md:max-w-25 md:rounded-3xl xl:h-39.5 xl:max-w-65"
+                height={158}
+                src={value.src}
                 title={value.alt}
+                width={260}
               />
               <div className="w-full md:max-w-95.5">
                 <p className="pb-4 text-xs leading-normal">{value.category}</p>
                 <h3 className="text-xl leading-normal md:text-base xl:text-2xl">{value.title}</h3>
                 <p
-                  className="line-clamp-2 h-14.5 overflow-hidden pt-1 text-xs leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 xl:h-14.5 xl:text-base"
                   aria-label={`Blog summary: ${value.descriptions}`}
+                  className="line-clamp-2 h-14.5 overflow-hidden pt-1 text-xs leading-normal font-light text-ellipsis text-[#8D8D8D] md:h-11 xl:h-14.5 xl:text-base"
                 >
                   {value.descriptions}
                 </p>
@@ -87,12 +89,12 @@ const GetMoreUpdates: FC<GetMoreUpdatesProps> = ({ data }) => {
       <div className="mx-auto w-fit">
         {(!showAll && isMobile) || !isMobile ? (
           <Button
+            aria-label="Show more blog posts"
             onClick={() => {
               if (isMobile) {
                 setShowAll(true);
               }
             }}
-            aria-label={`Show more blog posts`}
           >
             {data.button.buttonLabel}
           </Button>

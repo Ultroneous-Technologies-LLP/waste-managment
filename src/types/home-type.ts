@@ -1,12 +1,12 @@
-export type heroSection = {
+export interface heroSection {
   title: string;
   description: string;
   buttonLabel: string;
   src: string;
   alt: string;
-};
+}
 
-export type aboutUsSection = {
+export interface aboutUsSection {
   title: string;
   descriptionWithBlackText: string;
   descriptionWithGreenText: string;
@@ -24,9 +24,9 @@ export type aboutUsSection = {
       title: string;
     };
   };
-};
+}
 
-export type wasteManagementServices = {
+export interface wasteManagementServices {
   title: string;
   description: string;
   services: {
@@ -36,9 +36,9 @@ export type wasteManagementServices = {
     alt: string;
     src: string;
   }[];
-};
+}
 
-export type industriesWeServeSection = {
+export interface industriesWeServeSection {
   mainTitle: string;
   services: {
     id: number;
@@ -53,15 +53,15 @@ export type industriesWeServeSection = {
   };
   title: string;
   animation: { id: number; src: string; alt: string }[];
-};
+}
 
-export type ourProcessSection = {
+export interface ourProcessSection {
   title: string;
   description: string;
   video: { videoSrc: string; posterSrc: string; alt: string };
-};
+}
 
-export type transformingWasteSection = {
+export interface transformingWasteSection {
   title: string;
   description: string;
   skills: {
@@ -71,9 +71,9 @@ export type transformingWasteSection = {
     alt: string;
     src: string;
   }[];
-};
+}
 
-export type citiesWeCoveredSection = {
+export interface citiesWeCoveredSection {
   title: string;
   cities: {
     id: number;
@@ -81,17 +81,17 @@ export type citiesWeCoveredSection = {
     alt: string;
     src: string;
   }[];
-};
+}
 
-export type drivingImpactSection = {
+export interface drivingImpactSection {
   title: string;
   sustainabilityMetrics: { id: number; title: string; number: string }[];
   button: {
     label: string;
   };
-};
+}
 
-export type faqSections = {
+export interface faqSections {
   title: string;
   description: string;
   faq: {
@@ -100,9 +100,9 @@ export type faqSections = {
     ans: string;
   }[];
   haveQuestions: { title: string; description: string; buttonLabel: string };
-};
+}
 
-export type getMoreUpdatesSection = {
+export interface getMoreUpdatesSection {
   title: string;
   latestBlog: {
     img: {
@@ -127,18 +127,18 @@ export type getMoreUpdatesSection = {
   button: {
     buttonLabel: string;
   };
-};
+}
 
-export type ourAchievementsSection = {
+export interface ourAchievementsSection {
   title: string;
   images: {
     id: number;
     src: string;
     alt: string;
   }[];
-};
+}
 
-export type homeData = {
+export interface homeData {
   heroSection: heroSection;
   aboutUsSection: aboutUsSection;
   wasteManagementServicesSection: wasteManagementServices;
@@ -150,4 +150,4 @@ export type homeData = {
   getMoreUpdatesSection: getMoreUpdatesSection;
   ourAchievementsSection: ourAchievementsSection;
   faqSections: faqSections;
-};
+}
