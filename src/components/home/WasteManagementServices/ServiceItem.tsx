@@ -1,76 +1,68 @@
 "use client";
 
-import { useState, KeyboardEvent } from "react";
-import { ArrowWithBackGround } from "@/components/icons";
-import { NextImageWithFallback } from "@/components/common";
+import { useState, KeyboardEvent, FC } from "react";
 
-interface ServiceItemProps {
-  value: {
-    id: number;
-    title: string;
-    description: string;
-    src: string;
-    alt: string;
-  };
-}
+import { NextImageWithFallback, ArrowWithBackGround } from "@/components";
+import { getImageUrl } from "@/utils";
 
-const ServiceItem = ({ value }: ServiceItemProps) => {
+import { ServiceItemProps } from "./types";
+
+const MOUSE_POSITION_100 = 100;
+const MOUSE_POSITION_20 = 20;
+
+const ServiceItem: FC<ServiceItemProps> = ({ data }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // For keyboard accessibility
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
     if (e.key === "Enter" || e.key === " ") {
-      setHovered((prev) => !prev);
+      setIsHovered((prev) => !prev);
     }
   };
 
   return (
     <div
+      aria-labelledby={`service-title-${data.id}`}
       className="relative flex cursor-pointer items-center justify-between gap-3 border-b border-[#D6D6D6] py-6 md:gap-0 md:py-11.5 xl:py-5"
-      role="listitem"
-      aria-labelledby={`service-title-${value.id}`}
-      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onKeyDown={handleKeyDown}
+      role="listitem"
+      tabIndex={0}
     >
       <h3
-        id={`service-title-${value.id}`}
         className="w-full max-w-68 text-xl/snug md:max-w-100 md:text-2xl/normal xl:max-w-75 xl:text-xl/snug"
+        id={`service-title-${data.id}`}
       >
-        {value.title}
+        {data.title}
       </h3>
 
       <p className="hidden w-full max-w-136.5 text-xl/snug font-light text-[#6F6F6F] xl:block">
-        {value.description}
+        {data.description}
       </p>
-
       <ArrowWithBackGround
+        aria-hidden="true"
         className="bg-primary-yellow size-14.5 border-transparent"
-        width={22}
         height={16}
         svgClassName="rotate-[130deg] text-black"
-        aria-hidden="true"
+        width={22}
       />
-
-      {/* Floating image follows mouse over entire row */}
-      {hovered && (
+      {isHovered && (
         <NextImageWithFallback
-          alt={value.alt}
-          src={value.src}
-          width={203}
-          height={237}
+          alt={data.image.alternativeText}
           className="pointer-events-none absolute z-50 transition-all duration-100 xl:block"
+          height={237}
+          src={getImageUrl(data.image.url)}
           style={{
-            left: mousePos.x + 20,
-            top: mousePos.y - 100,
+            left: mousePos.x + MOUSE_POSITION_20,
+            top: mousePos.y - MOUSE_POSITION_100,
           }}
-          title={value.alt}
+          title={data.image.alternativeText}
+          width={203}
         />
       )}
     </div>

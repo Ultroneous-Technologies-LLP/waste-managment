@@ -6,13 +6,12 @@ import IndustriesWeServe from "./IndustriesWeServe";
 import OurAchievements from "./OurAchievements";
 import OurProcess from "./OurProcess";
 import TransformingWaste from "./TransformingWaste";
-import WasteManagementServices from "./WasteManagementServices";
 
 export * from "./HomeHero";
 export * from "./AboutUs";
+export * from "./WasteManagementServices";
 
 export {
-  WasteManagementServices,
   IndustriesWeServe,
   OurProcess,
   TransformingWaste,
