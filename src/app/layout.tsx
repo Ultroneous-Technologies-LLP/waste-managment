@@ -9,6 +9,7 @@ import LayoutClient from "./LayoutClient";
 import { LayoutDataType } from "./types";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: "Waste Management Landing Page Design | Eco-Friendly UI Concept",
   description:
     "Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites.",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     title: "Waste Management Landing Page Design | Eco-Friendly UI Concept",
     description:
       "Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites.",
-    url: "https://www.mywebsite.example/",
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     images: [
       {
         url: "/favicon.png",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     creator: "@mywebsite",
   },
   alternates: {
-    canonical: "https://www.mywebsite.example/",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL,
   },
   icons: {
     icon: [

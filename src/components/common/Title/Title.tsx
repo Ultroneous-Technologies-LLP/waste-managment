@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { FC } from "react";
 
-import { TitleProps } from "./type";
+import { TitleProps } from "./types";
 
 export const Title: FC<TitleProps> = ({ className = "", title, isMainTitle = false, id }) => {
   const Tag = isMainTitle ? "h1" : "h2";

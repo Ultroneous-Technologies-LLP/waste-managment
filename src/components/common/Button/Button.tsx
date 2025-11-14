@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { FC } from "react";
 
-import { ButtonOnlyProps, ButtonProps, LinkOnlyProps } from "./type";
+import { ButtonOnlyProps, ButtonProps, LinkOnlyProps } from "./types";
 
 export const Button: FC<ButtonProps> = (props) => {
   const { as, className, children, ...rest } = props;

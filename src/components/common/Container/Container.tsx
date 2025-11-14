@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ElementType, forwardRef } from "react";
 
-import { ContainerProps, SupportedTags } from "./type";
+import { ContainerProps, SupportedTags } from "./types";
 
 export const Container = forwardRef<HTMLElement, ContainerProps<SupportedTags>>(
   ({ as, backgroundClassName = "", className = "", children, ...rest }, ref) => {
