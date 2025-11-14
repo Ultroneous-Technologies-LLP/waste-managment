@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import { HeroSectionProps } from "@/components";
+import { AboutUsSectionProps, HeroSectionProps } from "@/components";
 import { footer, header } from "@/types/layout-type";
 
 export interface LayoutDataType {
@@ -14,5 +14,6 @@ export interface LayoutClientProps extends PropsWithChildren {
 }
 
 export interface HomePageDataTypes {
+  aboutUs: AboutUsSectionProps;
   hero: HeroSectionProps;
 }

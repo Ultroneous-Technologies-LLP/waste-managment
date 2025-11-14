@@ -1,4 +1,3 @@
-import AboutUs from "./AboutUs";
 import CitiesWeCovered from "./CitiesWeCovered";
 import DrivingImpact from "./DrivingImpact";
 import FAQ from "./FAQ";
@@ -10,9 +9,9 @@ import TransformingWaste from "./TransformingWaste";
 import WasteManagementServices from "./WasteManagementServices";
 
 export * from "./HomeHero";
+export * from "./AboutUs";
 
 export {
-  AboutUs,
   WasteManagementServices,
   IndustriesWeServe,
   OurProcess,
