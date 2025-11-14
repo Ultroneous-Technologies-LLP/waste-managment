@@ -1,10 +1,15 @@
 {
-  "heroSection": {
+  "hero": {
     "title": "Keep the environment clean and unharmed",
     "description": "Join us in protecting our planet by ensuring cleaner surroundings. Together, we can reduce waste, promote recycling, and preserve nature for future generations.",
-    "buttonLabel": "Request a pick up",
-    "src": "/assets/images/home-hero.avif",
-    "alt": "photo-shoot-depicting-recycling-workshop-world-environmental-education-day"
+    "button": {
+      "href": "/",
+      "label": "Request a pick up"
+    },
+    "image": {
+      "alternativeText": "photo-shoot-depicting-recycling-workshop-world-environmental-education-day",
+      "url": "/assets/images/home-hero.avif"
+    }
   },
   "aboutUsSection": {
     "title": "About SZW",
