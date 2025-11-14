@@ -1,67 +1,72 @@
-"use client";
+import { Metadata } from "next";
+import { FC, PropsWithChildren } from "react";
 
-import clsx from "clsx";
-import { Lexend } from "next/font/google";
-import { useState, useEffect, FC, PropsWithChildren } from "react";
-
-import { Footer, Header, Sidebar } from "@/components/layout";
-import { RESPONSIVE_SIZE_LG } from "@/constant/constant";
+import { lexend } from "@/constant";
 import data from "@/content/layout.json";
-import { layoutData } from "@/types/layout-type";
-import "../styles/globals.css";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
+import "../styles/globals.css";
+import LayoutClient from "./LayoutClient";
+import { LayoutDataType } from "./types";
+
+export const metadata: Metadata = {
+  title: "Waste Management Landing Page Design | Eco-Friendly UI Concept",
+  description:
+    "Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites.",
+  keywords: [
+    "waste management landing page",
+    "eco-friendly website design",
+    "sustainability UI design",
+    "green business web template",
+    "environmental services website",
+    "clean energy landing page",
+    "corporate sustainability design",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "My Website",
+    title: "Waste Management Landing Page Design | Eco-Friendly UI Concept",
+    description:
+      "Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites.",
+    url: "https://www.mywebsite.example/",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 1200,
+        height: 630,
+        alt: "Eco-friendly Waste Management Landing Page Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Waste Management Landing Page Design | Eco-Friendly UI Concept",
+    description:
+      "Clean and modern waste management landing page UI. Eco-friendly design concept for environmental services, sustainability, and green business websites.",
+    images: ["/favicon.png"],
+    creator: "@mywebsite",
+  },
+  alternates: {
+    canonical: "https://www.mywebsite.example/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon.png", sizes: "180x180" }],
+  },
+};
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  const { footer, header } = data as layoutData;
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = isSidebarOpen ? "hidden" : "auto";
-  }, [isSidebarOpen]);
-
-  useEffect(() => {
-    const handleResize = (): void => {
-      if (window.innerWidth < RESPONSIVE_SIZE_LG) {
-        return;
-      }
-      setIsSidebarOpen(false);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return (): void => window.removeEventListener("resize", handleResize);
-  }, []);
+  const { footer, header } = data as LayoutDataType;
 
   return (
     <html className="scroll-smooth" lang="en">
       <body className={`${lexend.variable} antialiased`}>
-        <div className="relative min-h-screen">
-          <Sidebar
-            data={header}
-            onClick={() => setIsSidebarOpen(false)}
-            sidebarOpen={isSidebarOpen}
-          />
-          <div
-            className={clsx("transition-transform duration-300 ease-in-out", {
-              "min-h-screen -translate-x-66": isSidebarOpen,
-            })}
-          >
-            <Header
-              data={header}
-              onMenuClose={() => setIsSidebarOpen(false)}
-              onMenuOpen={() => setIsSidebarOpen(true)}
-              sidebarOpen={isSidebarOpen}
-            />
-            <main>{children}</main>
-            <Footer data={footer} />
-          </div>
-        </div>
+        <LayoutClient footer={footer} header={header}>
+          {children}
+        </LayoutClient>
       </body>
     </html>
   );

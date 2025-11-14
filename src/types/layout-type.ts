@@ -1,4 +1,4 @@
-export type header = {
+export interface header {
   headerLogo: {
     src: string;
     alt: string;
@@ -13,9 +13,9 @@ export type header = {
     label: string;
     ariaLabel: string;
   };
-};
+}
 
-export type footer = {
+export interface footer {
   footerLogo: {
     src: string;
     alt: string;
@@ -51,9 +51,4 @@ export type footer = {
     label: string;
   }[];
   footerBottomImage: { id: number; src: string; alt: string }[];
-};
-
-export type layoutData = {
-  header: header;
-  footer: footer;
-};
+}
