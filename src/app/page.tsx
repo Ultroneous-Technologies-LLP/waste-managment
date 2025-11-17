@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { AboutUs, HomeHero } from "@/components";
+import { AboutUs, HomeHero, WasteManagementServices } from "@/components";
 import fallbackHomeData from "@/content/home-page-data.json";
 import { axiosInstance } from "@/utils/axios";
 
@@ -21,19 +21,19 @@ async function HomeData(): Promise<HomePageDataTypes> {
 const Home: FC = async () => {
   const strapiData = await HomeData();
 
-  const { hero, aboutUs } = strapiData;
+  const { hero, aboutUs, wasteManagementServices } = strapiData;
 
   return (
     <>
       <HomeHero {...hero} />
       <AboutUs {...aboutUs} />
+      <WasteManagementServices {...wasteManagementServices} />
     </>
   );
 };
 
 export default Home;
 
-//       <WasteManagementServices data={wasteManagementServicesSection} />
 //       <IndustriesWeServe data={industriesWeServeSection} />
 //       <OurProcess data={ourProcessSection} />
 //       <TransformingWaste data={transformingWasteSection} />

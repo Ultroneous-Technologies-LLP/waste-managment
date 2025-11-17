@@ -38,44 +38,54 @@
       }
     ]
   },
-  "wasteManagementServicesSection": {
+  "wasteManagementServices": {
     "title": "A wide range of waste Management services",
     "description": "We provide innovative and sustainable waste management services designed to meet the needs of organizations, institutions, and communities. Our goal is to create a cleaner, greener tomorrow.",
-    "services": [
+    "rangeOfWasteManagementServices": [
       {
         "id": 1,
         "title": "Waste Management Services",
         "description": "Responsible & sustainable waste management solutions for bulk waste generators like corporate parks, universities, residential complexs & more.",
-        "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        "image": {
+          "alternativeText": "recycle concept with woman collecting trash",
+          "url": "/assets/images/home/recycle-concept-with-woman-collecting-trash.avif"
+        }
       },
       {
         "id": 2,
         "title": "E-Waste Management",
         "description": "Specialized solutions for safe disposal and recycling of electronic waste, ensuring compliance with environmental regulations.",
-        "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/e-waste-management.avif"
+        "image": {
+          "alternativeText": "recycle concept with woman collecting trash",
+          "url": "/assets/images/home/e-waste-management.avif"
+        }
       },
       {
         "id": 3,
         "title": "EPR",
         "description": "Helping brands and producers meet their EPR obligations through sustainable collection, recycling, and reporting mechanisms.",
-        "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/epr.avif"
+        "image": {
+          "alternativeText": "recycle concept with woman collecting trash",
+          "url": "/assets/images/home/epr.avif"
+        }
       },
       {
         "id": 4,
         "title": "Consulting",
         "description": "Expert advisory services to guide organizations in adopting eco-friendly waste management strategies and policies.",
-        "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/consulting.avif"
+        "image": {
+          "alternativeText": "recycle concept with woman collecting trash",
+          "url": "/assets/images/home/consulting.avif"
+        }
       },
       {
         "id": 5,
         "title": "Training & Development",
         "description": "Workshops and training programs to raise awareness and build capacity for effective waste management practices.",
-        "alt": "recycle concept with woman collecting trash",
-        "src": "/assets/images/home/training-development.avif"
+        "image": {
+          "alternativeText": "recycle concept with woman collecting trash",
+          "url": "/assets/images/home/training-development.avif"
+        }
       }
     ]
   },
