@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 import {
   AboutUsSectionProps,
   CitiesWeCoveredSectionProps,
+  DrivingImpactSectionProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurProcessSectionProps,
@@ -24,6 +25,7 @@ export interface LayoutClientProps extends PropsWithChildren {
 export interface HomePageDataTypes {
   aboutUs: AboutUsSectionProps;
   citiesWeCovered: CitiesWeCoveredSectionProps;
+  drivingImpact: DrivingImpactSectionProps;
   hero: HeroSectionProps;
   industriesWeServe: IndustriesWeServeSectionProps;
   ourProcess: OurProcessSectionProps;
