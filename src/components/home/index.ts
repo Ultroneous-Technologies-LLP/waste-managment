@@ -1,4 +1,3 @@
-import FAQ from "./FAQ";
 import GetMoreUpdates from "./GetMoreUpdates";
 import OurAchievements from "./OurAchievements";
 
@@ -10,5 +9,6 @@ export * from "./OurProcess";
 export * from "./CitiesWeCovered";
 export * from "./TransformingWaste";
 export * from "./DrivingImpact";
+export * from "./FAQ";
 
-export { GetMoreUpdates, OurAchievements, FAQ };
+export { GetMoreUpdates, OurAchievements };

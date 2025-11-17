@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
 import { ArrowWithBackGround } from "@/components/icons";
-import { BASE_URL, getImageUrl } from "@/utils";
+import { getImageUrl } from "@/utils";
 
 import { HeroSectionProps } from "./types";
 

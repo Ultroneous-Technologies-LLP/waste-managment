@@ -4,6 +4,7 @@ import {
   AboutUsSectionProps,
   CitiesWeCoveredSectionProps,
   DrivingImpactSectionProps,
+  FaqSectionsProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurProcessSectionProps,
@@ -26,6 +27,7 @@ export interface HomePageDataTypes {
   aboutUs: AboutUsSectionProps;
   citiesWeCovered: CitiesWeCoveredSectionProps;
   drivingImpact: DrivingImpactSectionProps;
+  faq: FaqSectionsProps;
   hero: HeroSectionProps;
   industriesWeServe: IndustriesWeServeSectionProps;
   ourProcess: OurProcessSectionProps;
