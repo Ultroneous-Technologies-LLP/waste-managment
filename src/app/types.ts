@@ -6,6 +6,7 @@ import {
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurProcessSectionProps,
+  TransformingWasteSectionProps,
   WasteManagementServicesProps,
 } from "@/components";
 import { footer, header } from "@/types/layout-type";
@@ -26,5 +27,6 @@ export interface HomePageDataTypes {
   hero: HeroSectionProps;
   industriesWeServe: IndustriesWeServeSectionProps;
   ourProcess: OurProcessSectionProps;
+  transformingWaste: TransformingWasteSectionProps;
   wasteManagementServices: WasteManagementServicesProps;
 }

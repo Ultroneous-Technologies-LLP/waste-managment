@@ -7,6 +7,7 @@ import {
   HomeHero,
   IndustriesWeServe,
   OurProcess,
+  TransformingWaste,
   WasteManagementServices,
 } from "@/components";
 import fallbackHomeData from "@/content/home-page-data.json";
@@ -29,8 +30,15 @@ async function HomeData(): Promise<HomePageDataTypes> {
 const Home: FC = async () => {
   const strapiData = await HomeData();
 
-  const { hero, aboutUs, wasteManagementServices, industriesWeServe, ourProcess, citiesWeCovered } =
-    strapiData;
+  const {
+    hero,
+    aboutUs,
+    wasteManagementServices,
+    industriesWeServe,
+    ourProcess,
+    citiesWeCovered,
+    transformingWaste,
+  } = strapiData;
 
   return (
     <>
@@ -39,6 +47,7 @@ const Home: FC = async () => {
       <WasteManagementServices {...wasteManagementServices} />
       <IndustriesWeServe {...industriesWeServe} />
       <OurProcess {...ourProcess} />
+      <TransformingWaste {...transformingWaste} />
       <CitiesWeCovered {...citiesWeCovered} />
     </>
   );
@@ -46,7 +55,6 @@ const Home: FC = async () => {
 
 export default Home;
 
-//       <TransformingWaste data={transformingWasteSection} />
 //       <DrivingImpact data={drivingImpactSection} />
 //       <FAQ data={faqSections} />
 //       <GetMoreUpdates data={getMoreUpdatesSection} />
