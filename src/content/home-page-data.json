@@ -194,51 +194,63 @@
       "alternativeText": "Demo video"
     }
   },
-  "transformingWasteSection": {
+  "transformingWaste": {
     "title": "Transforming Waste into Resources",
     "description": "We believe waste is not the end, but the beginning of new possibilities. By recycling and reusing, we convert waste into valuable resources that benefit both businesses and communities.",
-    "skills": [
+    "transformingWastesKills": [
       {
         "id": 1,
         "title": "10+ year expertise",
         "description": "Over a decade of experience in delivering innovative and sustainable waste management solutions.",
-        "alt": "expertise",
-        "src": "/assets/images/home/expertise.svg"
+        "image": {
+          "alternativeText": "expertise",
+          "url": "/assets/images/home/expertise.svg"
+        }
       },
       {
         "id": 2,
         "title": "Certified",
         "description": "Recognized and accredited by industry-leading certification bodies for our high standards of operation.",
-        "alt": "Certified",
-        "src": "/assets/images/home/certified.svg"
+        "image": {
+          "alternativeText": "Certified",
+          "url": "/assets/images/home/certified.svg"
+        }
       },
       {
         "id": 3,
         "title": "Transparency",
         "description": "Clear, reliable processes with complete accountability at every stage of waste management.",
-        "alt": "Transparency",
-        "src": "/assets/images/home/transparency.svg"
+        "image": {
+          "alternativeText": "Transparency",
+          "url": "/assets/images/home/transparency.svg"
+        }
       },
       {
         "id": 4,
         "title": "Compliant with laws",
         "description": "Strict adherence to national and international environmental regulations.",
-        "alt": "Compliant with laws",
-        "src": "/assets/images/home/compliant-with-laws.svg"
+        "image": {
+          "alternativeText": "Compliant with laws",
+          "url": "/assets/images/home/compliant-with-laws.svg"
+        }
       },
       {
         "id": 5,
         "title": "Professional team",
         "description": "A highly skilled and dedicated team committed to sustainable practices",
-        "alt": "Professional team",
-        "src": "/assets/images/home/professional-team.svg"
+        "image": {
+          "alternativeText": "Professional team",
+          "url": "/assets/images/home/professional-team.svg"
+        }
       },
       {
         "id": 6,
         "title": "Safe Careers",
         "description": "Promoting safe working conditions and career growth opportunities in the waste management sector.",
-        "alt": "Safe Careers",
-        "src": "/assets/images/home/safe-careers.svg"
+        "image": {
+          "alternativeText": "Safe Careers",
+          "url": "/assets/images/home/safe-careers.svg"
+        }
       }
     ]
   },
