@@ -3,6 +3,7 @@ import { FC } from "react";
 
 import {
   AboutUs,
+  CitiesWeCovered,
   HomeHero,
   IndustriesWeServe,
   OurProcess,
@@ -28,7 +29,8 @@ async function HomeData(): Promise<HomePageDataTypes> {
 const Home: FC = async () => {
   const strapiData = await HomeData();
 
-  const { hero, aboutUs, wasteManagementServices, industriesWeServe, ourProcess } = strapiData;
+  const { hero, aboutUs, wasteManagementServices, industriesWeServe, ourProcess, citiesWeCovered } =
+    strapiData;
 
   return (
     <>
@@ -37,6 +39,7 @@ const Home: FC = async () => {
       <WasteManagementServices {...wasteManagementServices} />
       <IndustriesWeServe {...industriesWeServe} />
       <OurProcess {...ourProcess} />
+      <CitiesWeCovered {...citiesWeCovered} />
     </>
   );
 };
@@ -44,7 +47,6 @@ const Home: FC = async () => {
 export default Home;
 
 //       <TransformingWaste data={transformingWasteSection} />
-//       <CitiesWeCovered data={citiesWeCoveredSection} />
 //       <DrivingImpact data={drivingImpactSection} />
 //       <FAQ data={faqSections} />
 //       <GetMoreUpdates data={getMoreUpdatesSection} />

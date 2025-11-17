@@ -242,62 +242,80 @@
       }
     ]
   },
-  "citiesWeCoveredSection": {
+  "citiesWeCovered": {
     "title": "Cities we covered",
     "cities": [
       {
         "id": 1,
         "cityName": "Bangalore",
-        "alt": "expertise",
-        "src": "/assets/images/home/bangalore.avif"
+        "image": {
+          "alternativeText": "expertise",
+          "url": "/assets/images/home/bangalore.avif"
+        }
       },
       {
         "id": 2,
         "cityName": "Chennai",
-        "alt": "Certified",
-        "src": "/assets/images/home/chennai.avif"
+        "image": {
+          "alternativeText": "Certified",
+          "url": "/assets/images/home/chennai.avif"
+        }
       },
       {
         "id": 3,
         "cityName": "Mumbai",
-        "alt": "Transparency",
-        "src": "/assets/images/home/mumbai.avif"
+        "image": {
+          "alternativeText": "Transparency",
+          "url": "/assets/images/home/mumbai.avif"
+        }
       },
       {
         "id": 4,
         "cityName": "Goa",
-        "alt": "Compliant with laws",
-        "src": "/assets/images/home/goa.avif"
+        "image": {
+          "alternativeText": "Compliant with laws",
+          "url": "/assets/images/home/goa.avif"
+        }
       },
       {
         "id": 5,
         "cityName": "Pune",
-        "alt": "Professional team",
-        "src": "/assets/images/home/pune.avif"
+        "image": {
+          "alternativeText": "Professional team",
+          "url": "/assets/images/home/pune.avif"
+        }
       },
       {
         "id": 6,
         "cityName": "Delhi NCR",
-        "alt": "Safe Careers",
-        "src": "/assets/images/home/delhi.avif"
+        "image": {
+          "alternativeText": "Safe Careers",
+          "url": "/assets/images/home/delhi.avif"
+        }
       },
       {
         "id": 7,
         "cityName": "Ahmadabad",
-        "alt": "Compliant with laws",
-        "src": "/assets/images/home/ahmadabad.avif"
+        "image": {
+          "alternativeText": "Compliant with laws",
+          "url": "/assets/images/home/ahmadabad.avif"
+        }
       },
       {
         "id": 8,
         "cityName": "Hyderabad",
-        "alt": "Professional team",
-        "src": "/assets/images/home/hyderabad.avif"
+        "image": {
+          "alternativeText": "Professional team",
+          "url": "/assets/images/home/hyderabad.avif"
+        }
       },
       {
         "id": 9,
         "cityName": "Jaipur",
-        "alt": "Safe Careers",
-        "src": "/assets/images/home/jaipur.avif"
+        "image": {
+          "alternativeText": "Safe Careers",
+          "url": "/assets/images/home/jaipur.avif"
+        }
       }
     ]
   },
