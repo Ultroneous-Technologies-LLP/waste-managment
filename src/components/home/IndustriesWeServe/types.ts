@@ -1,19 +1,19 @@
 import { Button, Image } from "@/types";
 
-export interface IndustriesWeServedServices {
+export interface IndustriesWeServedService {
   id: number;
   title: string;
 }
 
-export interface AnimationImages {
+export interface AnimationImage {
   image: Image[];
 }
 
 export interface IndustriesWeServeSectionProps {
   button: Button;
   image: Image;
-  industriesWeServeAnimation: AnimationImages;
-  industriesWeServedServices: IndustriesWeServedServices[];
+  industriesWeServeAnimation: AnimationImage;
+  industriesWeServedServices: IndustriesWeServedService[];
   mainTitle: string;
   title: string;
 }

@@ -182,13 +182,16 @@
       ]
     }
   },
-  "ourProcessSection": {
+  "ourProcess": {
     "title": "Our Process",
     "description": "Our process is designed to minimize waste and maximize recycling. From collection to segregation, treatment, and reuse, we ensure every step contributes to environmental sustainability.",
     "video": {
-      "posterSrc": "/assets/images/home/video-poster.avif",
-      "alt": "Demo video",
-      "videoSrc": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "alternativeText": "Demo video",
+      "url": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    "videoPoster": {
+      "url": "/assets/images/home/video-poster.avif",
+      "alternativeText": "Demo video"
     }
   },
   "transformingWasteSection": {

@@ -1,7 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC } from "react";
 
-import { AboutUs, HomeHero, IndustriesWeServe, WasteManagementServices } from "@/components";
+import {
+  AboutUs,
+  HomeHero,
+  IndustriesWeServe,
+  OurProcess,
+  WasteManagementServices,
+} from "@/components";
 import fallbackHomeData from "@/content/home-page-data.json";
 import { axiosInstance } from "@/utils/axios";
 
@@ -22,7 +28,7 @@ async function HomeData(): Promise<HomePageDataTypes> {
 const Home: FC = async () => {
   const strapiData = await HomeData();
 
-  const { hero, aboutUs, wasteManagementServices, industriesWeServe } = strapiData;
+  const { hero, aboutUs, wasteManagementServices, industriesWeServe, ourProcess } = strapiData;
 
   return (
     <>
@@ -30,13 +36,13 @@ const Home: FC = async () => {
       <AboutUs {...aboutUs} />
       <WasteManagementServices {...wasteManagementServices} />
       <IndustriesWeServe {...industriesWeServe} />
+      <OurProcess {...ourProcess} />
     </>
   );
 };
 
 export default Home;
 
-//       <OurProcess data={ourProcessSection} />
 //       <TransformingWaste data={transformingWasteSection} />
 //       <CitiesWeCovered data={citiesWeCoveredSection} />
 //       <DrivingImpact data={drivingImpactSection} />
