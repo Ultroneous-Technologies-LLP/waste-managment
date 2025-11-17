@@ -331,7 +331,7 @@
       }
     ]
   },
-  "drivingImpactSection": {
+  "drivingImpact": {
     "title": "Driving impact: Connect with us today",
     "sustainabilityMetrics": [
       { "id": 1, "title": "MT of waste managed", "number": "42,122" },

@@ -4,6 +4,7 @@ import { FC } from "react";
 import {
   AboutUs,
   CitiesWeCovered,
+  DrivingImpact,
   HomeHero,
   IndustriesWeServe,
   OurProcess,
@@ -38,6 +39,7 @@ const Home: FC = async () => {
     ourProcess,
     citiesWeCovered,
     transformingWaste,
+    drivingImpact,
   } = strapiData;
 
   return (
@@ -49,6 +51,7 @@ const Home: FC = async () => {
       <OurProcess {...ourProcess} />
       <TransformingWaste {...transformingWaste} />
       <CitiesWeCovered {...citiesWeCovered} />
+      <DrivingImpact {...drivingImpact} />
     </>
   );
 };
