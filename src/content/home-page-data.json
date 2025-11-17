@@ -347,40 +347,42 @@
       }
     ],
     "button": {
-      "label": "Get in touch"
+      "label": "Get in touch",
+      "href": "/",
+      "ariaLabel": "Get in touch"
     }
   },
-  "faqSections": {
+  "faq": {
     "title": "Frequently Asked Questions",
     "description": "Have questions about eco-friendly practices, recycling, or waste disposal? Explore our FAQs to find clear answers and practical solutions.",
-    "faq": [
+    "faqItem": [
       {
-        "id": 1,
+        "id": 7,
         "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       },
       {
-        "id": 2,
+        "id": 8,
         "questions": "Why Are The Recycled Papers A Shade Of Brown?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       },
       {
-        "id": 3,
+        "id": 9,
         "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       },
       {
-        "id": 4,
+        "id": 10,
         "questions": "How Do I Place Orders In Bulk?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       },
       {
-        "id": 5,
+        "id": 11,
         "questions": "Why Are Eco-Friendly Products Slightly More Expensive Than Regular Alternatives?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       },
       {
-        "id": 6,
+        "id": 12,
         "questions": "How Do I Place Orders In Bulk?",
         "ans": "Lorem ipsum dolor sit amet consectetur. Semper dictum ac vulputate eget mauris. Arcu pulvinar tincidunt massa ultricies odio eu eget vel. Ac nibh volutpat purus in at."
       }
@@ -388,7 +390,11 @@
     "haveQuestions": {
       "title": "Still have Questions?",
       "description": "Couldn’t find what you were looking for? Our team is here to help you with customized waste management solutions and expert advice.",
-      "buttonLabel": "Get in touch"
+      "button": {
+        "label": "Get in touch",
+        "href": "/",
+        "ariaLabel": "Get in touch"
+      }
     }
   },
   "getMoreUpdatesSection": {

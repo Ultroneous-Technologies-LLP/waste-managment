@@ -1,20 +1,19 @@
 "use client";
+import clsx from "clsx";
 import { FC, useState, KeyboardEvent } from "react";
-import { faqSections } from "@/types/home-type";
+
 import { ArrowWithBackGround } from "@/components/icons";
 
-interface FAQSProps {
-  data: faqSections["faq"];
-}
+import { FaqItemsProps } from "./types";
 
-const FAQS: FC<FAQSProps> = ({ data }) => {
+const FAQItems: FC<FaqItemsProps> = ({ data }) => {
   const [openId, setOpenId] = useState<number | null>(null);
 
-  const handleToggle = (id: number) => {
+  const handleToggle = (id: number): void => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>, id: number) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>, id: number): void => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       handleToggle(id);
@@ -22,48 +21,47 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
   };
 
   return (
-    <div className="space-y-3 pt-6" role="list" aria-label="Frequently asked questions">
+    <div aria-label="Frequently asked questions" className="space-y-3 pt-6" role="list">
       {data.map((faq) => {
         const isOpen = openId === faq.id;
         return (
           <div
-            key={faq.id}
             className="rounded-3xl bg-white p-4 md:rounded-4xl xl:p-6"
+            key={faq.id}
             role="listitem"
           >
-            {/* Button-like header */}
             <div
-              role="button"
-              tabIndex={0}
-              aria-expanded={isOpen}
               aria-controls={`faq-answer-${faq.id}`}
+              aria-expanded={isOpen}
+              className="flex cursor-pointer items-center justify-between gap-4"
               id={`faq-question-${faq.id}`}
               onClick={() => handleToggle(faq.id)}
               onKeyDown={(e) => handleKeyDown(e, faq.id)}
-              className="flex cursor-pointer items-center justify-between gap-4"
+              role="button"
+              tabIndex={0}
             >
               <h3 className="w-full max-w-63 text-base md:max-w-154 xl:max-w-304.5 xl:text-2xl/7.5">
                 {faq.questions}
               </h3>
               <ArrowWithBackGround
-                className="bg-primary-yellow size-14.5 border-transparent transition-transform duration-500"
-                width={22}
-                height={16}
-                svgClassName={`${
-                  isOpen ? "rotate-90" : "-rotate-90"
-                } text-black transition-transform duration-500`}
                 aria-hidden="true"
+                className="bg-primary-yellow size-14.5 border-transparent transition-transform duration-500"
+                height={16}
+                svgClassName={clsx(
+                  "text-black transition-transform duration-500",
+                  isOpen ? "rotate-90" : "-rotate-90"
+                )}
+                width={22}
               />
             </div>
-
-            {/* Expandable answer */}
             <div
+              aria-labelledby={`faq-question-${faq.id}`}
+              className={clsx(
+                "overflow-hidden transition-all duration-500 ease-in-out",
+                isOpen ? "max-h-96 pt-3 opacity-100" : "max-h-0 opacity-0"
+              )}
               id={`faq-answer-${faq.id}`}
               role="region"
-              aria-labelledby={`faq-question-${faq.id}`}
-              className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                isOpen ? "max-h-96 pt-3 opacity-100" : "max-h-0 opacity-0"
-              }`}
             >
               <p className="text-base">{faq.ans}</p>
             </div>
@@ -74,4 +72,4 @@ const FAQS: FC<FAQSProps> = ({ data }) => {
   );
 };
 
-export default FAQS;
+export default FAQItems;

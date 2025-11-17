@@ -5,6 +5,7 @@ import {
   AboutUs,
   CitiesWeCovered,
   DrivingImpact,
+  FAQ,
   HomeHero,
   IndustriesWeServe,
   OurProcess,
@@ -40,6 +41,7 @@ const Home: FC = async () => {
     citiesWeCovered,
     transformingWaste,
     drivingImpact,
+    faq,
   } = strapiData;
 
   return (
@@ -52,13 +54,12 @@ const Home: FC = async () => {
       <TransformingWaste {...transformingWaste} />
       <CitiesWeCovered {...citiesWeCovered} />
       <DrivingImpact {...drivingImpact} />
+      <FAQ {...faq} />
     </>
   );
 };
 
 export default Home;
 
-//       <DrivingImpact data={drivingImpactSection} />
-//       <FAQ data={faqSections} />
 //       <GetMoreUpdates data={getMoreUpdatesSection} />
 //       <OurAchievements data={ourAchievementsSection} />
