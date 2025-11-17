@@ -2,14 +2,19 @@
 
 import { FC } from "react";
 
-import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
-import { industriesWeServeSection } from "@/types/home-type";
+import { Button, Container, NextImageWithFallback, Title } from "@/components";
+import { getImageUrl } from "@/utils";
 
-interface IndustriesWeServe {
-  data: industriesWeServeSection;
-}
+import { IndustriesWeServeSectionProps } from "./types";
 
-const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
+export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
+  button,
+  image,
+  mainTitle,
+  industriesWeServedServices,
+  industriesWeServeAnimation,
+  title,
+}) => (
   <>
     <Container
       aria-labelledby="industries-title"
@@ -18,27 +23,18 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
       id="industries"
       role="region"
     >
-      {/* Left Section - Title and Services */}
       <div className="col-start-1 col-end-2 row-start-1 row-end-2">
-        <Title className="text-center xl:text-start" id="industries-title" title={data.mainTitle} />
+        <Title className="text-center xl:text-start" id="industries-title" title={mainTitle} />
         <div
           aria-label="Industries we serve"
           className="flex flex-wrap justify-center gap-2 pt-6 xl:justify-start xl:py-8"
           role="list"
         >
-          {data.services.map((value) => (
+          {industriesWeServedServices.map((value) => (
             <h3
               aria-label={`Industry: ${value.title}`}
               className="cursor-pointer rounded-full bg-white p-2.5 text-xs leading-normal font-light text-black select-none md:p-6 md:text-2xl"
               key={value.title}
-              onClick={() => console.log(`Clicked ${value.title}`)} // Replace with your action
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  console.log(`Clicked ${value.title}`); // Replace with your action
-                }
-              }}
-              role="button"
               tabIndex={0}
             >
               {value.title}
@@ -46,26 +42,22 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
           ))}
         </div>
       </div>
-
-      {/* Image Section */}
       <div className="col-start-1 col-end-2 row-start-2 md:row-start-3 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-4">
         <NextImageWithFallback
-          alt={data.image.alt}
+          alt={image.alternativeText}
           className="md:rounded-40 mx-auto h-full w-full object-cover md:max-h-172.5 md:max-w-180 xl:max-h-fit xl:max-w-fit"
           height={690}
-          src={data.image.src}
-          title={data.image.alt}
+          src={getImageUrl(image.url)}
+          title={image.alternativeText}
           width={658}
         />
       </div>
-
-      {/* Button Section */}
       <div className="col-start-1 col-end-2 row-start-3 mx-auto w-fit self-start md:row-start-2 xl:col-start-1 xl:col-end-2 xl:row-start-2 xl:row-end-3 xl:mr-auto xl:ml-0 xl:self-end">
-        <Button aria-label={data.button.label}>{data.button.label}</Button>
+        <Button aria-label={button.ariaLabel} as="link" href={button.href}>
+          {button.label}
+        </Button>
       </div>
     </Container>
-
-    {/* Animated Brand Section */}
     <div
       aria-labelledby="industries-animation-title"
       className="bg-primary-yellow py-12.5"
@@ -76,7 +68,7 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
           className="md:text-32 pb-6 text-center text-2xl leading-snug text-black md:px-6 md:pb-12 xl:px-0 xl:text-[40px]"
           id="industries-animation-title"
         >
-          {data.title}
+          {title}
         </h4>
       </div>
 
@@ -86,25 +78,25 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
         role="list"
       >
         <div className="animate-marquee flex w-max">
-          {data.animation.map((value) => (
+          {industriesWeServeAnimation.image.map((value) => (
             <NextImageWithFallback
-              alt={value.alt}
+              alt={value.alternativeText}
               className="mx-8 h-10 w-40 object-contain"
               height={40}
-              key={`anim1-${value.id}`}
-              src={value.src}
-              title={value.alt}
+              key={`anim1-${value.alternativeText}`}
+              src={getImageUrl(value.url)}
+              title={value.alternativeText}
               width={160}
             />
           ))}
-          {data.animation.map((value) => (
+          {industriesWeServeAnimation.image.map((value) => (
             <NextImageWithFallback
-              alt={value.alt}
+              alt={value.alternativeText}
               className="mx-8 h-10 w-40 object-contain"
               height={40}
-              key={`anim2-${value.id}`}
-              src={value.src}
-              title={value.alt}
+              key={`anim2-${value.alternativeText}`}
+              src={getImageUrl(value.url)}
+              title={value.alternativeText}
               width={160}
             />
           ))}
@@ -113,5 +105,3 @@ const IndustriesWeServe: FC<IndustriesWeServe> = ({ data }) => (
     </div>
   </>
 );
-
-export default IndustriesWeServe;

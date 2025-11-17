@@ -1,6 +1,11 @@
 import { PropsWithChildren } from "react";
 
-import { AboutUsSectionProps, HeroSectionProps, WasteManagementServicesProps } from "@/components";
+import {
+  AboutUsSectionProps,
+  HeroSectionProps,
+  IndustriesWeServeSectionProps,
+  WasteManagementServicesProps,
+} from "@/components";
 import { footer, header } from "@/types/layout-type";
 
 export interface LayoutDataType {
@@ -16,5 +21,6 @@ export interface LayoutClientProps extends PropsWithChildren {
 export interface HomePageDataTypes {
   aboutUs: AboutUsSectionProps;
   hero: HeroSectionProps;
+  industriesWeServe: IndustriesWeServeSectionProps;
   wasteManagementServices: WasteManagementServicesProps;
 }

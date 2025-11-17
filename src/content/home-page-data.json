@@ -89,9 +89,9 @@
       }
     ]
   },
-  "industriesWeServeSection": {
+  "industriesWeServe": {
     "mainTitle": "Industries We Serve",
-    "services": [
+    "industriesWeServedServices": [
       {
         "id": 1,
         "title": "Health Care"
@@ -118,65 +118,69 @@
       }
     ],
     "button": {
-      "label": "Know More"
+      "label": "Know More",
+      "href": "/",
+      "ariaLabel": "Know More"
     },
     "image": {
-      "src": "/assets/images/home/woman-collecting-trash.avif",
-      "alt": "woman collecting trash"
+      "url": "/assets/images/home/woman-collecting-trash.avif",
+      "alternativeText": "woman collecting trash"
     },
     "title": "Trusted by the world’s most innovative companies",
-    "animation": [
-      {
-        "id": 1,
-        "src": "/assets/images/home/acme.svg",
-        "alt": "acme"
-      },
-      {
-        "id": 2,
-        "src": "/assets/images/home/focal-point.svg",
-        "alt": "focal point"
-      },
-      {
-        "id": 3,
-        "src": "/assets/images/home/polymath.svg",
-        "alt": "polymath"
-      },
-      {
-        "id": 4,
-        "src": "/assets/images/home/segment.svg",
-        "alt": "segment"
-      },
-      {
-        "id": 5,
-        "src": "/assets/images/home/bavarian.svg",
-        "alt": "acme"
-      },
-      {
-        "id": 6,
-        "src": "/assets/images/home/harmony-hills.svg",
-        "alt": "focal point"
-      },
-      {
-        "id": 7,
-        "src": "/assets/images/home/abstract.svg",
-        "alt": "polymath"
-      },
-      {
-        "id": 8,
-        "src": "/assets/images/home/good.svg",
-        "alt": "segment"
-      },
-      {
-        "id": 9,
-        "src": "/assets/images/home/designocracy.svg",
-        "alt": "acme"
-      },
-      {
-        "id": 10,
-        "src": "/assets/images/home/intdeco.svg",
-        "alt": "focal point"
-      }
-    ]
+    "industriesWeServeAnimation": {
+      "image": [
+        {
+          "id": 1,
+          "url": "/assets/images/home/acme.svg",
+          "alternativeText": "acme"
+        },
+        {
+          "id": 2,
+          "url": "/assets/images/home/focal-point.svg",
+          "alternativeText": "focal point"
+        },
+        {
+          "id": 3,
+          "url": "/assets/images/home/polymath.svg",
+          "alternativeText": "polymath"
+        },
+        {
+          "id": 4,
+          "url": "/assets/images/home/segment.svg",
+          "alternativeText": "segment"
+        },
+        {
+          "id": 5,
+          "url": "/assets/images/home/bavarian.svg",
+          "alternativeText": "bavarian"
+        },
+        {
+          "id": 6,
+          "url": "/assets/images/home/harmony-hills.svg",
+          "alternativeText": "harmony hills"
+        },
+        {
+          "id": 7,
+          "url": "/assets/images/home/abstract.svg",
+          "alternativeText": "abstract"
+        },
+        {
+          "id": 8,
+          "url": "/assets/images/home/good.svg",
+          "alternativeText": "good"
+        },
+        {
+          "id": 9,
+          "url": "/assets/images/home/designocracy.svg",
+          "alternativeText": "designocracy"
+        },
+        {
+          "id": 10,
+          "url": "/assets/images/home/intdeco.svg",
+          "alternativeText": "intdeco"
+        }
+      ]
+    }
   },
   "ourProcessSection": {
     "title": "Our Process",
