@@ -1,6 +1,6 @@
 import { Image } from "@/types";
 
-export interface RangeOfWasteManagementServices {
+export interface RangeOfWasteManagementService {
   description: string;
   id: number;
   image: Image;
@@ -8,11 +8,11 @@ export interface RangeOfWasteManagementServices {
 }
 
 export interface ServiceItemProps {
-  data: RangeOfWasteManagementServices;
+  data: RangeOfWasteManagementService;
 }
 
 export interface WasteManagementServicesProps {
   description: string;
-  rangeOfWasteManagementServices: RangeOfWasteManagementServices[];
+  rangeOfWasteManagementServices: RangeOfWasteManagementService[];
   title: string;
 }
