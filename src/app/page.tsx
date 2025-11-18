@@ -9,6 +9,7 @@ import {
   GetMoreUpdates,
   HomeHero,
   IndustriesWeServe,
+  OurAchievements,
   OurProcess,
   TransformingWaste,
   WasteManagementServices,
@@ -44,6 +45,7 @@ const Home: FC = async () => {
     drivingImpact,
     faq,
     getMoreUpdates,
+    ourAchievements,
   } = strapiData;
 
   return (
@@ -58,10 +60,9 @@ const Home: FC = async () => {
       <DrivingImpact {...drivingImpact} />
       <FAQ {...faq} />
       <GetMoreUpdates {...getMoreUpdates} />
+      <OurAchievements {...ourAchievements} />
     </>
   );
 };
 
 export default Home;
-
-//       <OurAchievements data={ourAchievementsSection} />

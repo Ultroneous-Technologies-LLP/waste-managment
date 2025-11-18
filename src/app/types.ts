@@ -8,6 +8,7 @@ import {
   GetMoreUpdatesSectionProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
+  OurAchievementsSectionProps,
   OurProcessSectionProps,
   TransformingWasteSectionProps,
   WasteManagementServicesProps,
@@ -32,6 +33,7 @@ export interface HomePageDataTypes {
   getMoreUpdates: GetMoreUpdatesSectionProps;
   hero: HeroSectionProps;
   industriesWeServe: IndustriesWeServeSectionProps;
+  ourAchievements: OurAchievementsSectionProps;
   ourProcess: OurProcessSectionProps;
   transformingWaste: TransformingWasteSectionProps;
   wasteManagementServices: WasteManagementServicesProps;
