@@ -49,8 +49,8 @@
   },
   "footer": {
     "footerLogo": {
-      "src": "/assets/images/logo-white.svg",
-      "alt": "wast management logo"
+      "url": "/assets/images/logo-white.svg",
+      "alternativeText": "wast management logo"
     },
     "headquarters": {
       "title": "Our headquarters",
@@ -158,44 +158,44 @@
       ]
     },
     "copyRightText": {
-      "text": "© 2024 saahaswaste. All Rights Reserved."
+      "text": "saahaswaste. All Rights Reserved."
     },
     "socialMediaLink": [
       {
         "id": 1,
         "href": "https://www.instagram.com/",
-        "Icon": "Instagram",
-        "label": "Go to instagram"
+        "label": "instagram",
+        "linkTitle": "Go to instagram"
       },
       {
         "id": 2,
         "href": "https://in.linkedin.com/",
-        "Icon": "LinkedIn",
-        "label": "Go to LinkedIn"
+        "label": "linkedin",
+        "linkTitle": "Go to LinkedIn"
       },
       {
         "id": 3,
         "href": "https://dribbble.com/",
-        "Icon": "Dribble",
-        "label": "Go to dribbble"
+        "label": "dribbble",
+        "linkTitle": "Go to dribbble"
       },
       {
         "id": 4,
         "href": "https://www.behance.net/",
-        "Icon": "Behance",
-        "label": "Go to behance"
+        "label": "behance",
+        "linkTitle": "Go to behance"
       }
     ],
     "footerBottomImage": [
       {
         "id": 1,
-        "src": "/assets/images/call-to-action.svg",
-        "alt": "call-to-action"
+        "url": "/assets/images/call-to-action.svg",
+        "alternativeText": "call-to-action"
       },
       {
         "id": 2,
-        "src": "/assets/images/tuv.svg",
-        "alt": "tuv"
+        "url": "/assets/images/tuv.svg",
+        "alternativeText": "tuv"
       }
     ]
   }
