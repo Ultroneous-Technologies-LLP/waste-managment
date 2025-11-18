@@ -7,6 +7,7 @@ import {
   FaqSectionsProps,
   FooterProps,
   GetMoreUpdatesSectionProps,
+  HeaderProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurAchievementsSectionProps,
@@ -14,11 +15,10 @@ import {
   TransformingWasteSectionProps,
   WasteManagementServicesProps,
 } from "@/components";
-import { header } from "@/types/layout-type";
 
 export interface LayoutDataType {
   footer: FooterProps;
-  header: header;
+  header: HeaderProps;
 }
 
 export interface LayoutClientProps extends PropsWithChildren {

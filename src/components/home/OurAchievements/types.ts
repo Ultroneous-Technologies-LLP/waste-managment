@@ -1,7 +1,6 @@
 import { Image } from "@/types";
 
 interface OurAchievementsImages {
-  id: number;
   images: Image[];
 }
 

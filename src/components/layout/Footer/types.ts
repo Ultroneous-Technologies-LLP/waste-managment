@@ -23,12 +23,13 @@ interface Newsletter {
   title: string;
 }
 
-interface RegionalOfficesAddress extends Id {
+interface RegionalOffice {
   address: string;
+  id: number;
 }
 
 interface RegionalOfficesAddress {
-  regionalOfficesAddress: RegionalOfficesAddress[];
+  regionalOfficesAddress: RegionalOffice[];
   title: string;
 }
 

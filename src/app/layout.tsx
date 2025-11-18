@@ -5,7 +5,7 @@ import { lexend } from "@/constant";
 import data from "@/content/layout.json";
 
 import "../styles/globals.css";
-import LayoutClient from "./LayoutClient";
+import { LayoutClient } from "./LayoutClient";
 import { LayoutDataType } from "./types";
 
 export const metadata: Metadata = {
