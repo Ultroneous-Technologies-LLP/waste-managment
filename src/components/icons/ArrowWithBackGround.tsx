@@ -1,47 +1,47 @@
 import clsx from "clsx";
 import { FC, SVGProps } from "react";
 
+import { ICON_SIZE_0, ICON_SIZE_16, ICON_SIZE_22 } from "./constant";
+
 interface ArrowWithBackGroundProps extends SVGProps<SVGSVGElement> {
   className?: string;
+  height?: number;
   svgClassName?: string;
   width?: number;
-  height?: number;
 }
 
 const ArrowWithBackGround: FC<ArrowWithBackGroundProps> = ({
   className,
   svgClassName,
-  width = 22,
-  height = 16,
+  width = ICON_SIZE_22,
+  height = ICON_SIZE_16,
   ...svgProps
-}) => {
-  return (
-    <div
-      className={clsx(
-        "flex cursor-pointer items-center justify-center rounded-full border transition-colors duration-300",
-        className
-      )}
+}) => (
+  <div
+    className={clsx(
+      "flex cursor-pointer items-center justify-center rounded-full border transition-colors duration-300",
+      className
+    )}
+  >
+    <svg
+      className={clsx("transition-colors duration-300", svgClassName)}
+      fill="none"
+      height={height}
+      role="img"
+      viewBox={`${ICON_SIZE_0} ${ICON_SIZE_0} ${ICON_SIZE_22} ${ICON_SIZE_16}`}
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
+      {...svgProps}
     >
-      <svg
-        viewBox="0 0 22 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
-        role="img"
-        className={clsx("transition-colors duration-300", svgClassName)}
-        {...svgProps}
-      >
-        <path
-          d="M20.5 8L1.5 8M1.5 8L8.625 0.999999M1.5 8L8.625 15"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-  );
-};
+      <path
+        d="M20.5 8L1.5 8M1.5 8L8.625 0.999999M1.5 8L8.625 15"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  </div>
+);
 
 export default ArrowWithBackGround;
