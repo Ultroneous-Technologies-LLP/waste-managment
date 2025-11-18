@@ -10,3 +10,10 @@ export interface Image {
   url: string;
   id?: number;
 }
+
+export interface Link {
+  href: string;
+  label: string;
+  id?: number;
+  linkTitle?: string;
+}

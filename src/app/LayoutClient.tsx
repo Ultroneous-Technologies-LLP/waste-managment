@@ -44,7 +44,7 @@ const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }) => {
           sidebarOpen={isSidebarOpen}
         />
         <main>{children}</main>
-        <Footer data={footer} />
+        <Footer {...footer} />
       </div>
     </div>
   );

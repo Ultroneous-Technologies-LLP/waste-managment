@@ -5,6 +5,7 @@ import {
   CitiesWeCoveredSectionProps,
   DrivingImpactSectionProps,
   FaqSectionsProps,
+  FooterProps,
   GetMoreUpdatesSectionProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
@@ -13,10 +14,10 @@ import {
   TransformingWasteSectionProps,
   WasteManagementServicesProps,
 } from "@/components";
-import { footer, header } from "@/types/layout-type";
+import { header } from "@/types/layout-type";
 
 export interface LayoutDataType {
-  footer: footer;
+  footer: FooterProps;
   header: header;
 }
 
