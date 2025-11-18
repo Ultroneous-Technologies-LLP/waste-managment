@@ -1,4 +1,3 @@
-import GetMoreUpdates from "./GetMoreUpdates";
 import OurAchievements from "./OurAchievements";
 
 export * from "./HomeHero";
@@ -10,5 +9,6 @@ export * from "./CitiesWeCovered";
 export * from "./TransformingWaste";
 export * from "./DrivingImpact";
 export * from "./FAQ";
+export * from "./GetMoreUpdates";
 
-export { GetMoreUpdates, OurAchievements };
+export { OurAchievements };
