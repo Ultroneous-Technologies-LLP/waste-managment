@@ -8,4 +8,5 @@ export interface Button {
 export interface Image {
   alternativeText: string;
   url: string;
+  id?: number;
 }

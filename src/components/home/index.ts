@@ -1,5 +1,3 @@
-import OurAchievements from "./OurAchievements";
-
 export * from "./HomeHero";
 export * from "./AboutUs";
 export * from "./WasteManagementServices";
@@ -10,5 +8,4 @@ export * from "./TransformingWaste";
 export * from "./DrivingImpact";
 export * from "./FAQ";
 export * from "./GetMoreUpdates";
-
-export { OurAchievements };
+export * from "./OurAchievements";

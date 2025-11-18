@@ -451,29 +451,31 @@
       "ariaLabel": "View All"
     }
   },
-  "ourAchievementsSection": {
+  "ourAchievements": {
     "title": "Our Achievements",
-    "images": [
-      {
-        "id": 1,
-        "src": "/assets/images/home/golbal-citizen-award.avif",
-        "alt": "golbal-citizen-award"
-      },
-      {
-        "id": 2,
-        "src": "/assets/images/home/cll.avif",
-        "alt": "cll"
-      },
-      {
-        "id": 3,
-        "src": "/assets/images/home/award.avif",
-        "alt": "award"
-      },
-      {
-        "id": 4,
-        "src": "/assets/images/home/golbal-citizen-award.avif",
-        "alt": "golbal-citizen-award"
-      }
-    ]
+    "ourAchievementsImages": {
+      "images": [
+        {
+          "id": 1,
+          "url": "/assets/images/home/golbal-citizen-award.avif",
+          "alternativeText": "golbal-citizen-award"
+        },
+        {
+          "id": 2,
+          "url": "/assets/images/home/cll.avif",
+          "alternativeText": "cll"
+        },
+        {
+          "id": 3,
+          "url": "/assets/images/home/award.avif",
+          "alternativeText": "award"
+        },
+        {
+          "id": 4,
+          "url": "/assets/images/home/golbal-citizen-award.avif",
+          "alternativeText": "golbal-citizen-award"
+        }
+      ]
+    }
   }
 }
