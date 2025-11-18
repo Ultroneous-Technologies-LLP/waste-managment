@@ -397,18 +397,18 @@
       }
     }
   },
-  "getMoreUpdatesSection": {
+  "getMoreUpdates": {
     "title": "Get more updates from SZW",
     "latestBlog": {
-      "img": {
-        "src": "/assets/images/home/recycling-workshop.avif",
-        "alt": "recycling workshop"
+      "image": {
+        "url": "/assets/images/home/recycling-workshop.avif",
+        "alternativeText": "recycling workshop"
       },
       "category": "Blog | Waste Management",
       "title": "Waste management container or bin for my home?",
       "descriptions": "Discover the right waste management solutions for your home and community. Learn how to choose between containers, bins, and recycling options to keep your surroundings clean.",
       "date": "02 Feb, 2024",
-      "link": "/"
+      "slug": "/"
     },
     "blogList": [
       {
@@ -416,31 +416,39 @@
         "category": "Blog | Waste Management",
         "title": "Largest solid waste management company",
         "descriptions": "Lorem ipsum dolor sit amet consectetur. Commodo auctor leo pharetra risus malesuada amet cursus semper at",
-        "link": "/",
-        "src": "/assets/images/home/largest-solid-waste-management-company.avif",
-        "alt": "largest-solid-waste-management-company"
+        "slug": "/",
+        "image": {
+          "url": "/assets/images/home/largest-solid-waste-management-company.avif",
+          "alternativeText": "largest-solid-waste-management-company"
+        }
       },
       {
         "id": 2,
         "category": "Blog | Waste Management",
         "title": "Approved SZW disposal facility expands capacity",
         "descriptions": "Lorem ipsum dolor sit amet consectetur. Commodo auctor leo pharetra risus malesuada amet cursus semper at",
-        "link": "/",
-        "src": "/assets/images/home/approved-szw-disposal-facility-expands-capacity.avif",
-        "alt": "approved-szw-disposal-facility-expands-capacity"
+        "slug": "/",
+        "image": {
+          "url": "/assets/images/home/approved-szw-disposal-facility-expands-capacity.avif",
+          "alternativeText": "approved-szw-disposal-facility-expands-capacity"
+        }
       },
       {
         "id": 3,
         "category": "Blog | Waste Management",
         "title": "When A Clear Stream Of Reasoning Awakens The Change",
         "descriptions": "Lorem ipsum dolor sit amet consectetur. Commodo auctor leo pharetra risus malesuada amet cursus semper at",
-        "link": "/",
-        "src": "/assets/images/home/when-a-clear-stream-of-reasoning-awakens-the-change.avif",
-        "alt": "when-a-clear-stream-of-reasoning-awakens-the-change"
+        "slug": "/",
+        "image": {
+          "url": "/assets/images/home/when-a-clear-stream-of-reasoning-awakens-the-change.avif",
+          "alternativeText": "when-a-clear-stream-of-reasoning-awakens-the-change"
+        }
       }
     ],
     "button": {
-      "buttonLabel": "View All"
+      "label": "View All",
+      "href": "/",
+      "ariaLabel": "View All"
     }
   },
   "ourAchievementsSection": {

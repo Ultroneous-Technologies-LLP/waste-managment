@@ -5,6 +5,7 @@ import {
   CitiesWeCoveredSectionProps,
   DrivingImpactSectionProps,
   FaqSectionsProps,
+  GetMoreUpdatesSectionProps,
   HeroSectionProps,
   IndustriesWeServeSectionProps,
   OurProcessSectionProps,
@@ -28,6 +29,7 @@ export interface HomePageDataTypes {
   citiesWeCovered: CitiesWeCoveredSectionProps;
   drivingImpact: DrivingImpactSectionProps;
   faq: FaqSectionsProps;
+  getMoreUpdates: GetMoreUpdatesSectionProps;
   hero: HeroSectionProps;
   industriesWeServe: IndustriesWeServeSectionProps;
   ourProcess: OurProcessSectionProps;
