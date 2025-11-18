@@ -1,35 +1,40 @@
+/* eslint-disable max-lines-per-function */
 "use client";
 
-import { FC, useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import clsx from "clsx";
+import Link from "next/link";
+import { FC, useState, useEffect, useRef, JSX } from "react";
 
 import { Button, Container, NextImageWithFallback } from "@/components/common";
 import { Cross, Search } from "@/components/icons";
-import { header } from "@/types/layout-type";
 
-interface HeaderProps {
-  data: header;
-  sidebarOpen?: boolean;
-  onMenuOpen?: () => void;
-  onMenuClose?: () => void;
-}
+import { HeaderProps } from "./types";
 
-const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose }) => {
-  const [searchOpen, setSearchOpen] = useState(false);
+const SECTION_THRESHOLD = 100;
+const MIN_SCROLL_OFFSET = 1;
+
+export const Header: FC<HeaderProps> = ({
+  headerButton,
+  headerLinks,
+  headerLogo,
+  sidebarOpen,
+  onMenuOpen,
+  onMenuClose,
+}) => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("home");
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const navRef = useRef<HTMLUListElement | null>(null);
 
   // Scroll spy
   useEffect(() => {
-    const handleScroll = () => {
-      data.headerLinks.forEach((link) => {
-        const sectionId = link.href.split("#")[1]; // extract 'home' from '/#home'
-        const section = document.getElementById(sectionId); // safer than querySelector
+    const handleScroll = (): void => {
+      headerLinks.forEach((link) => {
+        const sectionId = link.href.split("#")[`${MIN_SCROLL_OFFSET}`];
+        const section = document.getElementById(sectionId);
         if (section) {
           const top = section.getBoundingClientRect().top;
-          if (top <= 100 && top + section.offsetHeight > 100) {
+          if (top <= SECTION_THRESHOLD && top + section.offsetHeight > SECTION_THRESHOLD) {
             setCurrentSection(sectionId);
           }
         }
@@ -37,13 +42,14 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initialize
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [data.headerLinks]);
+    handleScroll();
+    return (): void => window.removeEventListener("scroll", handleScroll);
+  }, [headerLinks]);
 
-  // Update underline position
   useEffect(() => {
-    if (!navRef.current) return;
+    if (!navRef.current) {
+      return;
+    }
 
     const activeLink = navRef.current.querySelector<HTMLElement>(`[data-id='${currentSection}']`);
     if (activeLink) {
@@ -56,97 +62,90 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
 
   const containerClasses = clsx(
     "md:bg-[#f7f7f7] rounded-full !py-3 !pl-2 !pr-3 xl:!p-4 flex items-center transition-all duration-500 ease-in bg-white",
-    {
-      "justify-end gap-2 md:bg-transparent": sidebarOpen,
-      "justify-between gap-12": !sidebarOpen,
-      "md:bg-transparent h-14 md:h-21 bg-transparent": searchOpen,
-    }
+    sidebarOpen ? "justify-end gap-2 md:bg-transparent" : "justify-between gap-12",
+    isSearchOpen && "md:bg-transparent h-14 md:h-21 bg-transparent"
   );
 
-  // ✅ Extracted NavLinks (memoized for performance)
-
-  // ✅ Reusable SearchBar
-  const SearchBar = () => (
+  const SearchBar = (): JSX.Element => (
     <div className="border-primary-green/40 flex w-full items-center rounded-full border bg-white px-3 py-2 shadow-[0_0_0_4px_#22631B1F]">
-      <Search className="mr-2 text-black" aria-hidden="true" />
-      <label htmlFor="searchInput" className="sr-only">
+      <Search aria-hidden="true" className="mr-2 text-black" />
+      <label className="sr-only" htmlFor="searchInput">
         Search input
       </label>
       <input
+        aria-label="Search site"
         autoFocus
-        placeholder="Search"
         className="w-full text-base text-black outline-none"
         id="searchInput"
+        placeholder="Search"
         type="search"
-        aria-label="Search site"
       />
-      <button aria-label="Close search" onClick={() => setSearchOpen(false)} className="ml-2">
-        <Cross className="text-black" aria-hidden="true" />
+      <button aria-label="Close search" className="ml-2" onClick={() => setIsSearchOpen(false)}>
+        <Cross aria-hidden="true" className="text-black" />
       </button>
     </div>
   );
 
-  // ✅ Reusable MenuToggle
-  const MenuToggle = () => (
+  const MenuToggle = (): JSX.Element => (
     <button
-      aria-label="Open menu"
-      aria-expanded={sidebarOpen ? "true" : "false"}
       aria-controls="site-navigation"
-      onClick={onMenuOpen}
+      aria-expanded={sidebarOpen ? "true" : "false"}
+      aria-label="Open menu"
       className={clsx("flex flex-col md:mr-4 xl:hidden", {
-        hidden: sidebarOpen || searchOpen,
+        hidden: sidebarOpen || isSearchOpen,
       })}
+      onClick={onMenuOpen}
     >
-      <span className="bg-primary-green mb-2.5 block h-0.5 w-5 rounded-full md:h-1 md:w-8.5"></span>
-      <span className="bg-primary-green block h-0.5 w-5 rounded-full md:h-1 md:w-8.5"></span>
+      <span className="bg-primary-green mb-2.5 block h-0.5 w-5 rounded-full md:h-1 md:w-8.5" />
+      <span className="bg-primary-green block h-0.5 w-5 rounded-full md:h-1 md:w-8.5" />
     </button>
   );
 
   return (
     <nav className="sticky top-0 z-50 mx-auto w-full max-w-360 px-4 pt-5 md:px-6 xl:px-12.5">
       <Container as="header" className={containerClasses} role="banner">
-        {/* logo */}
         <div
-          className={clsx("transition-all duration-500 ease-in xl:w-full xl:max-w-15", {
-            hidden: sidebarOpen,
-            "hidden xl:block": searchOpen,
-          })}
+          className={clsx(
+            "transition-all duration-500 ease-in xl:w-full xl:max-w-15",
+            sidebarOpen && "hidden",
+            isSearchOpen && "hidden xl:block"
+          )}
         >
           <Link
-            href="/"
             aria-label="Homepage"
+            href="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <NextImageWithFallback
-              alt={data.headerLogo.alt}
-              src={data.headerLogo.src}
-              title={data.headerLogo.alt}
-              width={60}
-              height={56}
+              alt={headerLogo.alternativeText}
               className="h-8 w-9.5 md:h-14 md:w-15"
+              height={56}
+              src={headerLogo.url}
+              title={headerLogo.alternativeText}
+              width={60}
             />
           </Link>
         </div>
-
-        {/* Desktop Nav */}
         <div className="relative hidden xl:block xl:w-full xl:max-w-150">
           <ul
-            ref={navRef}
             className="relative flex justify-center gap-6 text-base/normal"
             id="site-navigation"
+            ref={navRef}
             role="menubar"
           >
-            {data.headerLinks.map((link) => (
+            {headerLinks.map((link) => (
               <li key={link.label} role="none">
                 <Link
-                  href={link.href}
-                  data-id={link.href.replace("/#", "")}
+                  aria-current={currentSection === link.href.replace("/#", "") ? "page" : undefined}
                   className={clsx(
                     "relative px-1 py-2 font-light transition-colors duration-300",
-                    currentSection === link.href.replace("/#", "") ? "text-black" : "text-gray-500"
+                    currentSection === link.href.replace("/#", "")
+                      ? "text-primary-green"
+                      : "text-gray-500"
                   )}
+                  data-id={link.href.replace("/#", "")}
+                  href={link.href}
                   role="menuitem"
-                  aria-current={currentSection === link.href.replace("/#", "") ? "page" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -155,7 +154,7 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
 
             {/* Sliding underline */}
             <span
-              className="absolute bottom-0 h-[2px] bg-black transition-all duration-300"
+              className="bg-primary-green absolute bottom-0 h-0.5 transition-all duration-300"
               style={{
                 left: underlineStyle.left,
                 width: underlineStyle.width,
@@ -165,17 +164,13 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
         </div>
 
         {/* Search + Button */}
-        <div
-          className={clsx("flex gap-6 xl:hidden", {
-            "w-full": searchOpen,
-          })}
-        >
+        <div className={clsx("flex gap-6 xl:hidden", isSearchOpen && "w-full")}>
           <div
             className={clsx("hidden w-fit gap-4 md:flex md:w-full md:max-w-80", {
-              "md:hidden": searchOpen,
+              "md:hidden": isSearchOpen,
             })}
           >
-            {searchOpen ? (
+            {isSearchOpen ? (
               <SearchBar />
             ) : (
               <div
@@ -183,41 +178,36 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
                   "flex w-full items-center gap-2 rounded-full bg-white px-3 py-4.5 xl:max-w-61.5",
                   { hidden: sidebarOpen }
                 )}
-                onClick={() => setSearchOpen(true)}
+                onClick={() => setIsSearchOpen(true)}
               >
                 <Search
-                  width={16}
-                  height={16}
-                  className="text-[#141420] opacity-30"
                   aria-hidden="true"
+                  className="text-[#141420] opacity-30"
+                  height={16}
+                  width={16}
                 />
-                <label htmlFor="searchInput" className="sr-only">
+                <label className="sr-only" htmlFor="searchInput">
                   Search input
                 </label>
                 <input
+                  aria-label="Search site"
+                  className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus-within:outline-0"
                   id="searchInput"
                   placeholder="Search"
-                  className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus-within:outline-0"
                   type="search"
-                  aria-label="Search site"
                 />
               </div>
             )}
           </div>
-          <div
-            className={clsx("", {
-              "w-full": searchOpen,
-              "flex items-center gap-4": !searchOpen,
-            })}
-          >
-            {!searchOpen ? (
+          <div className={clsx(isSearchOpen ? "w-full" : "flex items-center gap-4")}>
+            {!isSearchOpen ? (
               <>
                 <Search
-                  onClick={() => setSearchOpen(true)}
-                  className={clsx("text-[#141420] opacity-30 xl:hidden", {
-                    hidden: !searchOpen,
-                  })}
                   aria-hidden="true"
+                  className={clsx("text-[#141420] opacity-30 xl:hidden", {
+                    hidden: !isSearchOpen,
+                  })}
+                  onClick={() => setIsSearchOpen(true)}
                 />
                 <MenuToggle />
               </>
@@ -237,45 +227,43 @@ const Header: FC<HeaderProps> = ({ data, sidebarOpen, onMenuOpen, onMenuClose })
           >
             <button type="button">
               <Search
-                width={16}
-                height={16}
-                className="text-[#141420] opacity-30"
                 aria-hidden="true"
+                className="text-[#141420] opacity-30"
+                height={16}
+                width={16}
               />
             </button>
-            <label htmlFor="searchInput" className="sr-only">
+            <label className="sr-only" htmlFor="searchInput">
               Search input
             </label>
             <input
+              aria-label="Search site"
+              className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus:outline-none"
               id="searchInput"
               placeholder="Search"
               type="search"
-              aria-label="Search site"
-              className="placeholder:text-philippine-silver text-philippine-silver w-full max-w-4/5 text-base focus:outline-none"
             />
           </div>
 
           <Button
-            aria-label={data.headerButton.ariaLabel}
-            className="!hidden xl:!inline-block xl:max-w-48.5"
+            aria-label={headerButton.ariaLabel}
+            className="hidden! xl:inline-block! xl:max-w-48.5"
           >
-            {data.headerButton.label}
+            {headerButton.label}
           </Button>
         </div>
 
         <button
           aria-label="Close menu"
-          onClick={onMenuClose}
           className={clsx(
             "grid size-10 place-content-center rounded-xl bg-[#949494] transition-all duration-300 ease-in",
-            { block: sidebarOpen, hidden: !sidebarOpen || searchOpen }
+            { block: sidebarOpen, hidden: !sidebarOpen || isSearchOpen }
           )}
+          onClick={onMenuClose}
         >
-          <Cross className="text-white" aria-hidden="true" />
+          <Cross aria-hidden="true" className="text-white" />
         </button>
       </Container>
     </nav>
   );
 };
-
-export default Header;

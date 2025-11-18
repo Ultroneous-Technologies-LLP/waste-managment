@@ -8,7 +8,7 @@ import { RESPONSIVE_SIZE_LG } from "@/constant";
 
 import { LayoutClientProps } from "./types";
 
-const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }) => {
+export const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -31,14 +31,14 @@ const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }) => {
 
   return (
     <div className="relative min-h-screen">
-      <Sidebar data={header} onClick={() => setIsSidebarOpen(false)} sidebarOpen={isSidebarOpen} />
+      <Sidebar {...header} onClick={() => setIsSidebarOpen(false)} sidebarOpen={isSidebarOpen} />
       <div
         className={clsx("transition-transform duration-300 ease-in-out", {
           "min-h-screen -translate-x-66": isSidebarOpen,
         })}
       >
         <Header
-          data={header}
+          {...header}
           onMenuClose={() => setIsSidebarOpen(false)}
           onMenuOpen={() => setIsSidebarOpen(true)}
           sidebarOpen={isSidebarOpen}
@@ -49,5 +49,3 @@ const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }) => {
     </div>
   );
 };
-
-export default LayoutClient;

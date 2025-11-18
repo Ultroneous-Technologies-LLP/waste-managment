@@ -1,19 +1,14 @@
 "use client";
-import { FC, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
+import { FC, useState } from "react";
 
-import { header } from "@/types/layout-type";
-import { RightArrow, RightArrowLong } from "@/components/icons";
 import { NextImageWithFallback } from "@/components/common";
+import { RightArrow, RightArrowLong } from "@/components/icons";
 
-interface SidebarProps {
-  sidebarOpen: boolean;
-  onClick: () => void;
-  data: header;
-}
+import { SideBarProps } from "./types";
 
-const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
+export const Sidebar: FC<SideBarProps> = ({ onClick, sidebarOpen, headerLinks, headerLogo }) => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
@@ -29,16 +24,16 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
       <div className="p-4">
         <div className="pb-12">
           <NextImageWithFallback
-            alt={data.headerLogo.alt}
-            src={data.headerLogo.src}
-            title={data.headerLogo.alt}
-            width={60}
-            height={65}
+            alt={headerLogo.alternativeText}
             className="mr-0 ml-auto h-8 w-8.5 md:h-14 md:w-15"
+            height={65}
+            src={headerLogo.url}
+            title={headerLogo.alternativeText}
+            width={60}
           />
         </div>
         <ul className="space-y-4">
-          {data.headerLinks.map((link) => {
+          {headerLinks.map((link) => {
             const isHovered = hoveredLink === link.label;
             return (
               <li
@@ -47,12 +42,12 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 <Link
-                  href={link.href}
-                  onClick={onClick}
                   className={clsx(
                     "flex items-center text-2xl/snug font-normal text-black transition-colors duration-700 ease-in-out",
                     isHovered && "text-primary-green font-medium"
                   )}
+                  href={link.href}
+                  onClick={onClick}
                 >
                   {/* Width of this div animates smoothly */}
                   <div
@@ -86,5 +81,3 @@ const Sidebar: FC<SidebarProps> = ({ onClick, sidebarOpen, data }) => {
     </aside>
   );
 };
-
-export default Sidebar;

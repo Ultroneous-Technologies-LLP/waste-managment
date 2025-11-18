@@ -1,21 +1,16 @@
 import { Button, Image } from "@/types";
 
-interface LatestBlog {
+interface BlogList {
   category: string;
-  date: string;
   descriptions: string;
   image: Image;
   slug: string;
   title: string;
+  id?: number;
 }
 
-interface BlogList {
-  category: string;
-  descriptions: string;
-  id: number;
-  image: Image;
-  link: string;
-  title: string;
+interface LatestBlog extends BlogList {
+  date: string;
 }
 
 export interface GetMoreUpdatesSectionProps {
