@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { useState, useEffect, FC } from "react";
 
-import { Footer, Header, Sidebar } from "@/components";
+import { Footer, Header, Sidebar } from "@/components/layout";
 import { RESPONSIVE_SIZE_LG } from "@/constant";
 
 import { LayoutClientProps } from "./types";

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FC, useState } from "react";
 
-import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
+import { Button, Container, FallBackImage, Title } from "@/components/common";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { getImageUrl } from "@/utils";
 
@@ -12,7 +12,7 @@ import { GetMoreUpdatesSectionProps } from "./types";
 const SLICE_START = 0;
 const SLICE_END = 2;
 
-export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
+const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
   blogList,
   button,
   latestBlog,
@@ -36,7 +36,7 @@ export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
           href={latestBlog.slug}
           role="listitem"
         >
-          <NextImageWithFallback
+          <FallBackImage
             alt={latestBlog.image.alternativeText}
             className="h-42.5 w-full rounded-[20px] object-cover md:h-87.5 md:rounded-3xl xl:h-92.5"
             height={350}
@@ -65,7 +65,7 @@ export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
               key={value.id}
               role="listitem"
             >
-              <NextImageWithFallback
+              <FallBackImage
                 alt={value.image.alternativeText}
                 className="h-42.5 w-full rounded-[20px] object-cover md:h-30 md:max-w-25 md:rounded-3xl xl:h-39.5 xl:max-w-65"
                 height={158}
@@ -106,3 +106,5 @@ export const GetMoreUpdates: FC<GetMoreUpdatesSectionProps> = ({
     </Container>
   );
 };
+
+export default GetMoreUpdates;

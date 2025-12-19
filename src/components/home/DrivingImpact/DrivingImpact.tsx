@@ -1,15 +1,11 @@
 import { FC } from "react";
 
-import { Button, Container, Title } from "@/components";
+import { Button, Container, Title } from "@/components/common";
 
 import AnimatedNumber from "./AnimatedNumber";
 import { DrivingImpactSectionProps } from "./types";
 
-export const DrivingImpact: FC<DrivingImpactSectionProps> = ({
-  button,
-  sustainabilityMetrics,
-  title,
-}) => (
+const DrivingImpact: FC<DrivingImpactSectionProps> = ({ button, sustainabilityMetrics, title }) => (
   <Container
     aria-labelledby="impact-title"
     backgroundClassName="bg-primary-yellow scroll-mt-30"
@@ -51,3 +47,5 @@ export const DrivingImpact: FC<DrivingImpactSectionProps> = ({
     </div>
   </Container>
 );
+
+export default DrivingImpact;

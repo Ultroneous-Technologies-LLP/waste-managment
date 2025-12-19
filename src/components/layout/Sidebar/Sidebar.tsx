@@ -3,12 +3,12 @@ import clsx from "clsx";
 import Link from "next/link";
 import { FC, useState } from "react";
 
-import { NextImageWithFallback } from "@/components/common";
+import { FallBackImage } from "@/components/common";
 import { RightArrow, RightArrowLong } from "@/components/icons";
 
 import { SideBarProps } from "./types";
 
-export const Sidebar: FC<SideBarProps> = ({ onClick, sidebarOpen, headerLinks, headerLogo }) => {
+const Sidebar: FC<SideBarProps> = ({ onClick, sidebarOpen, headerLinks, headerLogo }) => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
@@ -23,7 +23,7 @@ export const Sidebar: FC<SideBarProps> = ({ onClick, sidebarOpen, headerLinks, h
     >
       <div className="p-4">
         <div className="pb-12">
-          <NextImageWithFallback
+          <FallBackImage
             alt={headerLogo.alternativeText}
             className="mr-0 ml-auto h-8 w-8.5 md:h-14 md:w-15"
             height={65}
@@ -81,3 +81,5 @@ export const Sidebar: FC<SideBarProps> = ({ onClick, sidebarOpen, headerLinks, h
     </aside>
   );
 };
+
+export default Sidebar;

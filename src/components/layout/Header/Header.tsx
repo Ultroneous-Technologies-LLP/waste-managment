@@ -5,7 +5,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { FC, useState, useEffect, useRef, JSX } from "react";
 
-import { Button, Container, NextImageWithFallback } from "@/components/common";
+import { Button, Container } from "@/components/common";
+import FallBackImage from "@/components/common/FallBackImage/FallBackImage";
 import { Cross, Search } from "@/components/icons";
 
 import { HeaderProps } from "./types";
@@ -13,7 +14,7 @@ import { HeaderProps } from "./types";
 const SECTION_THRESHOLD = 100;
 const MIN_SCROLL_OFFSET = 1;
 
-export const Header: FC<HeaderProps> = ({
+const Header: FC<HeaderProps> = ({
   headerButton,
   headerLinks,
   headerLogo,
@@ -116,7 +117,7 @@ export const Header: FC<HeaderProps> = ({
             href="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <NextImageWithFallback
+            <FallBackImage
               alt={headerLogo.alternativeText}
               className="h-8 w-9.5 md:h-14 md:w-15"
               height={56}
@@ -267,3 +268,5 @@ export const Header: FC<HeaderProps> = ({
     </nav>
   );
 };
+
+export default Header;

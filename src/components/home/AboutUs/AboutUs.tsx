@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import { FC } from "react";
 
-import { Button, Container, NextImageWithFallback, Title, Arrow } from "@/components";
+import { Button, Container, FallBackImage, Title } from "@/components/common";
+import { Arrow } from "@/components/icons";
 import { getImageUrl } from "@/utils";
 
 import { AboutUsSectionProps } from "./types";
 
-export const AboutUs: FC<AboutUsSectionProps> = ({
+const AboutUs: FC<AboutUsSectionProps> = ({
   button,
   descriptionWithColor,
   descriptionWithDefaultColor,
@@ -56,7 +57,7 @@ export const AboutUs: FC<AboutUsSectionProps> = ({
             {text}
           </h3>
           {image && (
-            <NextImageWithFallback
+            <FallBackImage
               alt={image.alternativeText}
               className="h-full w-full"
               height={200}
@@ -71,3 +72,5 @@ export const AboutUs: FC<AboutUsSectionProps> = ({
     </div>
   </Container>
 );
+
+export default AboutUs;

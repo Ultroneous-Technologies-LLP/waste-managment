@@ -2,17 +2,13 @@
 
 import { FC, useState } from "react";
 
-import { Container, NextImageWithFallback, Title, PlayButton } from "@/components";
+import { Container, FallBackImage, Title } from "@/components/common";
+import { PlayButton } from "@/components/icons";
 import { getImageUrl } from "@/utils";
 
 import { OurProcessSectionProps } from "./types";
 
-export const OurProcess: FC<OurProcessSectionProps> = ({
-  description,
-  title,
-  video,
-  videoPoster,
-}) => {
+const OurProcess: FC<OurProcessSectionProps> = ({ description, title, video, videoPoster }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -37,7 +33,7 @@ export const OurProcess: FC<OurProcessSectionProps> = ({
       >
         {!isPlaying ? (
           <div className="relative h-full w-full rounded-2xl">
-            <NextImageWithFallback
+            <FallBackImage
               alt={videoPoster.alternativeText}
               className="object-cover"
               fill
@@ -65,3 +61,5 @@ export const OurProcess: FC<OurProcessSectionProps> = ({
     </Container>
   );
 };
+
+export default OurProcess;

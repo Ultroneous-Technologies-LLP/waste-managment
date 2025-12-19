@@ -13,7 +13,7 @@ import {
   OurProcess,
   TransformingWaste,
   WasteManagementServices,
-} from "@/components";
+} from "@/components/home";
 import fallbackHomeData from "@/content/home-page-data.json";
 import { axiosInstance } from "@/utils/axios";
 
@@ -21,9 +21,7 @@ import { HomePageDataTypes } from "./types";
 
 async function HomeData(): Promise<HomePageDataTypes> {
   try {
-    const response = await axiosInstance.get<{ data: HomePageDataTypes }>(
-      "/waste-managment?pLevel=7"
-    );
+    const response = await axiosInstance.get<HomePageDataTypes>("/waste-managment?pLevel=7");
     return response.data;
   } catch (error: any) {
     console.error(error);

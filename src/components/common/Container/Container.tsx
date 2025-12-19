@@ -3,7 +3,7 @@ import { ElementType, forwardRef } from "react";
 
 import { ContainerProps, SupportedTags } from "./types";
 
-export const Container = forwardRef<HTMLElement, ContainerProps<SupportedTags>>(
+const Container = forwardRef<HTMLElement, ContainerProps<SupportedTags>>(
   ({ as, backgroundClassName = "", className = "", children, ...rest }, ref) => {
     const Component = (as || "section") as ElementType;
 
@@ -30,3 +30,5 @@ export const Container = forwardRef<HTMLElement, ContainerProps<SupportedTags>>(
 );
 
 Container.displayName = "Container";
+
+export default Container;

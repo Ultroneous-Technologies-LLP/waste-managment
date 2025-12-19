@@ -3,7 +3,7 @@ import { FC } from "react";
 
 import { TitleProps } from "./types";
 
-export const Title: FC<TitleProps> = ({ className = "", title, isMainTitle = false, id }) => {
+const Title: FC<TitleProps> = ({ className = "", title, isMainTitle = false, id }) => {
   const Tag = isMainTitle ? "h1" : "h2";
 
   const baseClasses = isMainTitle ? "text-32 md:text-5xl" : "text-2xl md:text-32";
@@ -14,3 +14,5 @@ export const Title: FC<TitleProps> = ({ className = "", title, isMainTitle = fal
     </Tag>
   );
 };
+
+export default Title;

@@ -1,14 +1,11 @@
 import { FC } from "react";
 
-import { NextImageWithFallback, Title } from "@/components/common";
+import { FallBackImage, Title } from "@/components/common";
 import { getImageUrl } from "@/utils";
 
 import { OurAchievementsSectionProps } from "./types";
 
-export const OurAchievements: FC<OurAchievementsSectionProps> = ({
-  ourAchievementsImages,
-  title,
-}) => (
+const OurAchievements: FC<OurAchievementsSectionProps> = ({ ourAchievementsImages, title }) => (
   <section aria-labelledby="our-achievements-title" className="pb-20 xl:pb-37.5" role="region">
     <Title className="pb-6 text-center md:pb-8" id="our-achievements-title" title={title} />
     <div
@@ -24,7 +21,7 @@ export const OurAchievements: FC<OurAchievementsSectionProps> = ({
             key={`first-${value.id}`}
             role="listitem"
           >
-            <NextImageWithFallback
+            <FallBackImage
               alt={value.alternativeText}
               className="md:rounded-40 h-42.5 w-50 rounded-[20px] object-cover md:h-87 md:w-115 xl:h-87 xl:w-130.5"
               height={348}
@@ -41,7 +38,7 @@ export const OurAchievements: FC<OurAchievementsSectionProps> = ({
             key={`second-${value.id}`}
             role="listitem"
           >
-            <NextImageWithFallback
+            <FallBackImage
               alt={value.alternativeText}
               className="md:rounded-40 h-42.5 w-50 rounded-[20px] object-cover md:h-87 md:w-115 xl:h-87 xl:w-130.5"
               height={348}
@@ -55,3 +52,5 @@ export const OurAchievements: FC<OurAchievementsSectionProps> = ({
     </div>
   </section>
 );
+
+export default OurAchievements;

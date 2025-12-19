@@ -1,11 +1,11 @@
 import { FC } from "react";
 
-import { Container, NextImageWithFallback, Title } from "@/components/common";
+import { Container, FallBackImage, Title } from "@/components/common";
 import { getImageUrl } from "@/utils";
 
 import { TransformingWasteSectionProps } from "./types";
 
-export const TransformingWaste: FC<TransformingWasteSectionProps> = ({
+const TransformingWaste: FC<TransformingWasteSectionProps> = ({
   description,
   transformingWastesKills,
   title,
@@ -40,7 +40,7 @@ export const TransformingWaste: FC<TransformingWasteSectionProps> = ({
           className="bg-anti-flash-white flex flex-col items-start gap-4 rounded-3xl p-6 text-left md:p-10 xl:flex-row xl:gap-6"
           key={value.id}
         >
-          <NextImageWithFallback
+          <FallBackImage
             alt={value.image.alternativeText}
             className="size-13 md:size-16"
             height={64}
@@ -61,3 +61,5 @@ export const TransformingWaste: FC<TransformingWasteSectionProps> = ({
     </div>
   </Container>
 );
+
+export default TransformingWaste;

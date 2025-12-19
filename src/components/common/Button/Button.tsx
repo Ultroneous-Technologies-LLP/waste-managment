@@ -4,7 +4,7 @@ import { FC } from "react";
 
 import { ButtonOnlyProps, ButtonProps, LinkOnlyProps } from "./types";
 
-export const Button: FC<ButtonProps> = (props) => {
+const Button: FC<ButtonProps> = (props) => {
   const { as, className, children, ...rest } = props;
 
   const combinedClass = clsx(
@@ -27,3 +27,5 @@ export const Button: FC<ButtonProps> = (props) => {
     </button>
   );
 };
+
+export default Button;
