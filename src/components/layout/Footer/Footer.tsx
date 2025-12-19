@@ -2,13 +2,13 @@ import clsx from "clsx";
 import Link from "next/link";
 import React, { FC } from "react";
 
-import { Container, NextImageWithFallback } from "@/components";
+import { Container, FallBackImage } from "@/components/common";
 
 import { currentYear, LAST_ITEM_OFFSET, renderIcon } from "./constant";
 import { FooterButtonTextEnum } from "./enum";
 import { FooterProps } from "./types";
 
-export const Footer: FC<FooterProps> = ({
+const Footer: FC<FooterProps> = ({
   company,
   copyRightText,
   footerBottomImage,
@@ -30,7 +30,7 @@ export const Footer: FC<FooterProps> = ({
         aria-label="Company logo and headquarters information"
         className="row-end-2 text-center md:col-start-1 md:col-end-2 md:row-start-1 md:text-start xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2"
       >
-        <NextImageWithFallback
+        <FallBackImage
           alt={footerLogo.alternativeText}
           className="mx-auto md:mr-auto md:ml-0"
           height={52}
@@ -154,7 +154,7 @@ export const Footer: FC<FooterProps> = ({
         </div>
         <div aria-label="Footer images" className="flex gap-2.5">
           {footerBottomImage.map((value) => (
-            <NextImageWithFallback
+            <FallBackImage
               alt={value.alternativeText}
               height={50}
               key={value.id}
@@ -168,3 +168,4 @@ export const Footer: FC<FooterProps> = ({
     </div>
   </Container>
 );
+export default Footer;

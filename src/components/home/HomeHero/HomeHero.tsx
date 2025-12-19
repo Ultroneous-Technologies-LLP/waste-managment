@@ -1,12 +1,12 @@
 import { FC } from "react";
 
-import { Button, Container, NextImageWithFallback, Title } from "@/components/common";
+import { Button, Container, FallBackImage, Title } from "@/components/common";
 import { ArrowWithBackGround } from "@/components/icons";
 import { getImageUrl } from "@/utils";
 
 import { HeroSectionProps } from "./types";
 
-export const HomeHero: FC<HeroSectionProps> = ({ button, description, title, image }) => (
+const HomeHero: FC<HeroSectionProps> = ({ button, description, title, image }) => (
   <Container
     aria-labelledby="home-hero-title"
     className="grid scroll-mt-30 grid-cols-1 gap-6 pt-6 xl:grid-cols-2"
@@ -49,7 +49,7 @@ export const HomeHero: FC<HeroSectionProps> = ({ button, description, title, ima
       </div>
     </div>
     <div>
-      <NextImageWithFallback
+      <FallBackImage
         alt={image.alternativeText}
         className="h-full max-h-50 w-full rounded-3xl object-cover md:max-h-110 xl:max-h-full xl:rounded-[50px]"
         height={658}
@@ -61,3 +61,5 @@ export const HomeHero: FC<HeroSectionProps> = ({ button, description, title, ima
     </div>
   </Container>
 );
+
+export default HomeHero;

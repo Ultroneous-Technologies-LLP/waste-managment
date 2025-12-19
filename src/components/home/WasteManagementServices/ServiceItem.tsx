@@ -2,7 +2,8 @@
 
 import { useState, KeyboardEvent, FC } from "react";
 
-import { NextImageWithFallback, ArrowWithBackGround } from "@/components";
+import FallBackImage from "@/components/common/FallBackImage/FallBackImage";
+import { ArrowWithBackGround } from "@/components/icons";
 import { getImageUrl } from "@/utils";
 
 import { ServiceItemProps } from "./types";
@@ -52,7 +53,7 @@ const ServiceItem: FC<ServiceItemProps> = ({ data }) => {
         width={22}
       />
       {isHovered && (
-        <NextImageWithFallback
+        <FallBackImage
           alt={data.image.alternativeText}
           className="pointer-events-none absolute z-50 transition-all duration-100 xl:block"
           height={237}

@@ -5,7 +5,7 @@ import { Button, Container, Title } from "@/components/common";
 import FAQItems from "./FAQItems";
 import { FaqSectionsProps } from "./types";
 
-export const FAQ: FC<FaqSectionsProps> = ({ description, faqItem, haveQuestions, title }) => (
+const FAQ: FC<FaqSectionsProps> = ({ description, faqItem, haveQuestions, title }) => (
   <Container
     aria-labelledby="faq-title"
     backgroundClassName="bg-anti-flash-white"
@@ -45,3 +45,5 @@ export const FAQ: FC<FaqSectionsProps> = ({ description, faqItem, haveQuestions,
     </div>
   </Container>
 );
+
+export default FAQ;

@@ -3,12 +3,12 @@
 import clsx from "clsx";
 import { FC, useState, KeyboardEvent } from "react";
 
-import { Container, NextImageWithFallback, Title } from "@/components";
+import { Container, FallBackImage, Title } from "@/components/common";
 import { getImageUrl } from "@/utils";
 
 import { CitiesWeCoveredSectionProps } from "./types";
 
-export const CitiesWeCovered: FC<CitiesWeCoveredSectionProps> = ({ cities, title }) => {
+const CitiesWeCovered: FC<CitiesWeCoveredSectionProps> = ({ cities, title }) => {
   const [activeId, setActiveId] = useState<number | null>(null);
 
   const handleToggle = (id: number): void => {
@@ -59,7 +59,7 @@ export const CitiesWeCovered: FC<CitiesWeCoveredSectionProps> = ({ cities, title
               >
                 {value.cityName}
               </span>
-              <NextImageWithFallback
+              <FallBackImage
                 alt={value.image.alternativeText}
                 className={clsx(
                   "absolute inset-0 h-full w-full object-cover transition-opacity duration-300 xl:group-hover:opacity-100",
@@ -82,3 +82,5 @@ export const CitiesWeCovered: FC<CitiesWeCoveredSectionProps> = ({ cities, title
     </Container>
   );
 };
+
+export default CitiesWeCovered;

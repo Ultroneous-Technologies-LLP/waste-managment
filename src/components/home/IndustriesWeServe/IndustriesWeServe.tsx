@@ -2,12 +2,12 @@
 
 import { FC } from "react";
 
-import { Button, Container, NextImageWithFallback, Title } from "@/components";
+import { Button, Container, FallBackImage, Title } from "@/components/common";
 import { getImageUrl } from "@/utils";
 
 import { IndustriesWeServeSectionProps } from "./types";
 
-export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
+const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
   button,
   image,
   mainTitle,
@@ -43,7 +43,7 @@ export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
         </div>
       </div>
       <div className="col-start-1 col-end-2 row-start-2 md:row-start-3 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-4">
-        <NextImageWithFallback
+        <FallBackImage
           alt={image.alternativeText}
           className="md:rounded-40 mx-auto h-full w-full object-cover md:max-h-172.5 md:max-w-180 xl:max-h-fit xl:max-w-fit"
           height={690}
@@ -79,7 +79,7 @@ export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
       >
         <div className="animate-marquee flex w-max">
           {industriesWeServeAnimation.image.map((value) => (
-            <NextImageWithFallback
+            <FallBackImage
               alt={value.alternativeText}
               className="mx-8 h-10 w-40 object-contain"
               height={40}
@@ -90,7 +90,7 @@ export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
             />
           ))}
           {industriesWeServeAnimation.image.map((value) => (
-            <NextImageWithFallback
+            <FallBackImage
               alt={value.alternativeText}
               className="mx-8 h-10 w-40 object-contain"
               height={40}
@@ -105,3 +105,5 @@ export const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
     </div>
   </>
 );
+
+export default IndustriesWeServe;

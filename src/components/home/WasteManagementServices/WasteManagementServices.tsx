@@ -2,12 +2,12 @@
 
 import { FC } from "react";
 
-import { Container, Title } from "@/components";
+import { Container, Title } from "@/components/common";
 
 import ServiceItem from "./ServiceItem";
 import { WasteManagementServicesProps } from "./types";
 
-export const WasteManagementServices: FC<WasteManagementServicesProps> = ({
+const WasteManagementServices: FC<WasteManagementServicesProps> = ({
   description,
   rangeOfWasteManagementServices,
   title,
@@ -39,3 +39,5 @@ export const WasteManagementServices: FC<WasteManagementServicesProps> = ({
     </div>
   </Container>
 );
+
+export default WasteManagementServices;

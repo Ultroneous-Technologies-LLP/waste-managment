@@ -7,12 +7,7 @@ import { NextImageWithFallbackProps } from "./types";
 
 const DEFAULT_FALLBACK = "/assets/images/fall-back-image.avif";
 
-export const NextImageWithFallback: FC<NextImageWithFallbackProps> = ({
-  src,
-  fallbackSrc,
-  alt,
-  ...props
-}) => {
+const FallBackImage: FC<NextImageWithFallbackProps> = ({ src, fallbackSrc, alt, ...props }) => {
   const [isImgSrc, setIsImgSrc] = useState(src);
 
   useEffect(() => {
@@ -27,3 +22,5 @@ export const NextImageWithFallback: FC<NextImageWithFallbackProps> = ({
 
   return <Image alt={alt} onError={handleError} src={isImgSrc} {...props} />;
 };
+
+export default FallBackImage;
