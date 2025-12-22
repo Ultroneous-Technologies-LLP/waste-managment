@@ -32,6 +32,7 @@ export default tseslint.config(
       ...tseslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
     ],
+
     plugins: {
       react,
       "react-hooks": reactHooks,
@@ -42,6 +43,7 @@ export default tseslint.config(
       prettier: prettierPlugin,
       "@next/next": nextPlugin,
     },
+
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
@@ -54,6 +56,7 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+
     settings: {
       react: { version: "detect" },
       "import/resolver": {
@@ -96,14 +99,18 @@ export default tseslint.config(
         },
       ],
 
-      /* ---------------- TypeScript Rules ---------------- */
+      /* ---------------- TypeScript ---------------- */
+      "@typescript-eslint/no-magic-numbers": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-duplicate-enum-values": "error",
       "@typescript-eslint/no-extra-non-null-assertion": "error",
       "@typescript-eslint/no-unnecessary-condition": "error",
-      "@typescript-eslint/prefer-as-const": "warn",
       "@typescript-eslint/no-unused-expressions": "error",
       "@typescript-eslint/no-shadow": "error",
+      "@typescript-eslint/prefer-as-const": "warn",
+      "@typescript-eslint/prefer-optional-chain": "error",
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+      "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -113,22 +120,19 @@ export default tseslint.config(
         },
       ],
 
+      /* ---------------- Naming Convention (Merged) ---------------- */
       "@typescript-eslint/naming-convention": [
         "error",
         {
           selector: "default",
           format: ["camelCase"],
-          // ✅ Ignore Tailwind and class strings
           filter: {
             regex:
               "^(min-h-|translate-x-|translate|rotate-|bg-|text-|fixed|relative|absolute|inset-|top-|bottom-|left-|right-|shadow-|backdrop-|xl:|sm:|md:|lg:|hover:|focus:|\\[|\\]|#)",
             match: false,
           },
         },
-        {
-          selector: "variable",
-          format: ["camelCase", "PascalCase"],
-        },
+        { selector: "variable", format: ["camelCase", "PascalCase"] },
         {
           selector: "variable",
           modifiers: ["const"],
@@ -167,6 +171,14 @@ export default tseslint.config(
           selector: "import",
           format: ["camelCase", "PascalCase"],
         },
+        {
+          selector: "objectLiteralProperty",
+          format: null,
+          filter: {
+            regex: "^(@|__)html$|^@context$|^@type$",
+            match: true,
+          },
+        },
       ],
 
       "@typescript-eslint/member-ordering": [
@@ -180,13 +192,13 @@ export default tseslint.config(
       "@typescript-eslint/prefer-optional-chain": "error",
       "@typescript-eslint/explicit-function-return-type": "error",
 
-      /* ---------------- React / Hooks ---------------- */
+      /* ---------------- React ---------------- */
       "react/jsx-no-useless-fragment": "error",
+      "react/jsx-fragments": "error",
       "react/self-closing-comp": ["error", { component: true, html: true }],
       "react/function-component-definition": ["error", { namedComponents: "arrow-function" }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      "react/jsx-fragments": "error",
 
       /* ---------------- Next.js ---------------- */
       "@next/next/no-img-element": "error",
@@ -210,9 +222,6 @@ export default tseslint.config(
       "max-params": ["error", 3],
       "max-lines-per-function": ["error", { max: 200, skipBlankLines: true, skipComments: true }],
 
-      /* ---------------- Sorting (Perfectionist) ---------------- */
-      // TODO: remove the comment and re-enable the rule properly.
-      // "perfectionist/sort-interfaces": ["error", { type: "natural", order: "asc" }],
       "perfectionist/sort-jsx-props": ["error", { type: "alphabetical", order: "asc" }],
     },
   },
