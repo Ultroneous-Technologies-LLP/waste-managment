@@ -110,9 +110,9 @@ const IndustriesWeServe: FC<IndustriesWeServeSectionProps> = ({
         </div>
       </Container>
       <div
-        aria-labelledby="industries-animation-title"
-        className="bg-primary-yellow py-12.5"
-        role="region"
+        aria-label="Scrolling partner logos"
+        className="relative w-full overflow-hidden"
+        role="list"
       >
         <div>
           <h4
