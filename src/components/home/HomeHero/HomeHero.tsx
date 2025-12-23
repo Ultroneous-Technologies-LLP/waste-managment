@@ -53,7 +53,7 @@ const HomeHero: FC<HeroSectionProps> = ({ button, description, title, image }) =
         alt={image.alternativeText}
         className="h-full max-h-50 w-full rounded-3xl object-cover md:max-h-110 xl:max-h-full xl:rounded-[50px]"
         height={658}
-        priority
+        preload
         src={getImageUrl(image.url)}
         title={image.alternativeText}
         width={658}

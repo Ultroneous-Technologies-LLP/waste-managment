@@ -18,10 +18,10 @@
     "descriptionWithColor": "We have been operational for 10 years with a focus around nature, people and technology. Connect with us to know more.",
     "button": { "href": "/", "label": "Know More", "ariaLabel": "Know More" },
     "weProtectNature": [
-      { "id": 1, "text": "Protect", "backgroundColor": "anti-flash-white" },
+      { "id": 1, "text": "we", "backgroundColor": "anti-flash-white" },
       {
         "id": 2,
-        "text": "we",
+        "text": "Protect",
         "image": {
           "alternativeText": "people collect garbage in the garden",
           "url": "/assets/images/home/protect.avif"
