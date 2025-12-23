@@ -86,7 +86,7 @@ const ServiceItem: FC<ServiceItemProps> = ({ data }) => {
         {data.description}
       </p>
       <ArrowWithBackGround
-        aria-hidden
+        aria-hidden="true"
         className="bg-primary-yellow size-14.5 border-transparent"
         height={16}
         svgClassName="rotate-[130deg] text-black"
