@@ -18,10 +18,10 @@
     "descriptionWithColor": "We have been operational for 10 years with a focus around nature, people and technology. Connect with us to know more.",
     "button": { "href": "/", "label": "Know More", "ariaLabel": "Know More" },
     "weProtectNature": [
-      { "id": 1, "text": "Protect", "backgroundColor": "anti-flash-white" },
+      { "id": 1, "text": "we", "backgroundColor": "anti-flash-white" },
       {
         "id": 2,
-        "text": "we",
+        "text": "Protect",
         "image": {
           "alternativeText": "people collect garbage in the garden",
           "url": "/assets/images/home/protect.avif"
@@ -457,23 +457,28 @@
       "images": [
         {
           "id": 1,
-          "url": "/assets/images/home/golbal-citizen-award.avif",
-          "alternativeText": "golbal-citizen-award"
+          "url": "/assets/images/home/awards.avif",
+          "alternativeText": "awards"
         },
         {
           "id": 2,
-          "url": "/assets/images/home/cll.avif",
-          "alternativeText": "cll"
+          "url": "/assets/images/home/man-give-medal-to-other-man.avif",
+          "alternativeText": "man-give-medal-to-other-man"
         },
         {
           "id": 3,
-          "url": "/assets/images/home/award.avif",
+          "url": "/assets/images/home/wast-to-best.avif",
           "alternativeText": "award"
         },
         {
           "id": 4,
-          "url": "/assets/images/home/golbal-citizen-award.avif",
-          "alternativeText": "golbal-citizen-award"
+          "url": "/assets/images/home/awards-on-table.avif",
+          "alternativeText": "awards"
+        },
+        {
+          "id": 5,
+          "url": "/assets/images/home/man-and-woman-collecting-wast.avif",
+          "alternativeText": "man-give-medal-to-other-man"
         }
       ]
     }
