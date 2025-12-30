@@ -7,7 +7,6 @@
   --color-light-silver: #d8d7d7;
   --color-anti-flash-white: #f3f3f3;
   --color-philippine-silver: #b1b3b5;
-  --animate-marquee: marquee 20s linear infinite;
   --text-32: 32px;
   --radius-40: 40px;
 }
@@ -16,11 +15,27 @@ body {
   font-family: "Lexend", sans-serif;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
 }
