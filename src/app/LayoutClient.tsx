@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { useState, useEffect, FC } from "react";
 
+import { LenisProvider } from "@/components/common";
 import { Footer, Header, Sidebar } from "@/components/layout";
 import { RESPONSIVE_SIZE_LG } from "@/constant";
 
@@ -31,21 +32,23 @@ export const LayoutClient: FC<LayoutClientProps> = ({ header, footer, children }
 
   return (
     <div className="relative min-h-screen">
-      <Sidebar {...header} onClick={() => setIsSidebarOpen(false)} sidebarOpen={isSidebarOpen} />
-      <div
-        className={clsx("transition-transform duration-300 ease-in-out", {
-          "min-h-screen -translate-x-66": isSidebarOpen,
-        })}
-      >
-        <Header
-          {...header}
-          onMenuClose={() => setIsSidebarOpen(false)}
-          onMenuOpen={() => setIsSidebarOpen(true)}
-          sidebarOpen={isSidebarOpen}
-        />
-        <main>{children}</main>
-        <Footer {...footer} />
-      </div>
+      <LenisProvider>
+        <Sidebar {...header} onClick={() => setIsSidebarOpen(false)} sidebarOpen={isSidebarOpen} />
+        <div
+          className={clsx("transition-transform duration-300 ease-in-out", {
+            "min-h-screen -translate-x-66": isSidebarOpen,
+          })}
+        >
+          <Header
+            {...header}
+            onMenuClose={() => setIsSidebarOpen(false)}
+            onMenuOpen={() => setIsSidebarOpen(true)}
+            sidebarOpen={isSidebarOpen}
+          />
+          <main>{children}</main>
+          <Footer {...footer} />
+        </div>
+      </LenisProvider>
     </div>
   );
 };

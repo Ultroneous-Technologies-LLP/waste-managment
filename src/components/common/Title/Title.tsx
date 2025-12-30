@@ -1,18 +1,26 @@
 import clsx from "clsx";
-import { FC } from "react";
+import { forwardRef, HTMLAttributes } from "react";
 
 import { TitleProps } from "./types";
 
-const Title: FC<TitleProps> = ({ className = "", title, isMainTitle = false, id }) => {
-  const Tag = isMainTitle ? "h1" : "h2";
+const Title = forwardRef<HTMLHeadingElement, TitleProps & HTMLAttributes<HTMLHeadingElement>>(
+  ({ className = "", title, isMainTitle = false, id, ...props }, ref) => {
+    const Tag = isMainTitle ? "h1" : "h2";
+    const baseClasses = isMainTitle ? "text-32 md:text-5xl" : "text-2xl md:text-32";
 
-  const baseClasses = isMainTitle ? "text-32 md:text-5xl" : "text-2xl md:text-32";
+    return (
+      <Tag
+        className={clsx("leading-snug text-black xl:text-6xl", baseClasses, className)}
+        id={id}
+        ref={ref} // <-- ref is forwarded here
+        {...props} // <-- spread other props
+      >
+        {title}
+      </Tag>
+    );
+  }
+);
 
-  return (
-    <Tag className={clsx("leading-snug text-black xl:text-6xl", baseClasses, className)} id={id}>
-      {title}
-    </Tag>
-  );
-};
+Title.displayName = "Title"; // Important for dev tools
 
 export default Title;
